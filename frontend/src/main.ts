@@ -1,0 +1,64 @@
+/**
+ * Vue 3 应用入口
+ *
+ * M3 W1-D2: 集成 i18n (CDN 模式) + Pinia + Vue Router + Element Plus (CDN 模式)
+ * 注意：Element Plus / Vue I18n / Axios 通过 index.html 里的 CDN 注入
+ *  - 切回 npm 时，把 import 改回来即可
+ *
+ * D5 公网部署改造：
+ *  - element-plus 整个 alias 到本地 shim（绕 ESM 循环依赖）
+ *  - locale 文件从 element-plus 复制到本地 src/utils/element-plus-locales/
+ */
+import { createApp, watch } from 'vue'
+import { createPinia } from 'pinia'
+// D5 公网部署：locale 文件从 element-plus 复制到本地 src/utils/element-plus-locales/
+// 绕开 element-plus npm 包内部 ESM 循环引用（runtime.mjs 引用 types.mjs 找不到）
+import zhCn from './utils/element-plus-locales/zh-cn'
+
+import App from './App.vue'
+import router from './router'
+import i18n from './i18n'
+
+// 扩展 window 上的 CDN 全局对象类型
+declare global {
+  interface Window {
+    ElementPlus: any
+    ElementPlusIconsVue: Record<string, any>
+    vueI18n?: any
+  }
+}
+
+const app = createApp(App)
+
+// 注册所有 Element Plus 图标（CDN 注入到 window.ElementPlusIconsVue）
+if (window.ElementPlusIconsVue) {
+  for (const [key, component] of Object.entries(window.ElementPlusIconsVue)) {
+    app.component(key, component)
+  }
+}
+
+app.use(createPinia())
+app.use(router)
+app.use(i18n) // 必须在 router 之后、ElementPlus 之前
+
+// 安装 Element Plus（CDN 加载后）
+function installElementPlus() {
+  if (window.ElementPlus) {
+    app.use(window.ElementPlus, { locale: zhCn })
+  } else {
+    console.error('[EVOLUTION AI] Element Plus CDN 未加载，请检查网络')
+  }
+}
+
+// 监听 i18n locale 变化 → 同步 document.documentElement.lang
+watch(i18n.global.locale, (newLocale) => {
+  document.documentElement.lang = newLocale
+})
+
+if (window.ElementPlus) {
+  installElementPlus()
+} else {
+  document.addEventListener('DOMContentLoaded', installElementPlus)
+}
+
+app.mount('#app')

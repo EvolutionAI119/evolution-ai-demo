@@ -1,0 +1,253 @@
+/**
+ * 中文文案字典
+ *
+ * 覆盖 App.vue（导航 + 切换按钮）+ Home.vue（首页所有文案）
+ * 后续 D3 写新页面时继续追加
+ */
+export default {
+  app: {
+    name: 'EVOLUTION AI',
+    version: 'v0.3.0',
+    nav: {
+      home: '首页',
+      designer: '造型设计',
+      quality: '质量评估',
+      optimize: 'AI 优化',
+      storyboard: '分镜脚本',
+      projects: '方案管理',
+    },
+    lang: {
+      zh: '中文',
+      en: 'English',
+      switchTip: '切换语言',
+    },
+  },
+  home: {
+    hero: {
+      title: 'EVOLUTION AI',
+      subtitle: '参数化 + AI 驱动的汽车造型开发平台',
+    },
+    status: {
+      backendOnline: '后端: online',
+      backendOffline: '后端: offline',
+      backendUnknown: '后端: unknown',
+      apiEndpoints: 'API v{version} · {count} 端点',
+      m3Skeleton: 'M3 W1-D{day} 骨架',
+    },
+    sectionTitle: '{count} 大业务模块',
+    modules: {
+      designer: {
+        label: '造型设计',
+        desc: '22 维参数 + 实时 3D 预览',
+      },
+      quality: {
+        label: '质量评估',
+        desc: 'G0/G1/G2 + 反射分析',
+      },
+      optimize: {
+        label: 'AI 优化',
+        desc: 'WebSocket 实时进度（M2.5）',
+      },
+      storyboard: {
+        label: '分镜脚本',
+        desc: 'AI 视频脚本 + 渲染',
+      },
+      projects: {
+        label: '方案管理',
+        desc: 'CRUD + 历史任务',
+      },
+    },
+  },
+  common: {
+    loading: '加载中…',
+    error: '出错了',
+    retry: '重试',
+    confirm: '确认',
+    cancel: '取消',
+    save: '保存',
+    delete: '删除',
+    edit: '编辑',
+    create: '创建',
+    search: '搜索',
+  },
+  error: {
+    network: '网络错误，请检查网络连接',
+    timeout: '请求超时，请稍后重试',
+    server4xx: '请求错误 ({code})',
+    server5xx: '服务器错误 ({code})',
+    unknown: '未知错误',
+  },
+  // ===== W1-D3 业务页面文案 =====
+  designer: {
+    title: '造型设计',
+    subtitle: '22 维参数 + 实时 3D 预览',
+    params: {
+      bodyLength: '车身长度 (L)',
+      bodyWidth: '车身宽度 (W)',
+      bodyHeight: '车身高度 (H)',
+      wheelbase: '轴距',
+      frontOverhang: '前悬',
+      rearOverhang: '后悬',
+      groundClearance: '离地间隙',
+      roofHeight: '车顶高度',
+      windshieldAngle: '前风窗角度',
+      rearWindowAngle: '后风窗角度',
+      hoodAngle: '引擎盖角度',
+    },
+    actions: {
+      generate: '生成 3D 模型',
+      reset: '重置参数',
+      save: '保存方案',
+    },
+    status: {
+      ready: '就绪',
+      generating: '生成中...',
+      done: '生成完成',
+    },
+  },
+  quality: {
+    title: '质量评估',
+    subtitle: 'G0/G1/G2 连续性 + 反射线分析',
+    metrics: {
+      g0Count: 'G0 边数',
+      g1Count: 'G1 边数',
+      g2Count: 'G2 边数',
+      g2Ratio: 'G2 比率',
+      reflection: '反射线评分',
+      meanCurvature: '平均曲率',
+      maxJump: '最大法向跳变',
+    },
+    grade: {
+      A: 'A级曲面',
+      B: 'B级曲面',
+      C: 'C级曲面',
+      D: 'D级曲面',
+    },
+    actions: {
+      assess: '开始评估',
+      preset: '预设曲面',
+    },
+  },
+  optimize: {
+    title: 'AI 优化',
+    subtitle: 'WebSocket 实时进度 · 模拟退火算法',
+    shape: {
+      sphere: '球面',
+      plane: '带噪平面',
+      cylinder: '圆柱',
+      carBody: '车身侧围',
+    },
+    params: {
+      shape: '选择曲面',
+      maxIter: '最大迭代次数',
+      panelName: '面板名称',
+      seed: '随机种子',
+    },
+    actions: {
+      start: '开始异步优化',
+      startSync: '同步运行',
+      cancel: '取消任务',
+    },
+    progress: {
+      title: '实时进度',
+      currentIter: '当前迭代',
+      bestScore: '最佳得分',
+      elapsed: '已用时',
+    },
+    history: {
+      title: '历史任务',
+      empty: '暂无历史任务',
+      view: '查看详情',
+    },
+  },
+  optimizeDetail: {
+    title: '优化任务详情',
+    taskInfo: '任务信息',
+    convergence: '收敛曲线',
+    result: '优化结果',
+    initial: '初始',
+    final: '优化后',
+    improvement: '改善量',
+  },
+  storyboard: {
+    title: '分镜脚本',
+    subtitle: 'AI 视频脚本 + 渲染',
+    params: {
+      productName: '产品名称',
+      duration: '时长 (秒)',
+      style: '视觉风格',
+      template: '脚本模板',
+    },
+    templates: {
+      carPromotion: '汽车广告',
+      techDemo: '科技展示',
+      minimalShowcase: '简约展示',
+    },
+    actions: {
+      generate: '生成分镜',
+      render: '渲染',
+    },
+    scenes: {
+      title: '分镜列表',
+      empty: '暂无分镜',
+    },
+  },
+  storyboardDetail: {
+    title: '分镜项目详情',
+    scenes: '分镜',
+    render: '渲染输出',
+    export: '导出',
+  },
+  projects: {
+    title: '方案管理',
+    subtitle: 'CRUD + 历史任务',
+    actions: {
+      create: '新建方案',
+      search: '搜索方案',
+      refresh: '刷新',
+    },
+    table: {
+      id: 'ID',
+      name: '方案名称',
+      surfaceType: '曲面类型',
+      status: '状态',
+      createdAt: '创建时间',
+      updatedAt: '更新时间',
+      actions: '操作',
+    },
+    status: {
+      draft: '草稿',
+      running: '运行中',
+      success: '已完成',
+      failed: '失败',
+    },
+    empty: '暂无方案',
+  },
+  projectDetail: {
+    title: '项目详情',
+    tabs: {
+      overview: '概览',
+      model3d: '3D 模型',
+      optimize: '优化历史',
+      quality: '质量评估',
+      storyboard: '分镜脚本',
+    },
+    actions: {
+      back: '返回列表',
+      delete: '删除方案',
+    },
+  },
+  errors: {
+    notFound: {
+      title: '404 · 页面走丢了',
+      desc: '主人要找的页面不在江湖上，回去歇歇？',
+      back: '回首页',
+    },
+    serverError: {
+      title: '500 · 服务挂了',
+      desc: '后端进程被 sandbox 回收了 / 抛了 / 躺了，5 秒后重试或回首页',
+      retry: '重试',
+      back: '回首页',
+    },
+  },
+} as const

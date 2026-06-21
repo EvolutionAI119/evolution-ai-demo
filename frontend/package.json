@@ -1,0 +1,32 @@
+{
+  "name": "evolution-ai-frontend",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "EVOLUTION AI Frontend - M3 W1-D1 (Vue 3 + Vite + TS skeleton)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview --port 5173",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "vue": "^3.4.38",
+    "vue-router": "^4.4.3",
+    "pinia": "^2.2.2",
+    "element-plus": "^2.8.1",
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.7.4",
+    "three": "^0.167.1",
+    "echarts": "^5.5.1",
+    "vue-echarts": "^7.0.3"
+  },
+  "devDependencies": {
+    "@types/three": "^0.167.1",
+    "@types/node": "^22.5.0",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "typescript": "~5.5.4",
+    "vite": "^5.4.2",
+    "vue-tsc": "^2.1.4"
+  }
+}

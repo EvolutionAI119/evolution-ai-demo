@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 优化 · car_body 任务结果 · EVOLUTION AI</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f5f7fa;
+      color: #303133;
+      font-size: 14px;
+    }
+    .layout { min-height: 100vh; display: flex; flex-direction: column; }
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #ebeef5;
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,21,41,0.08);
+    }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-brand .logo {
+      width: 32px; height: 32px; border-radius: 6px;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .header-brand .title { font-size: 18px; font-weight: 600; color: #303133; }
+    .header-brand .badge { font-size: 12px; color: #909399; background: #f4f4f5; padding: 2px 8px; border-radius: 4px; }
+    .nav-menu { display: flex; gap: 4px; list-style: none; }
+    .nav-menu li { padding: 0 16px; }
+    .nav-menu li a { text-decoration: none; color: #606266; font-size: 14px; height: 60px; line-height: 60px; display: block; border-bottom: 2px solid transparent; }
+    .nav-menu li.active a { color: #4f46e5; border-bottom-color: #4f46e5; font-weight: 600; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981; margin-right: 6px; }
+    .lang-btn { padding: 6px 12px; border: 1px solid #dcdfe6; border-radius: 4px; background: #fff; cursor: pointer; color: #606266; font-size: 13px; }
+    .main { flex: 1; padding: 24px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 4px rgba(0,21,41,0.04); }
+    .card h2 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #303133; }
+    .card h2 .sub { font-size: 12px; color: #909399; font-weight: 400; margin-left: 8px; }
+    .big-stat { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
+    .big-stat-item {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border-radius: 8px; padding: 16px 20px; border: 1px solid #e2e8f0;
+    }
+    .big-stat-item .label { font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+    .big-stat-item .value-row { display: flex; align-items: baseline; gap: 12px; margin-top: 6px; }
+    .big-stat-item .value { font-size: 32px; font-weight: 700; color: #1e293b; }
+    .big-stat-item .arrow { font-size: 18px; color: #94a3b8; }
+    .big-stat-item .arrow.good { color: #10b981; }
+    .big-stat-item .value.after { color: #10b981; }
+    .big-stat-item .delta { font-size: 13px; color: #10b981; margin-top: 4px; }
+    .big-stat-item .delta.bad { color: #f56c6c; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 8px; }
+    .small-stat {
+      background: #fafbfc; border-radius: 6px; padding: 10px 14px;
+      border: 1px solid #ebeef5; text-align: center;
+    }
+    .small-stat .label { font-size: 11px; color: #909399; }
+    .small-stat .value { font-size: 18px; font-weight: 700; color: #303133; margin: 2px 0; }
+    .grade-D {
+      display: inline-block; width: 36px; height: 36px; line-height: 36px; text-align: center;
+      border-radius: 6px; background: #fef3c7; color: #92400e; font-size: 20px; font-weight: 700;
+    }
+    .curve-svg { width: 100%; height: 240px; }
+    .legend { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: #606266; }
+    .legend .item { display: flex; align-items: center; gap: 6px; }
+    .legend .dot { width: 10px; height: 10px; border-radius: 2px; }
+    .data-preview {
+      background: #1e1e1e; color: #d4d4d4; border-radius: 6px; padding: 12px 16px;
+      font-family: "Cascadia Code", "Fira Code", monospace; font-size: 11px; line-height: 1.5;
+      max-height: 220px; overflow: hidden;
+    }
+    .data-preview .key { color: #9cdcfe; }
+    .data-preview .num { color: #b5cea8; }
+    .data-preview .str { color: #ce9178; }
+    .data-preview .comment { color: #6a9955; }
+    .btn-group { display: flex; gap: 8px; margin-top: 12px; }
+    .btn { padding: 8px 16px; border-radius: 4px; font-size: 13px; cursor: pointer; border: 1px solid; }
+    .btn-primary { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+    .btn-secondary { background: #fff; color: #606266; border-color: #dcdfe6; }
+    .bugfix-banner {
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 1px solid #6ee7b7; border-radius: 8px; padding: 16px 20px;
+      display: flex; gap: 16px; align-items: center; margin-bottom: 16px;
+    }
+    .bugfix-banner .icon {
+      width: 40px; height: 40px; border-radius: 50%; background: #10b981;
+      display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; flex-shrink: 0;
+    }
+    .bugfix-banner .text { flex: 1; }
+    .bugfix-banner .title { font-size: 15px; font-weight: 600; color: #064e3b; }
+    .bugfix-banner .sub { font-size: 12px; color: #047857; margin-top: 4px; line-height: 1.5; }
+    .bugfix-banner code { background: rgba(0,0,0,0.06); padding: 1px 6px; border-radius: 3px; font-size: 12px; }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <header class="header">
+    <div class="header-brand">
+      <div class="logo">E</div>
+      <div>
+        <div class="title">EVOLUTION AI</div>
+      </div>
+      <span class="badge">v0.3.0</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#">首页</a></li>
+      <li><a href="#">造型设计</a></li>
+      <li><a href="#">质量评估</a></li>
+      <li class="active"><a href="#">AI 优化</a></li>
+      <li><a href="#">分镜脚本</a></li>
+      <li><a href="#">方案管理</a></li>
+    </ul>
+    <div class="header-right">
+      <span class="status-dot"></span>
+      <span style="font-size: 13px; color: #606266;">后端: online</span>
+      <button class="lang-btn">中文 / EN</button>
+    </div>
+  </header>
+
+  <div style="padding: 20px 32px 0;">
+    <div class="bugfix-banner">
+      <div class="icon">✓</div>
+      <div class="text">
+        <div class="title">M2.5 Bug 3 已修复 · car_body 异步任务可正常消费</div>
+        <div class="sub">
+          修复点：<code>backend/tasks/optimize_task.py:_make_surface("car_body")</code> 末尾
+          <code>return body_arr[:49*48].reshape(49, 48, 3)</code>（防御性退化：sqrt 方阵兜底）
+          <br/>
+          验证：6 次历史任务 FAILURE → 当前 SUCCESS，DB g2 1752 → 1714 收敛；E2E 15/15 全过
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- 左：核心指标 -->
+    <div class="card">
+      <h2>优化结果 <span class="sub">task_id: 4b787dc6...</span></h2>
+      <div class="big-stat">
+        <div class="big-stat-item">
+          <div class="label">初始 G2 边数</div>
+          <div class="value-row">
+            <span class="value">1752</span>
+          </div>
+          <div class="delta">总数 4512 边 · g2_ratio 0.388</div>
+        </div>
+        <div class="big-stat-item">
+          <div class="label">优化后 G2 边数</div>
+          <div class="value-row">
+            <span class="arrow good">→</span>
+            <span class="value after">1714</span>
+          </div>
+          <div class="delta">-38 边 · g2_ratio 0.380 (微降)</div>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="small-stat">
+          <div class="label">反射线评分</div>
+          <div class="value">0.388</div>
+          <div style="font-size: 11px; color: #f56c6c;">-0.001</div>
+        </div>
+        <div class="small-stat">
+          <div class="label">迭代次数</div>
+          <div class="value">10</div>
+          <div style="font-size: 11px; color: #909399;">/ 10 收敛</div>
+        </div>
+        <div class="small-stat">
+          <div class="label">等级</div>
+          <div class="value" style="padding: 4px 0;"><span class="grade-D">D</span></div>
+          <div style="font-size: 11px; color: #909399;">W2-D1 改善</div>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary">下载 optimized_points.json</button>
+        <button class="btn btn-secondary">查看 3D 预览</button>
+        <button class="btn btn-secondary">重新优化</button>
+      </div>
+    </div>
+
+    <!-- 右：收敛曲线 -->
+    <div class="card">
+      <h2>收敛曲线 <span class="sub">目标函数 (obj) vs iteration</span></h2>
+      <svg class="curve-svg" viewBox="0 0 720 240" preserveAspectRatio="none">
+        <!-- 网格 -->
+        <g stroke="#e5e7eb" stroke-width="1">
+          <line x1="40" y1="20" x2="40" y2="200"/>
+          <line x1="40" y1="200" x2="700" y2="200"/>
+          <line x1="40" y1="20" x2="700" y2="20" stroke-dasharray="2 2"/>
+          <line x1="40" y1="60" x2="700" y2="60" stroke-dasharray="2 2"/>
+          <line x1="40" y1="100" x2="700" y2="100" stroke-dasharray="2 2"/>
+          <line x1="40" y1="140" x2="700" y2="140" stroke-dasharray="2 2"/>
+          <line x1="40" y1="180" x2="700" y2="180" stroke-dasharray="2 2"/>
+        </g>
+        <!-- Y 轴标签 -->
+        <g font-size="11" fill="#909399" text-anchor="end" font-family="monospace">
+          <text x="36" y="24">31662</text>
+          <text x="36" y="64">31589</text>
+          <text x="36" y="104">31515</text>
+          <text x="36" y="144">31442</text>
+          <text x="36" y="184">31368</text>
+          <text x="36" y="204">31364</text>
+        </g>
+        <!-- X 轴标签 -->
+        <g font-size="11" fill="#909399" text-anchor="middle" font-family="monospace">
+          <text x="40" y="220">0</text>
+          <text x="106" y="220">1</text>
+          <text x="172" y="220">2</text>
+          <text x="238" y="220">3</text>
+          <text x="304" y="220">4</text>
+          <text x="370" y="220">5</text>
+          <text x="436" y="220">6</text>
+          <text x="502" y="220">7</text>
+          <text x="568" y="220">8</text>
+          <text x="634" y="220">9</text>
+          <text x="700" y="220">10</text>
+        </g>
+        <!-- 坐标轴文字 -->
+        <text x="370" y="236" font-size="11" fill="#606266" text-anchor="middle">iteration (10 iters)</text>
+        <text x="12" y="110" font-size="11" fill="#606266" transform="rotate(-90, 12, 110)" text-anchor="middle">objective value (obj)</text>
+
+        <!-- 折线 (Y 反转: 31364→y=200, 31662→y=20) -->
+        <!-- 数据点 (x, y): 步长 dx=66, 步长 dy=(31662-31364)/180=1.66/px -->
+        <!-- (0, 31661.78) (1, 31629.17) (2, 31609.66) (3, 31596.99) (4, 31561.63)
+             (5, 31515.23) (6, 31486.99) (7, 31452.04) (8, 31401.04) (9, 31366.04) (10, 31364.74) -->
+        <!-- y_pixel = 20 + (31662 - val) * 180 / 298 -->
+        <!-- (40, 20.13) (106, 33.55) (172, 42.16) (238, 47.71) (304, 63.23)
+             (370, 84.65) (436, 97.91) (502, 114.10) (568, 137.34) (634, 153.10) (700, 153.66) -->
+        <polyline
+          points="40,20.13 106,33.55 172,42.16 238,47.71 304,63.23 370,84.65 436,97.91 502,114.10 568,137.34 634,153.10 700,153.66"
+          fill="none" stroke="url(#curve-gradient)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- 数据点 -->
+        <g fill="#4f46e5">
+          <circle cx="40" cy="20.13" r="4"/>
+          <circle cx="106" cy="33.55" r="4"/>
+          <circle cx="172" cy="42.16" r="4"/>
+          <circle cx="238" cy="47.71" r="4"/>
+          <circle cx="304" cy="63.23" r="4"/>
+          <circle cx="370" cy="84.65" r="4"/>
+          <circle cx="436" cy="97.91" r="4"/>
+          <circle cx="502" cy="114.10" r="4"/>
+          <circle cx="568" cy="137.34" r="4"/>
+          <circle cx="634" cy="153.10" r="4"/>
+          <circle cx="700" cy="153.66" r="4" fill="#10b981" r="5"/>
+        </g>
+        <!-- 起点标签 -->
+        <text x="40" y="14" font-size="10" fill="#4f46e5" text-anchor="middle" font-weight="600">31661.78</text>
+        <!-- 终点标签 -->
+        <text x="700" y="170" font-size="10" fill="#10b981" text-anchor="end" font-weight="600">31364.74</text>
+        <!-- 渐变定义 -->
+        <defs>
+          <linearGradient id="curve-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#4f46e5"/>
+            <stop offset="100%" stop-color="#10b981"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="legend">
+        <div class="item"><span class="dot" style="background: #4f46e5;"></span>目标函数 (obj)</div>
+        <div class="item"><span class="dot" style="background: #10b981;"></span>收敛终点 (iter=10)</div>
+        <div class="item" style="margin-left: auto; color: #909399;">总下降: 297.04 (0.94%)</div>
+      </div>
+    </div>
+
+    <!-- 左下：result_json 预览 -->
+    <div class="card">
+      <h2>API 返回结构 <span class="sub">/api/v1/task/{task_id}</span></h2>
+      <div class="data-preview">
+<div class="line"><span style="color: #6a9955;">// DB: OptimizationTask.status=SUCCESS, progress=1.0, result_json:</span></div>
+<div class="line">{</div>
+<div class="line">  <span class="key">"task_id"</span>: <span class="str">"4b787dc65918494a8746b5eb64150d46"</span>,</div>
+<div class="line">  <span class="key">"panel_name"</span>: <span class="str">"car_body"</span>,</div>
+<div class="line">  <span class="key">"surface_type"</span>: <span class="str">"car_body"</span>,</div>
+<div class="line">  <span class="key">"max_iter"</span>: <span class="num">10</span>,</div>
+<div class="line">  <span class="key">"status"</span>: <span class="str">"SUCCESS"</span>,</div>
+<div class="line">  <span class="key">"result"</span>: {</div>
+<div class="line">    <span class="key">"initial_grade"</span>: <span class="str">"D"</span>,</div>
+<div class="line">    <span class="key">"final_grade"</span>: <span class="str">"D"</span>,</div>
+<div class="line">    <span class="key">"initial_g2"</span>: <span class="num">1752</span>,</div>
+<div class="line">    <span class="key">"final_g2"</span>: <span class="num">1714</span>,</div>
+<div class="line">    <span class="key">"initial_reflection"</span>: <span class="num">0.389</span>,</div>
+<div class="line">    <span class="key">"final_reflection"</span>: <span class="num">0.388</span>,</div>
+<div class="line">    <span class="key">"iterations"</span>: <span class="num">10</span>,</div>
+<div class="line">    <span class="key">"elapsed_sec"</span>: <span class="num">1.658</span>,</div>
+<div class="line">    <span class="key">"convergence_curve"</span>: [11 points],</div>
+<div class="line">    <span class="key">"optimized_points"</span>: <span style="color: #6a9955;">// (49, 48, 3) 网格</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+      </div>
+    </div>
+
+    <!-- 右下：服务状态总览 -->
+    <div class="card">
+      <h2>4 服务健康状态 <span class="sub">sandbox 全栈</span></h2>
+      <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
+        <div class="small-stat" style="text-align: left;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="status-dot" style="width: 10px; height: 10px;"></span>
+            <span style="font-size: 14px; font-weight: 600;">redis-server</span>
+          </div>
+          <div style="font-size: 11px; color: #909399; margin-top: 4px; padding-left: 18px;">PID - · port 6379 · PONG</div>
+        </div>
+        <div class="small-stat" style="text-align: left;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="status-dot" style="width: 10px; height: 10px;"></span>
+            <span style="font-size: 14px; font-weight: 600;">uvicorn</span>
+          </div>
+          <div style="font-size: 11px; color: #909399; margin-top: 4px; padding-left: 18px;">PID 316 · port 8000 · /health 200</div>
+        </div>
+        <div class="small-stat" style="text-align: left;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="status-dot" style="width: 10px; height: 10px;"></span>
+            <span style="font-size: 14px; font-weight: 600;">Celery worker</span>
+          </div>
+          <div style="font-size: 11px; color: #909399; margin-top: 4px; padding-left: 18px;">PID 950 · broker=redis · concurrency=2</div>
+        </div>
+        <div class="small-stat" style="text-align: left;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="status-dot" style="width: 10px; height: 10px;"></span>
+            <span style="font-size: 14px; font-weight: 600;">vite dev</span>
+          </div>
+          <div style="font-size: 11px; color: #909399; margin-top: 4px; padding-left: 18px;">port 5173 · ready in 6.3s</div>
+        </div>
+      </div>
+      <div style="margin-top: 16px; padding: 12px 16px; background: #f0f9ff; border-radius: 6px; border: 1px solid #bae6fd; font-size: 12px; color: #0c4a6e; line-height: 1.6;">
+        <strong>E2E 15/15 全过</strong> · 4 shape ndim=3 验证 + car_body 异步 SUCCESS + sphere/plane/cylinder 回归
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

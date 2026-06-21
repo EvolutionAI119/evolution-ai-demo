@@ -1,0 +1,89 @@
+"""
+Car 路由
+"""
+from fastapi import APIRouter, Depends, HTTPException
+
+from backend.deps import get_car_model_service
+from backend.models.car import (
+    CarParamsAPI,
+    CarStatsAPI,
+    CarBuildResponse,
+    CarValidateRequest,
+    CarValidateResponse,
+)
+from backend.services.car_model_service import CarModelService
+
+router = APIRouter()
+
+
+@router.get("/params/default", response_model=CarParamsAPI, summary="获取默认参数")
+def get_default_params():
+    """返回 22 维默认参数"""
+    return CarParamsAPI()
+
+
+@router.post("/build", response_model=CarBuildResponse, summary="构建整车 3D 模型")
+def build_car(
+    params: CarParamsAPI,
+    service: CarModelService = Depends(get_car_model_service),
+):
+    """
+    根据 22 维参数构建完整汽车造型
+
+    返回：
+    - glb_url: 静态资源 URL，前端可直传 Three.js GLTFLoader
+    - stats: 顶点数/面数/部件统计
+    - params_hash: 参数 hash（用于缓存去重）
+    - build_time_ms: 构建耗时
+    """
+    try:
+        result = service.build(params)
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    return result
+
+
+@router.post("/validate", response_model=CarValidateResponse, summary="参数越界校验")
+def validate_params(
+    req: CarValidateRequest,
+    service: CarModelService = Depends(get_car_model_service),
+):
+    """参数边界校验（双重：Pydantic Field + CarParams.validate）"""
+    return service.validate(req.params)
+
+
+@router.get("/presets", summary="预设方案（运动型/豪华型/SUV）")
+def get_presets():
+    """3 套预设方案，方便用户快速开始"""
+    return {
+        "sport": {
+            "name": "运动型轿车",
+            "description": "低矮、宽体、激进",
+            "params": CarParamsAPI(
+                L=4.6, W=1.9, H=1.32, wheelbase=2.75,
+                hood_angle=8.0, roof_arc=0.65, windshield_rake=28.0,
+                fender_prominence=0.28, overall_arc=0.45,
+                wheel_radius=0.36, wheel_width=0.25, wheel_spoke_count=5,
+            ).model_dump(),
+        },
+        "luxury": {
+            "name": "豪华型轿车",
+            "description": "修长、优雅、舒适",
+            "params": CarParamsAPI(
+                L=5.1, W=1.88, H=1.48, wheelbase=3.05,
+                hood_angle=15.0, roof_arc=0.30, windshield_rake=33.0,
+                fender_prominence=0.10, overall_arc=0.15,
+                wheel_radius=0.33, wheel_width=0.22, wheel_spoke_count=7,
+            ).model_dump(),
+        },
+        "suv": {
+            "name": "SUV",
+            "description": "高大、硬朗、空间大",
+            "params": CarParamsAPI(
+                L=4.8, W=1.95, H=1.72, wheelbase=2.85,
+                hood_angle=20.0, roof_arc=0.15, windshield_rake=38.0,
+                ground_clearance=0.22, fender_prominence=0.25, overall_arc=0.08,
+                wheel_radius=0.38, wheel_width=0.26, wheel_spoke_count=6,
+            ).model_dump(),
+        },
+    }
