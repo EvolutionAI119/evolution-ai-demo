@@ -1,0 +1,49 @@
+# EVOLUTION AI - Docker Compose
+# 一键启动：docker compose up -d
+# 查看日志：docker compose logs -f
+# 停止：docker compose down
+
+services:
+  evolution-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: evolution-ai
+    ports:
+      - "8000:8000"   # 后端 API
+      - "8501:8501"   # 前端 Streamlit
+    volumes:
+      # 数据持久化（不怕容器重建丢数据）
+      - evolution-data:/app/data
+      - evolution-logs:/app/logs
+    environment:
+      - EVOLUTION_ENV=production
+      - EVOLUTION_DEBUG=false
+      # 数据目录指向 Volume 挂载点
+      - EVOLUTION_OUTPUTS_DIR=/app/data/outputs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # 可选：Redis（Celery 异步任务需要）
+  # 取消注释即可启用
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: evolution-redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis-data:/data
+  #   restart: unless-stopped
+
+volumes:
+  evolution-data:
+    driver: local
+  evolution-logs:
+    driver: local
+  # redis-data:
+  #   driver: local

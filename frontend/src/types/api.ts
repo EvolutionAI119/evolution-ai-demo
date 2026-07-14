@@ -9,51 +9,46 @@ import type { TaskStatus } from './common'
 // ==================== Car 模块 ====================
 
 export interface CarParamsAPI {
-  // 22 维参数（与 algorithm_model.CarParams 对齐）
-  // 车身总体
-  body_length: number
-  body_width: number
-  body_height: number
-  wheelbase: number
-  // 姿态
-  ground_clearance: number
-  approach_angle: number
-  departure_angle: number
-  // 比例
-  overhang_front: number
-  overhang_rear: number
-  // 侧面轮廓
-  beltline_height: number
-  shoulder_line_angle: number
-  // 表面曲率（设计师可调）
-  hood_curvature: number
-  fender_flare: number
-  door_concavity: number
+  // 22 维参数（严格对齐 backend/models/car.py CarParamsAPI Pydantic 字段）
+  // W2-D1 修复：之前字段名（body_length/...）和后端 Pydantic (L/W/H/...) 不一致，
+  //           导致 /car/build 接口永远走默认值；现统一用后端字段名
+  // 基础尺寸
+  L: number             // 车长 m (3.5-5.5)
+  W: number             // 车宽 m (1.6-2.1)
+  H: number             // 车高 m (1.25-1.85)
+  wheelbase: number     // 轴距 m (2.3-3.2)
+  // 比例姿态
+  hood_length: number   // 发动机盖长 m (0.7-1.5)
+  cabin_length: number  // 座舱长 m (1.6-2.6)
+  trunk_length: number  // 行李箱长 m (0.5-1.4)
+  ground_clearance: number  // 离地间隙 m (0.12-0.25)
+  // 曲面特征
+  hood_angle: number    // 发动机盖角度 ° (5-25)
+  roof_arc: number      // 车顶弧度 (0-0.8)
+  windshield_rake: number  // 前挡风倾角 ° (20-40)
+  rear_glass_angle: number  // 后挡风倾角 ° (25-45)
+  fender_prominence: number  // 轮眉突出 (0-0.35)
+  waist_line: number    // 腰线高度比 (0.65-0.95)
+  shoulder_line: number // 肩线高度比 (0.85-1.15)
+  // 整体
+  overall_arc: number   // 整体弧度 (0-0.7)
   // 玻璃
-  windshield_angle: number
-  rear_window_angle: number
-  side_window_area: number
-  // 轮拱
-  wheel_arch_height: number
-  wheel_arch_flare: number
-  // 装饰
-  character_lines: number
-  overall_aggression: number
-  // 类别预设
-  category: 'sport' | 'luxury' | 'suv' | 'sedan' | 'custom'
+  glass_darkness: number  // 玻璃透射 (0.1-0.7)
+  // 轮
+  wheel_radius: number  // 轮半径 m (0.28-0.40)
+  wheel_width: number   // 轮宽 m (0.18-0.28)
+  wheel_spoke_count: number  // 辐条数 (3-10)
+  // 灯
+  headlight_width: number   // 大灯宽度 m (0.30-0.55)
+  headlight_height: number  // 大灯高度 m (0.06-0.16)
 }
 
 export interface CarStatsAPI {
-  // algorithm_model.compute_stats 返回字段
-  num_panels: number
+  // 对齐 backend.models.car.CarStatsAPI Pydantic
   total_vertices: number
   total_faces: number
-  bounding_box: {
-    min: [number, number, number]
-    max: [number, number, number]
-  }
-  surface_area: number
-  panel_names: string[]
+  components: Record<string, { vertices: number; faces: number; color: string }>  // {part_name: {...}}
+  bounds: [[number, number, number], [number, number, number]]  // [[min], [max]]
 }
 
 export interface CarBuildResponse {

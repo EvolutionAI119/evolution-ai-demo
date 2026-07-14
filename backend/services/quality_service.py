@@ -94,3 +94,82 @@ class QualityService:
             raise ValueError(f"shape 必须是 {list(self.PRESET_MAKERS.keys())} 之一")
         points = self.PRESET_MAKERS[shape](resolution)
         return self.assess(points.tolist(), panel_name=shape)
+
+
+    def reflection_map(self, points: list, light_direction: list = None) -> dict:
+        """
+        生成反射线可视化数据
+
+        Returns:
+            dict with vertices, normals, curvature, reflection_intensity, reflection_score, indices
+        """
+        from algorithm_model.surface_quality.curvature import estimate_normals, angle_between
+
+        if light_direction is None:
+            light_direction = [0.0, 0.0, 1.0]
+
+        pts = np.array(points, dtype=np.float64)
+        if pts.ndim != 3 or pts.shape[2] != 3:
+            raise ValueError(f"points 形状必须是 (N, M, 3)，当前 {pts.shape}")
+
+        N, M = pts.shape[:2]
+        if N < 2 or M < 2:
+            raise ValueError("points 至少需要 2x2")
+
+        # 1. 法向量
+        normals = estimate_normals(pts)
+
+        # 2. 曲率（相邻法向夹角均值）
+        curvature = np.zeros((N, M), dtype=np.float64)
+        for i in range(1, N - 1):
+            for j in range(1, M - 1):
+                a_u = angle_between(normals[i, j], normals[i + 1, j]) if i + 1 < N else 0
+                a_d = angle_between(normals[i, j], normals[i - 1, j]) if i - 1 >= 0 else 0
+                a_r = angle_between(normals[i, j], normals[i, j + 1]) if j + 1 < M else 0
+                a_l = angle_between(normals[i, j], normals[i, j - 1]) if j - 1 >= 0 else 0
+                curvature[i, j] = (a_u + a_d + a_r + a_l) / 4.0
+
+        # 3. 反射光强度 = |dot(normal, light_dir)|
+        L = np.array(light_direction, dtype=np.float64)
+        L = L / (np.linalg.norm(L) + 1e-12)
+        # 对每个网格点计算反射强度
+        reflection_intensity = np.zeros((N, M), dtype=np.float64)
+        for i in range(N):
+            for j in range(M):
+                n = normals[i, j]
+                n_norm = np.linalg.norm(n)
+                if n_norm > 1e-9:
+                    reflection_intensity[i, j] = abs(np.dot(n / n_norm, L))
+                else:
+                    reflection_intensity[i, j] = 0.0
+
+        # 4. 反射线评分
+        from algorithm_model.surface_quality.reflection import compute_reflection_score
+        score = compute_reflection_score(pts)
+
+        # 5. 构建三角形索引
+        indices = []
+        for i in range(N - 1):
+            for j in range(M - 1):
+                v00 = i * M + j
+                v10 = (i + 1) * M + j
+                v01 = i * M + (j + 1)
+                v11 = (i + 1) * M + (j + 1)
+                indices.extend([v00, v10, v01, v10, v11, v01])
+
+        # 6. flatten
+        verts_flat = pts.reshape(-1, 3).tolist()
+        norms_flat = normals.reshape(-1, 3).tolist()
+        curv_flat = curvature.reshape(-1).tolist()
+        refl_flat = reflection_intensity.reshape(-1).tolist()
+
+        return {
+            "n": N,
+            "m": M,
+            "vertices": verts_flat,
+            "normals": norms_flat,
+            "curvature": curv_flat,
+            "reflection_intensity": refl_flat,
+            "reflection_score": score,
+            "indices": indices,
+        }

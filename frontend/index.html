@@ -2,18 +2,21 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EVOLUTION AI · 汽车造型开发平台</title>
-    <!-- Element Plus via CDN (绕过 FUSE 0 字节截断问题，W1 完工后切回 npm) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-plus@2.8.1/dist/index.css" />
-    <script src="https://cdn.jsdelivr.net/npm/element-plus@2.8.1/dist/index.full.min.js"></script>
-    <!-- Element Plus Icons via CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@element-plus/icons-vue@2.3.1/dist/index.iife.min.js"></script>
-    <!-- Axios via CDN (绕过 FUSE 0 字节截断问题) -->
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.7.4/dist/axios.min.js"></script>
-    <!-- Vue I18n via CDN (W1-D2 增量) -->
-    <script src="https://cdn.jsdelivr.net/npm/vue-i18n@9.14.5/dist/vue-i18n.global.prod.js"></script>
+    <!-- W2-D1 改造：CDN 全部本地化（绕国内 GFW）-->
+    <!-- Vue 全局（D5+2 修复：element-plus UMD / vue-i18n IIFE 都要 globalThis.Vue）-->
+    <script src="./vendor/vue.global.prod.js"></script>
+    <!-- Element Plus 本地化 -->
+    <link rel="stylesheet" href="./vendor/element-plus.css" />
+    <script src="./vendor/element-plus.js"></script>
+    <!-- Element Plus Icons 本地化 -->
+    <script src="./vendor/element-icons.js"></script>
+    <!-- Axios 本地化 -->
+    <script src="./vendor/axios.js"></script>
+    <!-- Vue I18n 本地化 -->
+    <script src="./vendor/vue-i18n.js"></script>
   </head>
   <body>
     <div id="app"></div>

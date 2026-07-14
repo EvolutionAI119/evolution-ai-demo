@@ -8,6 +8,8 @@ from backend.models.quality import (
     QualityAssessRequest,
     QualityAssessResponse,
     QualityPresetRequest,
+    ReflectionMapRequest,
+    ReflectionMapResponse,
 )
 from backend.services.quality_service import QualityService
 
@@ -46,5 +48,21 @@ def assess_preset(
     """
     try:
         return service.assess_preset(req.shape, req.resolution)
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+
+
+@router.post("/reflection-map", response_model=ReflectionMapResponse, summary="反射线可视化数据")
+def reflection_map(
+    req: ReflectionMapRequest,
+    service: QualityService = Depends(get_quality_service),
+):
+    """
+    生成反射线可视化数据（顶点、法向量、曲率、反射强度）
+
+    用于前端 Three.js 渲染反射光带效果。
+    """
+    try:
+        return service.reflection_map(req.points, req.light_direction)
     except ValueError as e:
         raise HTTPException(status_code=422, detail=str(e))

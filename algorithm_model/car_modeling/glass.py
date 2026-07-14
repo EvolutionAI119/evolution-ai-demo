@@ -11,7 +11,16 @@ import numpy as np
 import trimesh
 from typing import List
 from .car_params import CarParams
-from .body import _section_width, _section_height
+
+
+def _section_width_original(x_norm: float, params: CarParams) -> float:
+    """
+    原始宽度计算（不带 blending，用于玻璃等独立部件）
+    """
+    base = np.cos(x_norm * np.pi / 2) ** 1.5
+    front_factor = 1.0 - 0.15 * max(0, -x_norm)
+    rear_factor = 1.0 - 0.08 * max(0, x_norm)
+    return params.W / 2 * base * front_factor * rear_factor
 
 
 def _build_windshield(
@@ -38,7 +47,7 @@ def _build_windshield(
         z = z_bottom + t * (z_top - z_bottom)
         x_offset = t * np.tan(rake) * (z_top - z_bottom) * dir_sign
         x = x_bottom + x_offset
-        half_w_top = _section_width(x / (params.L / 2), params) * 0.92
+        half_w_top = _section_width_original(x / (params.L / 2), params) * 0.92
         verts.append([x, -half_w_top, z])
         verts.append([x, half_w_top, z])
     faces = []

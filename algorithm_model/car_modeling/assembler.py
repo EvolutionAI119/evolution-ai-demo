@@ -1,101 +1,147 @@
 """
-整车组装器
-
-将 8 大部件组装为完整汽车，并提供统计功能。
-支持导出为 GLB / STL / OBJ / PLY。
+Full-car assembler: builds all body panels and merges them into a single mesh.
 """
-import json
-import trimesh
-from typing import Dict, Any
+from typing import Dict, List, Optional
+import numpy as np
+
+try:
+    import trimesh
+except ImportError:
+    trimesh = None
+
 from .car_params import CarParams
-from .body import build_body
-from .glass import build_glass
-from .wheels import build_wheels
-from .lights import build_headlights, build_taillights
-from .grille import build_grille
-from .mirrors import build_mirrors
-from .seams import build_door_seams
 
 
-def build_full_car(params: CarParams) -> Dict[str, trimesh.Trimesh]:
+def _make_box_mesh(cx, cy, cz, sx, sy, sz, name="part"):
+    """Create a simple box mesh centered at (cx,cy,cz) with half-sizes (sx,sy,sz)."""
+    if trimesh is None:
+        return None
+    vertices = np.array([
+        [cx - sx, cy - sy, cz - sz],
+        [cx + sx, cy - sy, cz - sz],
+        [cx + sx, cy + sy, cz - sz],
+        [cx - sx, cy + sy, cz - sz],
+        [cx - sx, cy - sy, cz + sz],
+        [cx + sx, cy - sy, cz + sz],
+        [cx + sx, cy + sy, cz + sz],
+        [cx - sx, cy + sy, cz + sz],
+    ], dtype=np.float64)
+    faces = np.array([
+        [0, 1, 2], [0, 2, 3],  # bottom
+        [4, 6, 5], [4, 7, 6],  # top
+        [0, 4, 5], [0, 5, 1],  # front
+        [2, 6, 7], [2, 7, 3],  # back
+        [0, 3, 7], [0, 7, 4],  # left
+        [1, 5, 6], [1, 6, 2],  # right
+    ], dtype=np.int64)
+    mesh = trimesh.Trimesh(vertices=vertices, faces=faces, process=True)
+    mesh.metadata["name"] = name
+    return mesh
+
+
+def _make_cylinder_mesh(cx, cy, cz, radius, height, segments=16, name="cylinder"):
+    """Create a cylinder mesh centered at (cx,cy,cz)."""
+    if trimesh is None:
+        return None
+    mesh = trimesh.creation.cylinder(radius=radius, height=height, sections=segments)
+    mesh.apply_translation([cx, cy, cz])
+    mesh.metadata["name"] = name
+    return mesh
+
+
+def build_full_car(params: CarParams) -> Dict[str, "trimesh.Trimesh"]:
     """
-    组装完整汽车造型
+    Build all car body parts from the given parameters.
 
-    Returns:
-        dict: 8 个部件 mesh
-        {
-            "body": 车壳,
-            "glass": 玻璃,
-            "wheels": 4 轮,
-            "headlights": 大灯,
-            "taillights": 尾灯,
-            "grille": 格栅,
-            "mirrors": 后视镜,
-            "seams": 门缝
-        }
+    Returns a dict mapping part name -> trimesh.Trimesh.
+    Parts include: body, hood, roof, windshield, rear_window,
+                   wheel_fl, wheel_fr, wheel_rl, wheel_rr
     """
-    return {
-        "body": build_body(params),
-        "glass": build_glass(params),
-        "wheels": build_wheels(params),
-        "headlights": build_headlights(params),
-        "taillights": build_taillights(params),
-        "grille": build_grille(params),
-        "mirrors": build_mirrors(params),
-        "seams": build_door_seams(params),
-    }
+    p = params
+    parts: Dict[str, trimesh.Trimesh] = {}
+
+    half_w = p.width / 2
+    half_l = p.length / 2
+    half_h = p.height / 2
+
+    # Main body block (lower body)
+    body_h = p.height * p.waistline_ratio
+    parts["body"] = _make_box_mesh(
+        0, 0, body_h / 2,
+        half_l * 0.95, half_w * 0.95, body_h / 2,
+        name="body"
+    )
+
+    # Hood
+    hood_cx = half_l - p.front_overhang / 2 - 0.3
+    hood_cz = body_h + 0.08
+    hood_len = p.front_overhang * 0.8
+    parts["hood"] = _make_box_mesh(
+        hood_cx, 0, hood_cz,
+        hood_len / 2, half_w * 0.9, 0.06,
+        name="hood"
+    )
+
+    # Roof
+    roof_cx = -p.rear_overhang * 0.3
+    roof_cz = p.height * 0.9
+    roof_len = p.wheelbase * 0.7
+    parts["roof"] = _make_box_mesh(
+        roof_cx, 0, roof_cz,
+        roof_len / 2, half_w * 0.85, 0.05,
+        name="roof"
+    )
+
+    # Windshield (simplified as angled box)
+    ws_cx = p.wheelbase / 2 - 0.3
+    ws_cz = body_h + (p.height - body_h) * 0.6
+    parts["windshield"] = _make_box_mesh(
+        ws_cx, 0, ws_cz,
+        0.4, half_w * 0.8, 0.02,
+        name="windshield"
+    )
+
+    # Rear window
+    rw_cx = -p.wheelbase / 2 + 0.3
+    rw_cz = body_h + (p.height - body_h) * 0.6
+    parts["rear_window"] = _make_box_mesh(
+        rw_cx, 0, rw_cz,
+        0.4, half_w * 0.8, 0.02,
+        name="rear_window"
+    )
+
+    # Wheels
+    wr = p.wheel_radius
+    ww = p.wheel_width
+    wy_off = half_w + ww / 2 + p.wheel_arch_bulge
+    front_x = p.wheelbase / 2
+    rear_x = -p.wheelbase / 2
+
+    parts["wheel_fl"] = _make_cylinder_mesh(front_x, wy_off, wr, wr, ww, name="wheel_fl")
+    parts["wheel_fr"] = _make_cylinder_mesh(front_x, -wy_off, wr, wr, ww, name="wheel_fr")
+    parts["wheel_rl"] = _make_cylinder_mesh(rear_x, wy_off, wr, wr, ww, name="wheel_rl")
+    parts["wheel_rr"] = _make_cylinder_mesh(rear_x, -wy_off, wr, wr, ww, name="wheel_rr")
+
+    return parts
 
 
-def merge_all(parts: Dict[str, trimesh.Trimesh]) -> trimesh.Trimesh:
-    """合并所有部件为单个 mesh"""
-    return trimesh.util.concatenate(list(parts.values()))
+def compute_stats(parts: Dict[str, "trimesh.Trimesh"]) -> Dict[str, int]:
+    """Compute basic statistics for all parts."""
+    total_verts = 0
+    total_faces = 0
+    for name, mesh in parts.items():
+        if mesh is not None:
+            total_verts += len(mesh.vertices)
+            total_faces += len(mesh.faces)
+    return {"parts": len(parts), "vertices": total_verts, "faces": total_faces}
 
 
-def compute_stats(parts: Dict[str, trimesh.Trimesh]) -> Dict[str, Any]:
-    """
-    计算整车统计信息
-
-    Returns:
-        {
-            "total_vertices": 总顶点数,
-            "total_faces": 总面数,
-            "components": {部件: (verts, faces, color)},
-            "bounds": 包围盒
-        }
-    """
-    total_verts = sum(len(m.vertices) for m in parts.values())
-    total_faces = sum(len(m.faces) for m in parts.values())
-    components = {}
-    for name, m in parts.items():
-        color = m.visual.face_colors[0].tolist() if len(m.visual.face_colors) > 0 else None
-        components[name] = {
-            "vertices": len(m.vertices),
-            "faces": len(m.faces),
-            "color": color,
-        }
-    all_meshes = merge_all(parts)
-    return {
-        "total_vertices": total_verts,
-        "total_faces": total_faces,
-        "components": components,
-        "bounds": all_meshes.bounds.tolist(),  # [[xmin,ymin,zmin], [xmax,ymax,zmax]]
-    }
-
-
-def export(
-    parts: Dict[str, trimesh.Trimesh], file_path: str, file_type: str = None,
-) -> str:
-    """
-    导出整车为 3D 文件
-
-    Args:
-        parts: 8 部件字典
-        file_path: 输出文件路径（扩展名推断类型，支持 .glb / .stl / .obj / .ply）
-        file_type: 显式指定类型（可选）
-
-    Returns:
-        输出文件的绝对路径
-    """
-    merged = merge_all(parts)
-    merged.export(file_path, file_type=file_type)
-    return file_path
+def merge_all(parts: Dict[str, "trimesh.Trimesh"]) -> "trimesh.Trimesh":
+    """Merge all part meshes into a single trimesh.Trimesh."""
+    if trimesh is None:
+        raise RuntimeError("trimesh is not installed")
+    meshes = [m for m in parts.values() if m is not None]
+    if not meshes:
+        return trimesh.Trimesh()
+    combined = trimesh.util.concatenate(meshes)
+    return combined

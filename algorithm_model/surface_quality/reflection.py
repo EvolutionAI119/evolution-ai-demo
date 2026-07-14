@@ -14,10 +14,13 @@ import numpy as np
 from typing import List
 from .curvature import angle_between, estimate_normals
 
+# Cython 加速缓存
+_cy_reflect = None
+
 
 def compute_reflection_score(surface_points: np.ndarray) -> float:
     """
-    计算反射线评分 [0, 1]
+    计算反射线评分 [0, 1]（自动使用 Cython 加速，如可用）
 
     Args:
         surface_points: (N, M, 3) 网格点云
@@ -25,6 +28,17 @@ def compute_reflection_score(surface_points: np.ndarray) -> float:
     Returns:
         评分 [0, 1]，越接近 1 越光顺
     """
+    # 优先使用 Cython 加速版（带模块级缓存）
+    global _cy_reflect
+    if _cy_reflect is None:
+        try:
+            from ._quality_cy import compute_reflection_score_fast as _cy_reflect
+        except ImportError:
+            _cy_reflect = False
+    if _cy_reflect:
+        return _cy_reflect(np.ascontiguousarray(surface_points, dtype=np.float64))
+
+    # 纯 Python fallback
     n, m = surface_points.shape[:2]
     if n < 2 or m < 2:
         return 0.0

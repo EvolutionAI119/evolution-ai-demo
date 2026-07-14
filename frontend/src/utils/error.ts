@@ -15,11 +15,11 @@
  *  8. 未知错误
  */
 import type { AxiosError } from 'axios'
-import { ElMessageType } from 'element-plus'
+import type { MessageType } from 'element-plus'
 
 export interface NormalizedError {
   /** 错误类型，用于 ElMessage.type */
-  type: ElMessageType
+  type: MessageType
   /** 用户可读消息（已经过 i18n 化的 key 或回退字符串） */
   message: string
   /** 数字错误码（HTTP status 或业务 code） */

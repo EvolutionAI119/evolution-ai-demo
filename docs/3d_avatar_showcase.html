@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>EVOLUTION AI · 3D Avatar 展示台</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      overflow: hidden;
+      background: linear-gradient(180deg, #0a1628 0%, #1a2840 100%);
+      font-family: 'Segoe UI', 'PingFang SC', system-ui, sans-serif;
+      color: #fff;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #canvas-container {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0; left: 0;
+    }
+
+    canvas { display: block; }
+
+    /* ── 标题 ── */
+    #title-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(10,22,40,0.8) 0%, transparent 100%);
+    }
+
+    #title-bar .logo {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #00aaff, #0055ff);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    #title-bar h1 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #88ccff, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ── 底部标签 ── */
+    #view-label {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 10;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    #view-label .angle-display {
+      font-size: 11px;
+      color: rgba(100,180,255,0.5);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #view-label .view-name {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #66bbff, #ffffff, #66bbff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+    }
+
+    /* ── 控制按钮 ── */
+    #controls {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+      padding: 8px;
+      background: rgba(10, 22, 40, 0.7);
+      border: 1px solid rgba(100, 180, 255, 0.15);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .ctrl-btn {
+      padding: 8px 18px;
+      border: 1px solid rgba(100, 180, 255, 0.2);
+      border-radius: 10px;
+      background: rgba(0, 100, 200, 0.08);
+      color: rgba(180, 210, 255, 0.8);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(0, 120, 255, 0.2);
+      border-color: rgba(100, 180, 255, 0.5);
+      color: #fff;
+    }
+
+    .ctrl-btn.active {
+      background: linear-gradient(135deg, rgba(0,120,255,0.35), rgba(0,80,200,0.25));
+      border-color: rgba(100, 180, 255, 0.6);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 120, 255, 0.2);
+    }
+
+    /* ── 提示 ── */
+    #hint {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(100,160,255,0.35);
+      font-size: 11px;
+      letter-spacing: 2px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* ── 加载 ── */
+    #loading {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #0a1628, #1a2840);
+      z-index: 100;
+      transition: opacity 0.6s ease;
+    }
+
+    #loading.hidden { opacity: 0; pointer-events: none; }
+
+    .spinner {
+      width: 48px; height: 48px;
+      border: 3px solid rgba(0,150,255,0.15);
+      border-top-color: #00aaff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    #loading span {
+      color: rgba(100,180,255,0.6);
+      font-size: 13px;
+      letter-spacing: 3px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── 移动端适配 ── */
+    @media (max-width: 600px) {
+      .ctrl-btn { padding: 7px 12px; font-size: 11px; }
+      #view-label .view-name { font-size: 18px; letter-spacing: 4px; }
+      #title-bar h1 { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="canvas-container"></div>
+
+  <div id="title-bar">
+    <div class="logo">E</div>
+    <h1>Evolution AI · Avatar Showcase</h1>
+  </div>
+
+  <div id="view-label">
+    <div class="angle-display">0°</div>
+    <div class="view-name">正面</div>
+  </div>
+
+  <div id="hint">拖拽旋转 · 滚轮缩放 · 点击切换视角</div>
+
+  <div id="controls">
+    <button class="ctrl-btn active" data-view="front">正面</button>
+    <button class="ctrl-btn" data-view="right45">右前 45°</button>
+    <button class="ctrl-btn" data-view="back">背面</button>
+    <button class="ctrl-btn" data-view="left">左侧</button>
+  </div>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <span>LOADING</span>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.167.1/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.167.1/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+    import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+    import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 配置
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    const CONFIG = {
+      images: [
+        { name: 'front',   label: '正面',      file: './avatar_front.jpg',   angle: 0 },
+        { name: 'right45', label: '右前 45°',  file: './avatar_right45.jpg', angle: Math.PI / 2 },
+        { name: 'back',    label: '背面',      file: './avatar_back.jpg',    angle: Math.PI },
+        { name: 'left',    label: '左侧',      file: './avatar_left.jpg',    angle: 3 * Math.PI / 2 }
+      ],
+      plane: { width: 1.5, height: 2 },
+      radius: 3,
+      rotationPeriod: 20,          // 秒
+      bloom: { strength: 0.2, radius: 0.4, threshold: 0.9 },
+      camera: { fov: 45, near: 0.1, far: 100, pos: [0, 0.5, 7] }
+    };
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 状态
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    let scene, camera, renderer, composer, controls;
+    let avatarGroup;                // 包含所有图片平面的组
+    let clock = new THREE.Clock();
+    let autoRotate = true;
+    let currentAngle = 0;           // 当前旋转角度（弧度）
+    let targetAngle = null;         // 切换视角时的目标角度
+    let animatingView = false;
+    const loadedTextures = [];
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 初始化
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    async function init() {
+      // 场景
+      scene = new THREE.Scene();
+
+      // 渐变背景
+      const bgCanvas = document.createElement('canvas');
+      bgCanvas.width = 2; bgCanvas.height = 512;
+      const bgCtx = bgCanvas.getContext('2d');
+      const grad = bgCtx.createLinearGradient(0, 0, 0, 512);
+      grad.addColorStop(0, '#0a1628');
+      grad.addColorStop(1, '#1a2840');
+      bgCtx.fillStyle = grad;
+      bgCtx.fillRect(0, 0, 2, 512);
+      const bgTex = new THREE.CanvasTexture(bgCanvas);
+      bgTex.colorSpace = THREE.SRGBColorSpace;
+      scene.background = bgTex;
+
+      // 相机
+      camera = new THREE.PerspectiveCamera(
+        CONFIG.camera.fov,
+        window.innerWidth / window.innerHeight,
+        CONFIG.camera.near,
+        CONFIG.camera.far
+      );
+      camera.position.set(...CONFIG.camera.pos);
+
+      // 渲染器
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.1;
+      document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+      // 灯光
+      const ambient = new THREE.AmbientLight(0x667799, 0.8);
+      scene.add(ambient);
+
+      const pointLight1 = new THREE.PointLight(0x88bbff, 60, 20);
+      pointLight1.position.set(0, 4, 6);
+      scene.add(pointLight1);
+
+      const pointLight2 = new THREE.PointLight(0x4488ff, 30, 20);
+      pointLight2.position.set(-4, 2, -4);
+      scene.add(pointLight2);
+
+      // 加载纹理并创建平面
+      await loadAllTextures();
+      createAvatarPlanes();
+      createFloorGrid();
+      createParticles();
+
+      // 后处理
+      composer = new EffectComposer(renderer);
+      composer.addPass(new RenderPass(scene, camera));
+      const bloom = new UnrealBloomPass(
+        new THREE.Vector2(window.innerWidth, window.innerHeight),
+        CONFIG.bloom.strength,
+        CONFIG.bloom.radius,
+        CONFIG.bloom.threshold
+      );
+      composer.addPass(bloom);
+      composer.addPass(new OutputPass());
+
+      // 控制器
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.06;
+      controls.minDistance = 3;
+      controls.maxDistance = 14;
+      controls.maxPolarAngle = Math.PI * 0.65;
+      controls.minPolarAngle = Math.PI * 0.2;
+      controls.target.set(0, 0, 0);
+
+      // 用户开始拖拽时暂停自动旋转
+      controls.addEventListener('start', () => { autoRotate = false; });
+
+      // 事件
+      setupEvents();
+
+      // 隐藏加载
+      setTimeout(() => document.getElementById('loading').classList.add('hidden'), 400);
+
+      // 开始循环
+      animate();
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 加载纹理
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function loadAllTextures() {
+      const loader = new THREE.TextureLoader();
+      const promises = CONFIG.images.map((img, i) => new Promise(resolve => {
+        loader.load(img.file, tex => {
+          tex.colorSpace = THREE.SRGBColorSpace;
+          loadedTextures[i] = tex;
+          resolve();
+        }, undefined, () => {
+          // fallback: 彩色占位
+          loadedTextures[i] = createFallbackTexture(img.label, i);
+          resolve();
+        });
+      }));
+      return Promise.all(promises);
+    }
+
+    function createFallbackTexture(label, idx) {
+      const c = document.createElement('canvas');
+      c.width = 512; c.height = 680;
+      const ctx = c.getContext('2d');
+      const colors = ['#0055aa', '#006699', '#004488', '#003366'];
+      const g = ctx.createLinearGradient(0, 0, 0, c.height);
+      g.addColorStop(0, colors[idx]);
+      g.addColorStop(1, '#0a1628');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.font = 'bold 36px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(label, c.width / 2, c.height / 2);
+      const tex = new THREE.CanvasTexture(c);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      return tex;
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 创建 Avatar 平面
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function createAvatarPlanes() {
+      avatarGroup = new THREE.Group();
+      const { width, height } = CONFIG.plane;
+
+      CONFIG.images.forEach((imgCfg, i) => {
+        const geo = new THREE.PlaneGeometry(width, height);
+        const mat = new THREE.MeshStandardMaterial({
+          map: loadedTextures[i],
+          side: THREE.DoubleSide,
+          transparent: true,
+          roughness: 0.5,
+          metalness: 0.1,
+          emissive: new THREE.Color(0x112244),
+          emissiveIntensity: 0.15
+        });
+        const mesh = new THREE.Mesh(geo, mat);
+
+        // 放在圆形排列位置
+        const angle = imgCfg.angle;
+        mesh.position.set(
+          Math.sin(angle) * CONFIG.radius,
+          0,
+          Math.cos(angle) * CONFIG.radius
+        );
+        // 面朝外
+        mesh.lookAt(
+          Math.sin(angle) * (CONFIG.radius + 1),
+          0,
+          Math.cos(angle) * (CONFIG.radius + 1)
+        );
+
+        // 添加边框发光
+        const edgeGeo = new THREE.EdgesGeometry(geo);
+        const edgeMat = new THREE.LineBasicMaterial({
+          color: 0x3388cc,
+          transparent: true,
+          opacity: 0.35
+        });
+        const edgeLine = new THREE.LineSegments(edgeGeo, edgeMat);
+        mesh.add(edgeLine);
+
+        avatarGroup.add(mesh);
+      });
+
+      scene.add(avatarGroup);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 地面网格
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function createFloorGrid() {
+      const gridGeo = new THREE.RingGeometry(2.2, 3.8, 64);
+      const gridMat = new THREE.MeshBasicMaterial({
+        color: 0x1a3355,
+        transparent: true,
+        opacity: 0.18,
+        side: THREE.DoubleSide
+      });
+      const ring = new THREE.Mesh(gridGeo, gridMat);
+      ring.rotation.x = -Math.PI / 2;
+      ring.position.y = -1.2;
+      scene.add(ring);
+
+      // 中心点光晕
+      const glowGeo = new THREE.CircleGeometry(0.6, 32);
+      const glowMat = new THREE.MeshBasicMaterial({
+        color: 0x0066cc,
+        transparent: true,
+        opacity: 0.12
+      });
+      const glow = new THREE.Mesh(glowGeo, glowMat);
+      glow.rotation.x = -Math.PI / 2;
+      glow.position.y = -1.19;
+      scene.add(glow);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 环境粒子
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    let particleSystem;
+    function createParticles() {
+      const count = 200;
+      const geo = new THREE.BufferGeometry();
+      const pos = new Float32Array(count * 3);
+      for (let i = 0; i < count; i++) {
+        pos[i * 3]     = (Math.random() - 0.5) * 16;
+        pos[i * 3 + 1] = (Math.random() - 0.5) * 8;
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 16;
+      }
+      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+
+      const mat = new THREE.PointsMaterial({
+        color: 0x4488cc,
+        size: 0.03,
+        transparent: true,
+        opacity: 0.5,
+        sizeAttenuation: true
+      });
+      particleSystem = new THREE.Points(geo, mat);
+      scene.add(particleSystem);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 事件
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function setupEvents() {
+      // 视角切换按钮
+      document.querySelectorAll('.ctrl-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const viewName = btn.dataset.view;
+          const cfg = CONFIG.images.find(img => img.name === viewName);
+          if (!cfg) return;
+
+          // 更新按钮状态
+          document.querySelectorAll('.ctrl-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // 计算目标角度（让该视角正对相机）
+          targetAngle = -cfg.angle;
+          animatingView = true;
+          autoRotate = false;
+
+          // 延迟恢复自动旋转
+          clearTimeout(window._autoRotateTimer);
+          window._autoRotateTimer = setTimeout(() => {
+            autoRotate = true;
+            animatingView = false;
+          }, 3000);
+        });
+      });
+
+      // 响应式
+      window.addEventListener('resize', onResize);
+    }
+
+    function onResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      composer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 动画循环
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function animate() {
+      requestAnimationFrame(animate);
+      const delta = clock.getDelta();
+      const elapsed = clock.getElapsedTime();
+
+      // 自动旋转
+      if (autoRotate && !animatingView) {
+        currentAngle -= (2 * Math.PI / CONFIG.rotationPeriod) * delta;
+      }
+
+      // 视角切换动画
+      if (animatingView && targetAngle !== null) {
+        // 归一化角度差，取最短路径
+        let diff = targetAngle - currentAngle;
+        // 将 diff 归到 [-π, π]
+        while (diff > Math.PI) diff -= 2 * Math.PI;
+        while (diff < -Math.PI) diff += 2 * Math.PI;
+
+        currentAngle += diff * Math.min(1, delta * 4);  // 平滑插值
+
+        if (Math.abs(diff) < 0.01) {
+          currentAngle = targetAngle;
+          animatingView = false;
+        }
+      }
+
+      // 应用旋转
+      if (avatarGroup) {
+        avatarGroup.rotation.y = currentAngle;
+      }
+
+      // 粒子微动
+      if (particleSystem) {
+        particleSystem.rotation.y = elapsed * 0.015;
+      }
+
+      // 更新底部标签
+      updateViewLabel();
+
+      controls.update();
+      composer.render();
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 更新视角标签
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    function updateViewLabel() {
+      // 计算正对相机的视角
+      let normAngle = (-currentAngle) % (2 * Math.PI);
+      if (normAngle < 0) normAngle += 2 * Math.PI;
+
+      let closest = CONFIG.images[0];
+      let minDiff = Infinity;
+
+      CONFIG.images.forEach(img => {
+        let a = img.angle % (2 * Math.PI);
+        let diff = Math.abs(normAngle - a);
+        if (diff > Math.PI) diff = 2 * Math.PI - diff;
+        if (diff < minDiff) { minDiff = diff; closest = img; }
+      });
+
+      const label = document.getElementById('view-label');
+      const nameEl = label.querySelector('.view-name');
+      const angleEl = label.querySelector('.angle-display');
+
+      if (nameEl.textContent !== closest.label) {
+        nameEl.textContent = closest.label;
+        // 同步按钮状态
+        document.querySelectorAll('.ctrl-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.view === closest.name);
+        });
+      }
+
+      // 显示角度
+      let degrees = Math.round((normAngle * 180 / Math.PI)) % 360;
+      angleEl.textContent = `${degrees}°`;
+    }
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 启动
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    init().catch(err => {
+      console.error('初始化失败:', err);
+      document.getElementById('loading').innerHTML =
+        '<span style="color:#ff6666">加载失败，请检查图片路径</span>';
+    });
+  </script>
+</body>
+</html>

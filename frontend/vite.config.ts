@@ -4,7 +4,6 @@ import { fileURLToPath, URL } from 'node:url'
 import { resolve as pathResolve } from 'node:path'
 
 export default defineConfig({
-  base: '/evolution-ai-demo/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -13,14 +12,15 @@ export default defineConfig({
         fileURLToPath(new URL('./node_modules/vue/dist/vue.esm-bundler.js', import.meta.url))
       ),
       'axios': fileURLToPath(new URL('./src/utils/axios-shim.ts', import.meta.url)),
+      // D5 公网部署：所有 element-plus 引用（含子路径）都走 shim
+      // 反正代码里只剩 locale import（main.ts 已改本地），其他用 named export 也走 shim
       'element-plus/es': fileURLToPath(new URL('./src/utils/element-plus-shim.ts', import.meta.url)),
       'element-plus': fileURLToPath(new URL('./src/utils/element-plus-shim.ts', import.meta.url)),
-      'vue-i18n': fileURLToPath(new URL('./src/utils/vue-i18n-shim.ts', import.meta.url)),
     },
   },
   optimizeDeps: {
     include: ['vue', 'vue-router', 'pinia'],
-    exclude: ['axios', 'element-plus', 'vue-i18n'],
+    exclude: ['axios', 'element-plus'],
     esbuildOptions: { sourcemap: false },
   },
   server: {

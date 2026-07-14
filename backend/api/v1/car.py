@@ -1,15 +1,21 @@
 """
 Car 路由
 """
+from typing import Optional
+
 from fastapi import APIRouter, Depends, HTTPException
 
 from backend.deps import get_car_model_service
 from backend.models.car import (
     CarParamsAPI,
     CarStatsAPI,
+    CarBuildRequest,
     CarBuildResponse,
+    CarExportRequest,
+    CarExportResponse,
     CarValidateRequest,
     CarValidateResponse,
+    FreeformParams,
 )
 from backend.services.car_model_service import CarModelService
 
@@ -24,22 +30,61 @@ def get_default_params():
 
 @router.post("/build", response_model=CarBuildResponse, summary="构建整车 3D 模型")
 def build_car(
-    params: CarParamsAPI,
+    req: CarBuildRequest,
     service: CarModelService = Depends(get_car_model_service),
 ):
     """
     根据 22 维参数构建完整汽车造型
+
+    Body:
+    - params: 22 维形态参数（可选，不传则用默认值）
+    - freeform: 可选自由变形参数（5 种预设 + 自定义模式）
 
     返回：
     - glb_url: 静态资源 URL，前端可直传 Three.js GLTFLoader
     - stats: 顶点数/面数/部件统计
     - params_hash: 参数 hash（用于缓存去重）
     - build_time_ms: 构建耗时
+    - freeform_applied: 已应用的变形摘要（无 freeform 时为 None）
     """
+    params = req.params if req.params is not None else CarParamsAPI()
     try:
-        result = service.build(params)
+        result = service.build(params, freeform=req.freeform)
     except ValueError as e:
-        raise HTTPException(status_code=422, detail=str(e))
+        raise HTTPException(status_code=400, detail=str(e))
+    return result
+
+
+@router.post("/export", response_model=CarExportResponse, summary="导出模型（GLB/OBJ/STL）")
+def export_car(
+    req: CarExportRequest,
+    service: CarModelService = Depends(get_car_model_service),
+):
+    """
+    构建并导出为指定格式
+
+    Body:
+    - params: 22 维形态参数（可选，不传则用默认值）
+    - freeform: 可选自由变形参数
+    - format: 导出格式 glb / obj / stl（默认 glb）
+
+    OBJ 格式可能包含 .obj + .mtl 两个文件，会打包为 .obj.zip
+
+    返回：
+    - file_url: 静态资源 URL
+    - format: 实际导出格式
+    - file_size_bytes: 文件大小
+    - build_time_ms: 构建耗时
+    """
+    params = req.params if req.params is not None else CarParamsAPI()
+    try:
+        result = service.export_model(
+            params,
+            export_format=req.format.value,
+            freeform=req.freeform,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     return result
 
 

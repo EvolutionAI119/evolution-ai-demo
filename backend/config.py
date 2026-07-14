@@ -12,13 +12,15 @@ class Settings(BaseSettings):
     env: str = "development"  # development | production
     debug: bool = True
 
-    # CORS（开发环境全放开，生产环境收敛）
+    # CORS（开发环境全放开，生产环境通过环境变量配置）
     cors_origins: list[str] = [
         "http://localhost:3000",   # React/Vue 默认
         "http://localhost:5173",   # Vite
         "http://localhost:8080",
+        "http://localhost:8501",   # Streamlit
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
+        "http://127.0.0.1:8501",
     ]
 
     # 文件存储

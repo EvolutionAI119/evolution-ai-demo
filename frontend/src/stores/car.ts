@@ -1,8 +1,8 @@
 /**
- * Car Store（M3 W1-D1 骨架）
+ * Car Store（W2-D1 字段对齐）
  *
  * 状态：
- * - params: 当前 22 维参数
+ * - params: 当前 22 维参数（对齐 backend Pydantic）
  * - lastBuild: 最近一次 build_car 结果（GLB URL + stats）
  * - presets: 加载的预设
  * - loading: 构建中
@@ -12,29 +12,14 @@ import { ref, computed } from 'vue'
 import type { CarParamsAPI, CarBuildResponse, CarPresetsResponse } from '@/types/api'
 import { buildCar, getCarPresets } from '@/api/car'
 
+// 22 维默认参数（对齐 backend/models/car.py CarParamsAPI）
 const DEFAULT_PARAMS: CarParamsAPI = {
-  body_length: 4.7,
-  body_width: 1.85,
-  body_height: 1.45,
-  wheelbase: 2.8,
-  ground_clearance: 0.18,
-  approach_angle: 16,
-  departure_angle: 22,
-  overhang_front: 0.95,
-  overhang_rear: 1.05,
-  beltline_height: 0.95,
-  shoulder_line_angle: 8,
-  hood_curvature: 0.05,
-  fender_flare: 0.12,
-  door_concavity: 0.02,
-  windshield_angle: 28,
-  rear_window_angle: 35,
-  side_window_area: 0.35,
-  wheel_arch_height: 0.4,
-  wheel_arch_flare: 0.08,
-  character_lines: 3,
-  overall_aggression: 0.5,
-  category: 'sedan',
+  L: 4.7, W: 1.85, H: 1.45, wheelbase: 2.8,
+  hood_length: 1.1, cabin_length: 2.2, trunk_length: 1.0, ground_clearance: 0.18,
+  hood_angle: 12.0, roof_arc: 0.35, windshield_rake: 30.0, rear_glass_angle: 35.0,
+  fender_prominence: 0.15, waist_line: 0.8, shoulder_line: 1.0, overall_arc: 0.2,
+  glass_darkness: 0.4, wheel_radius: 0.34, wheel_width: 0.22, wheel_spoke_count: 5,
+  headlight_width: 0.42, headlight_height: 0.10,
 }
 
 export const useCarStore = defineStore('car', () => {
@@ -45,7 +30,9 @@ export const useCarStore = defineStore('car', () => {
   const error = ref<string | null>(null)
 
   const hasBuild = computed(() => lastBuild.value !== null)
-  const panelNames = computed(() => lastBuild.value?.stats.panel_names ?? [])
+  const componentNames = computed(() =>
+    lastBuild.value ? Object.keys(lastBuild.value.stats.components) : []
+  )
 
   async function loadPresets(): Promise<void> {
     try {
@@ -68,8 +55,8 @@ export const useCarStore = defineStore('car', () => {
     }
   }
 
-  function applyPreset(name: keyof typeof DEFAULT_PARAMS | string): void {
-    const p = presets.value[name as string]
+  function applyPreset(name: string): void {
+    const p = presets.value[name]
     if (p) params.value = { ...p }
   }
 
@@ -84,7 +71,7 @@ export const useCarStore = defineStore('car', () => {
     loading,
     error,
     hasBuild,
-    panelNames,
+    componentNames,
     loadPresets,
     build,
     applyPreset,

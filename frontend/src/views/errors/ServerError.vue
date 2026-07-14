@@ -12,6 +12,10 @@ const countdown = ref<number>(5)
 
 let timer: number | null = null
 
+function reloadPage(): void {
+  window.location.reload()
+}
+
 onMounted(() => {
   timer = window.setInterval(() => {
     countdown.value -= 1
@@ -32,7 +36,7 @@ onMounted(() => {
       <el-button type="primary" size="large" @click="router.push('/')" style="margin-right: 8px;">
         {{ t('errors.serverError.back') }}
       </el-button>
-      <el-button size="large" @click="location.reload()">
+      <el-button size="large" @click="reloadPage">
         {{ t('errors.serverError.retry') }}
       </el-button>
     </div>

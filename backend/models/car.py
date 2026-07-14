@@ -1,8 +1,62 @@
 """
 Car 相关 Pydantic 模型
 """
+from enum import Enum
 from typing import Dict, Any, List, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
+
+
+class FreeformPreset(str, Enum):
+    """自由变形预设类型"""
+    fender_bulge = "fender_bulge"      # 轮眉凸起
+    door_dent = "door_dent"            # 门板凹痕
+    hood_scoop = "hood_scoop"          # 发动机盖进气口
+    character_line = "character_line"  # 腰线特征线
+    roof_sculpt = "roof_sculpt"        # 车顶雕塑感
+    custom = "custom"                  # 自定义控制点
+
+
+class FreeformParams(BaseModel):
+    """
+    自由变形参数
+
+    在车身网格上施加 NURBS 曲面变形，支持 5 种预设 + 自定义模式。
+    """
+    preset: FreeformPreset = Field(
+        ...,
+        description="变形预设类型，custom 模式需提供 custom_control_points",
+    )
+    amplitude: float = Field(
+        default=0.05,
+        ge=0.0,
+        le=1.0,
+        description="变形幅度 0.0-1.0，缩放预设/自定义变形的强度",
+    )
+    center_x: float = Field(
+        default=0.0,
+        ge=-1.0,
+        le=1.0,
+        description="变形中心 X 坐标（归一化 -1.0~1.0，对应车尾到车头）",
+    )
+    center_z: float = Field(
+        default=0.5,
+        ge=-1.0,
+        le=1.0,
+        description="变形中心 Z 坐标（归一化 -1.0~1.0，对应车底到车顶）",
+    )
+    custom_control_points: Optional[List[List[float]]] = Field(
+        default=None,
+        description="自定义控制点网格（仅 custom 模式），二维数组 [[z00, z01, ...], ...]",
+    )
+
+    @model_validator(mode="after")
+    def validate_custom_mode(self) -> "FreeformParams":
+        """custom 模式必须提供 custom_control_points"""
+        if self.preset == FreeformPreset.custom and not self.custom_control_points:
+            raise ValueError("custom 模式必须提供 custom_control_points")
+        if self.preset != FreeformPreset.custom and self.custom_control_points:
+            raise ValueError("非 custom 模式不应提供 custom_control_points")
+        return self
 
 
 class CarParamsAPI(BaseModel):
@@ -63,6 +117,22 @@ class CarBuildResponse(BaseModel):
     stats: CarStatsAPI
     params_hash: str
     build_time_ms: float
+    freeform_applied: Optional[List[Dict[str, Any]]] = Field(
+        default=None,
+        description="已应用的自由变形摘要（无 freeform 参数时为 None）",
+    )
+
+
+class CarBuildRequest(BaseModel):
+    """build 接口请求（向后兼容：body 可直接传 CarParamsAPI 字段，也可嵌套 params + freeform）"""
+    params: Optional[CarParamsAPI] = Field(
+        default=None,
+        description="22 维形态参数（不传则使用默认值）",
+    )
+    freeform: Optional[FreeformParams] = Field(
+        default=None,
+        description="可选自由变形参数",
+    )
 
 
 class CarValidateRequest(BaseModel):
@@ -83,3 +153,33 @@ class CarPreset(BaseModel):
     description: str
     params: CarParamsAPI
     icon: Optional[str] = None
+
+class ExportFormat(str, Enum):
+    """模型导出格式"""
+    glb = "glb"
+    obj = "obj"
+    stl = "stl"
+
+
+class CarExportRequest(BaseModel):
+    """export 接口请求 — 构建并导出为指定格式"""
+    params: Optional[CarParamsAPI] = Field(
+        default=None,
+        description="22 维形态参数（不传则使用默认值）",
+    )
+    freeform: Optional[FreeformParams] = Field(
+        default=None,
+        description="可选自由变形参数",
+    )
+    format: ExportFormat = Field(
+        default=ExportFormat.glb,
+        description="导出格式：glb / obj / stl",
+    )
+
+
+class CarExportResponse(BaseModel):
+    """export 接口响应"""
+    file_url: str
+    format: str
+    file_size_bytes: int
+    build_time_ms: float
