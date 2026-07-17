@@ -1,0 +1,1668 @@
+2026-06-20 08:07:58 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=preview)
+2026-06-20 08:07:58 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:08:01 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 50.8ms → grade=D
+2026-06-20 08:08:01 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:56:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:56:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:56:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///./backend/outputs/evolution_ai.db
+2026-06-20 08:56:51 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:56:51 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:17 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:17 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:17 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:18 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:19 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-06-20 08:57:19 | INFO     | backend.services.car_model_service:build - ✅ Car built in 66.3ms (3475 verts)
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:19 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 69.2ms → grade=D
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:19 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:19 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-06-20 08:57:20 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.84s: D → D, g2 Δ=+0
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:20 | INFO     | backend.services.storyboard_service:generate - 🎬 [3bb224db9646] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-06-20 08:57:20 | INFO     | backend.services.storyboard_service:generate - ✅ [3bb224db9646] Storyboard ready in 0.8ms (7 scenes)
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:20 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:20 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 48.3ms (134644 bytes)
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:20 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:46 | INFO     | backend.services.project_service:create - 📁 Project created: id=2 name=测试方案
+2026-06-20 08:57:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:57:53 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:57:53 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:57:53 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:57:55 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:57:55 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案
+2026-06-20 08:57:55 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-06-20 08:58:08 | INFO     | backend.services.car_model_service:build - ✅ Car built in 51.2ms (3475 verts)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 45.4ms → grade=D
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:08 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-06-20 08:58:09 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.54s: D → D, g2 Δ=+0
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:09 | INFO     | backend.services.storyboard_service:generate - 🎬 [18c083bc5b85] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-06-20 08:58:09 | INFO     | backend.services.storyboard_service:generate - ✅ [18c083bc5b85] Storyboard ready in 0.4ms (7 scenes)
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:09 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:10 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 32.6ms (134644 bytes)
+2026-06-20 08:58:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:16 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:16 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:16 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:16 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:16 | INFO     | backend.services.project_service:create - 📁 Project created: id=2 name=测试方案
+2026-06-20 08:58:16 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=2
+2026-06-20 08:58:16 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=2
+2026-06-20 08:58:16 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:22 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:22 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:22 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:22 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:22 | INFO     | backend.services.project_service:create - 📁 Project created: id=3 name=测试方案
+2026-06-20 08:58:22 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=3
+2026-06-20 08:58:22 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=3
+2026-06-20 08:58:22 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-06-20 08:58:30 | INFO     | backend.services.car_model_service:build - ✅ Car built in 55.8ms (3475 verts)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.7ms → grade=D
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:31 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-06-20 08:58:31 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.54s: D → D, g2 Δ=+0
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:31 | INFO     | backend.services.storyboard_service:generate - 🎬 [2a0be37f3ec7] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-06-20 08:58:31 | INFO     | backend.services.storyboard_service:generate - ✅ [2a0be37f3ec7] Storyboard ready in 0.5ms (7 scenes)
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:31 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案
+2026-06-20 08:58:32 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=1
+2026-06-20 08:58:32 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=1
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:32 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 36.7ms (134644 bytes)
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:32 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:55 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:55 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:55 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:58:55 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:58:56 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:57 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:58:57 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:58:57 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:58:57 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:58:57 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:58:57 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:12 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:12 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:12 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:12 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:12 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:12 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:36 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:36 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:36 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:36 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:36 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:46 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-9477d5
+2026-06-20 08:59:47 | INFO     | backend.services.optimize_service:start_async - 🚀 [24b933e3779d42d9aad47eb4d3b60a68] Async optimize queued: 测试面板 (max_iter=30)
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:47 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-3467b2
+2026-06-20 08:59:47 | WARNING  | backend.services.optimize_service:start_async - ⚠️ Celery 推送失败，degrade 到同步执行: unknown surface_type: custom
+2026-06-20 08:59:47 | ERROR    | backend.services.optimize_service:start_async - ❌ 同步 fallback 也失败: unknown surface_type: custom
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:47 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-7f51f1
+2026-06-20 08:59:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 08:59:59 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 08:59:59 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 08:59:59 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 08:59:59 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 08:59:59 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-f02c58
+2026-06-20 09:00:00 | INFO     | backend.services.optimize_service:start_async - 🚀 [1da445729b35442793816a2dec40bafc] Async optimize queued: 测试面板 (max_iter=30)
+2026-06-20 09:00:00 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:00 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:00 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:00 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:00:00 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:00 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-2ad449
+2026-06-20 09:00:01 | INFO     | backend.services.optimize_service:start_async - 🚀 [f99650f19aba428c9ce87dc49c6119dd] Async optimize queued: plane_with_noise (max_iter=30)
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:01 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-6817c7
+2026-06-20 09:00:01 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-06-20 09:00:10 | INFO     | backend.services.car_model_service:build - ✅ Car built in 62.3ms (3475 verts)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 45.2ms → grade=D
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:10 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-06-20 09:00:11 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.55s: D → D, g2 Δ=+0
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:11 | INFO     | backend.services.storyboard_service:generate - 🎬 [108519038490] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-06-20 09:00:11 | INFO     | backend.services.storyboard_service:generate - ✅ [108519038490] Storyboard ready in 0.4ms (7 scenes)
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:11 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案
+2026-06-20 09:00:11 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=1
+2026-06-20 09:00:12 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=1
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:12 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 31.3ms (134644 bytes)
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:00:12 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:12 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-7aff50
+2026-06-20 09:00:13 | INFO     | backend.services.optimize_service:start_async - 🚀 [fdc101a180ba4ee8b17bef57eff7b309] Async optimize queued: 测试面板 (max_iter=30)
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:13 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-23c939
+2026-06-20 09:00:13 | INFO     | backend.services.optimize_service:start_async - 🚀 [7b0502214a964d09bc997083fb08a1cd] Async optimize queued: plane_with_noise (max_iter=30)
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:00:13 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-b71e97
+2026-06-20 09:00:13 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:00:21 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:00:21 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:00:21 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:00:23 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:01:23 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:01:26 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:01:26 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:01:26 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:01:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:01:56 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:02:05 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:02:05 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:02:05 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:02:07 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:02:12 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:02:14 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:02:14 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:02:14 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:02:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:02:32 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=M2-真接口测试
+2026-06-20 09:02:33 | INFO     | backend.services.optimize_service:start_async - 🚀 [01417da3355742cea94398b3eb902c16] Async optimize queued: 测试面板 (max_iter=30)
+2026-06-20 09:36:09 | INFO     | backend.services.project_service:create - 📁 Project created: id=2 name=M2-端到端验证
+2026-06-20 09:36:09 | INFO     | backend.services.optimize_service:start_async - 🚀 [ad7260cb0f4e442b9374e549c1eebbd8] Async optimize queued: 前翼子板 (max_iter=30)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-06-20 09:40:47 | INFO     | backend.services.car_model_service:build - ✅ Car built in 63.7ms (3475 verts)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.5ms → grade=D
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:47 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-06-20 09:40:48 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.54s: D → D, g2 Δ=+0
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:48 | INFO     | backend.services.storyboard_service:generate - 🎬 [c89c1bf51d0d] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-06-20 09:40:48 | INFO     | backend.services.storyboard_service:generate - ✅ [c89c1bf51d0d] Storyboard ready in 0.4ms (7 scenes)
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:48 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:48 | INFO     | backend.services.project_service:create - 📁 Project created: id=3 name=测试方案
+2026-06-20 09:40:48 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=3
+2026-06-20 09:40:49 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=3
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:49 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 32.1ms (134644 bytes)
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:40:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:49 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-4c2280
+2026-06-20 09:40:50 | INFO     | backend.services.optimize_service:start_async - 🚀 [abef9d140f454f79b3d31a3705657071] Async optimize queued: 测试面板 (max_iter=30)
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:50 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-a212d5
+2026-06-20 09:40:50 | INFO     | backend.services.optimize_service:start_async - 🚀 [cc34b11de07746fc9aab77654cbd974e] Async optimize queued: plane_with_noise (max_iter=30)
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 09:40:50 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-c02cec
+2026-06-20 09:40:50 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:17:18 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:17:18 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:17:18 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:17:18 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:18:21 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:18:21 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:18:21 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:18:21 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:18:21 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:21:02 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:21:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:21:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:21:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:21:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:21:42 | INFO     | backend.services.optimize_service:start_async - 🚀 [c1479f41c40749578369607c084e7c86] Async optimize queued: sphere (max_iter=30)
+2026-06-20 14:21:55 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:22:02 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:22:02 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:22:02 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:22:02 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:22:13 | INFO     | backend.services.optimize_service:start_async - 🚀 [42006b4777dd463aa3fd7c849a2d0a3b] Async optimize queued: sphere (max_iter=30)
+2026-06-20 14:22:37 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:22:43 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:22:43 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:22:43 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:22:43 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:22:49 | INFO     | backend.services.optimize_service:start_async - 🚀 [96122ff99d9640708edc090f25ce7485] Async optimize queued: sphere (max_iter=30)
+2026-06-20 14:24:15 | INFO     | backend.services.optimize_service:start_async - 🚀 [508dce7c7a554f0aa016ddef24fdfc9a] Async optimize queued: sphere (max_iter=30)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-06-20 14:24:35 | INFO     | backend.services.car_model_service:build - ✅ Car built in 70.0ms (3475 verts)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 45.0ms → grade=D
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:35 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:35 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-06-20 14:24:36 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.56s: D → D, g2 Δ=+0
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:36 | INFO     | backend.services.storyboard_service:generate - 🎬 [4f586f557f54] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-06-20 14:24:36 | INFO     | backend.services.storyboard_service:generate - ✅ [4f586f557f54] Storyboard ready in 0.4ms (7 scenes)
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:36 | INFO     | backend.services.project_service:create - 📁 Project created: id=4 name=测试方案
+2026-06-20 14:24:36 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=4
+2026-06-20 14:24:36 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=4
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:36 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 32.7ms (134644 bytes)
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:36 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:37 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-19d499
+2026-06-20 14:24:37 | INFO     | backend.services.optimize_service:start_async - 🚀 [53b47af4cd7040159bf3cc37197ddd6c] Async optimize queued: 测试面板 (max_iter=30)
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 14:24:37 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:37 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-ef53d5
+2026-06-20 14:24:38 | INFO     | backend.services.optimize_service:start_async - 🚀 [c10583d8e7bd44b3b68270121360c3a3] Async optimize queued: plane_with_noise (max_iter=30)
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 14:24:38 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-817e20
+2026-06-20 14:24:38 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 16:47:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 16:47:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 16:47:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 16:47:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 16:47:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 16:47:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 16:47:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 16:47:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 16:47:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-20 18:38:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 18:38:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 18:38:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 18:38:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 19:58:17 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 19:58:17 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 19:58:17 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 19:58:17 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 19:59:21 | INFO     | backend.services.optimize_service:start_async - 🚀 [7a7fcc0cfb1c45ee820bb5ceb18577e1] Async optimize queued: car_body (max_iter=10)
+2026-06-20 19:59:27 | INFO     | backend.services.optimize_service:start_async - 🚀 [6a93421f1f77428e9d485155d0d223bd] Async optimize queued: car_body (max_iter=10)
+2026-06-20 20:01:08 | INFO     | backend.services.optimize_service:start_async - 🚀 [86bd430aba3c46daa25f0e21204c8740] Async optimize queued: car_body (max_iter=10)
+2026-06-20 20:02:18 | INFO     | backend.services.optimize_service:start_async - 🚀 [4b17ed9559c54bd5ba174164d0ac6858] Async optimize queued: car_body (max_iter=10)
+2026-06-20 20:02:41 | INFO     | backend.services.optimize_service:start_async - 🚀 [70abc128e1414046953ba807e8242fea] Async optimize queued: car_body (max_iter=10)
+2026-06-20 20:02:54 | INFO     | backend.services.optimize_service:start_async - 🚀 [a14b088854ca4f7b9e372c9cb45ac520] Async optimize queued: car_body (max_iter=10)
+2026-06-20 21:04:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-20 21:04:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-20 21:04:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-20 21:04:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-20 22:16:54 | INFO     | backend.services.optimize_service:start_async - 🚀 [9f53abbcff3c48a09c62370017673642] Async optimize queued: car_body (max_iter=10)
+2026-06-20 22:17:25 | INFO     | backend.services.optimize_service:start_async - 🚀 [4b787dc65918494a8746b5eb64150d46] Async optimize queued: car_body (max_iter=10)
+2026-06-20 22:17:58 | INFO     | backend.services.optimize_service:start_async - 🚀 [61bf561eb4c5460ab1c70654b4416f27] Async optimize queued: car_body (max_iter=10)
+2026-06-20 22:18:01 | INFO     | backend.services.optimize_service:start_async - 🚀 [75754e59762747ccb7e58314a22edf17] Async optimize queued: sphere (max_iter=10)
+2026-06-20 22:18:02 | INFO     | backend.services.optimize_service:start_async - 🚀 [6acab2789112463587509d9d20f25303] Async optimize queued: plane_with_noise (max_iter=10)
+2026-06-20 22:18:03 | INFO     | backend.services.optimize_service:start_async - 🚀 [31ea145254d444519f049a35dcc01db4] Async optimize queued: cylinder (max_iter=10)
+2026-06-20 22:46:09 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 45.6ms → grade=D
+2026-06-20 22:46:10 | INFO     | backend.services.optimize_service:start_async - 🚀 [c4fd11b2a8744f3b82147a0c86bf57b1] Async optimize queued: sphere (max_iter=10)
+2026-06-20 22:46:10 | INFO     | backend.services.storyboard_service:generate - 🎬 [5c14db1a3c96] Generating storyboard: EVOLUTION AI (template=car_promotion)
+2026-06-20 22:46:10 | INFO     | backend.services.storyboard_service:generate - ✅ [5c14db1a3c96] Storyboard ready in 0.5ms (7 scenes)
+2026-06-20 22:46:26 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.4ms → grade=D
+2026-06-20 22:46:26 | INFO     | backend.services.optimize_service:start_async - 🚀 [22a0a8eb9c174851a9a59c77c3b99768] Async optimize queued: sphere (max_iter=10)
+2026-06-20 22:46:26 | INFO     | backend.services.storyboard_service:generate - 🎬 [cd33026ba1ce] Generating storyboard: EVOLUTION AI (template=car_promotion)
+2026-06-20 22:46:26 | INFO     | backend.services.storyboard_service:generate - ✅ [cd33026ba1ce] Storyboard ready in 0.4ms (7 scenes)
+2026-06-20 22:48:46 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.4ms → grade=D
+2026-06-20 22:48:47 | INFO     | backend.services.optimize_service:start_async - 🚀 [fe2f362771f440ad900316dc688f169a] Async optimize queued: sphere (max_iter=10)
+2026-06-20 22:48:47 | INFO     | backend.services.storyboard_service:generate - 🎬 [15e9398ed5a2] Generating storyboard: EVOLUTION AI (template=car_promotion)
+2026-06-20 22:48:47 | INFO     | backend.services.storyboard_service:generate - ✅ [15e9398ed5a2] Storyboard ready in 0.4ms (7 scenes)
+2026-06-20 22:49:10 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.2ms → grade=D
+2026-06-20 22:49:11 | INFO     | backend.services.optimize_service:start_async - 🚀 [be37159deb9c491c81b632b7eb1d0f99] Async optimize queued: sphere (max_iter=10)
+2026-06-20 22:49:11 | INFO     | backend.services.storyboard_service:generate - 🎬 [3498c77ad845] Generating storyboard: EVOLUTION AI (template=car_promotion)
+2026-06-20 22:49:11 | INFO     | backend.services.storyboard_service:generate - ✅ [3498c77ad845] Storyboard ready in 0.4ms (7 scenes)
+2026-06-20 22:49:14 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.3ms → grade=D
+2026-06-20 22:49:14 | INFO     | backend.services.optimize_service:start_async - 🚀 [dbbc982670cd43daab31fae1d145e4a4] Async optimize queued: sphere (max_iter=10)
+2026-06-20 22:49:14 | INFO     | backend.services.storyboard_service:generate - 🎬 [4ad145b35651] Generating storyboard: EVOLUTION AI (template=car_promotion)
+2026-06-20 22:49:14 | INFO     | backend.services.storyboard_service:generate - ✅ [4ad145b35651] Storyboard ready in 0.5ms (7 scenes)
+2026-06-20 22:49:20 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 43.9ms → grade=D
+2026-06-20 22:49:21 | INFO     | backend.services.optimize_service:start_async - 🚀 [245ab8f0f73b4594bfc7fe4ed7800907] Async optimize queued: sphere (max_iter=10)
+2026-06-20 22:49:21 | INFO     | backend.services.storyboard_service:generate - 🎬 [5143db34b2b3] Generating storyboard: EVOLUTION AI (template=car_promotion)
+2026-06-20 22:49:21 | INFO     | backend.services.storyboard_service:generate - ✅ [5143db34b2b3] Storyboard ready in 0.5ms (7 scenes)
+2026-06-21 08:10:59 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-21 08:10:59 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-21 08:10:59 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-21 08:10:59 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-21 08:11:22 | INFO     | backend.services.optimize_service:start_async - 🚀 [ad49e575d1b8434db15a40bbb0c63d30] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:18:44 | INFO     | backend.services.optimize_service:start_async - 🚀 [a14ebea41ef04d6f9342608f14e632bd] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:18:48 | INFO     | backend.services.optimize_service:start_async - 🚀 [75d52ae1e14540288008971186051571] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:19:12 | INFO     | backend.services.optimize_service:start_async - 🚀 [80254ae2da1f4f85ba8c72974af4803c] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:19:16 | INFO     | backend.services.optimize_service:start_async - 🚀 [e0b91597571f4841897ce33064046fb6] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:21:21 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-21 08:21:26 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-21 08:21:26 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-21 08:21:26 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-21 08:21:26 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-21 08:21:29 | INFO     | backend.services.optimize_service:start_async - 🚀 [9ea748208ca046508261e12cc90ee847] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:21:32 | INFO     | backend.services.optimize_service:start_async - 🚀 [09366613cb3c4dcb842b6bb3d09798de] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:21:36 | INFO     | backend.services.optimize_service:start_async - 🚀 [567fe7a30f8644e2b76c9d84f76dd6b2] Async optimize queued: sphere (max_iter=10)
+2026-06-21 08:21:52 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-21 08:21:57 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-21 08:21:57 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-21 08:21:57 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-21 08:21:57 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-21 08:22:00 | INFO     | backend.services.optimize_service:start_async - 🚀 [a4913cc315cb4453876ba31e82de505a] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:04 | INFO     | backend.services.optimize_service:start_async - 🚀 [bd54d208e78a43e1862dd34ab243e6ee] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:08 | INFO     | backend.services.optimize_service:start_async - 🚀 [52df272a48894d3d9b55a67e6b98825f] Async optimize queued: sphere (max_iter=10)
+2026-06-21 08:22:13 | INFO     | backend.services.optimize_service:start_async - 🚀 [70bd6068556f4c818bebeada83a9f575] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:16 | INFO     | backend.services.optimize_service:start_async - 🚀 [584e903f5ec74826976b70822d03248e] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:20 | INFO     | backend.services.optimize_service:start_async - 🚀 [2c8b5b9f896148438caed1277bfb8bc1] Async optimize queued: sphere (max_iter=10)
+2026-06-21 08:22:29 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-21 08:22:34 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-21 08:22:34 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-21 08:22:34 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-21 08:22:34 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-21 08:22:37 | INFO     | backend.services.optimize_service:start_async - 🚀 [026ea08c74924f94b06fcadfd6f46ebe] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:41 | INFO     | backend.services.optimize_service:start_async - 🚀 [7f9e186be086483eb5d10c2248c5ed15] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:44 | INFO     | backend.services.optimize_service:start_async - 🚀 [308d2940401b44e69094ee58bba60d83] Async optimize queued: sphere (max_iter=10)
+2026-06-21 08:22:46 | INFO     | backend.services.optimize_service:start_async - 🚀 [d84935dd51a84bc0b4abec0ac5085fd9] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:50 | INFO     | backend.services.optimize_service:start_async - 🚀 [9f74ab4695e6420385bfcaa98e0d5c51] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:22:54 | INFO     | backend.services.optimize_service:start_async - 🚀 [e18ca6784d2d44ec8673d15222ccd5cc] Async optimize queued: sphere (max_iter=10)
+2026-06-21 08:22:59 | INFO     | backend.services.optimize_service:start_async - 🚀 [b7271b260545406abdd95409e96bc300] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:23:02 | INFO     | backend.services.optimize_service:start_async - 🚀 [95010e9876b24d7bb605738f70300183] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:23:06 | INFO     | backend.services.optimize_service:start_async - 🚀 [40856094ee4e4115a2f3ef9428dca2e6] Async optimize queued: sphere (max_iter=10)
+2026-06-21 08:23:24 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-06-21 08:23:29 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-21 08:23:29 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-21 08:23:29 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-21 08:23:29 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-21 08:23:32 | INFO     | backend.services.optimize_service:start_async - 🚀 [8800a812d7ca4376814b2513948d3184] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:23:36 | INFO     | backend.services.optimize_service:start_async - 🚀 [e770a0c596a84606bd4044802c2bafef] Async optimize queued: car_body (max_iter=10)
+2026-06-21 08:23:40 | INFO     | backend.services.optimize_service:start_async - 🚀 [4d38e2fefff446e489947286f09c7f9d] Async optimize queued: sphere (max_iter=10)
+2026-06-21 08:42:02 | INFO     | backend.services.optimize_service:start_async - 🚀 [49110c9c49e44e3ea8b0eaaaed2bbae3] Async optimize queued: car_body (max_iter=12)
+2026-06-21 09:37:34 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-06-21 09:37:34 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-06-21 09:37:34 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-06-21 09:37:34 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-06-21 09:37:50 | INFO     | backend.services.optimize_service:start_async - 🚀 [35f511a0035a4d0f8a0b6c6b0afe35ab] Async optimize queued: car_body (max_iter=10)
+2026-06-21 09:38:36 | INFO     | backend.services.optimize_service:start_async - 🚀 [31a7cac372694fbba7aa8e8c7740b256] Async optimize queued: sphere (max_iter=10)
+2026-06-21 09:38:37 | INFO     | backend.services.optimize_service:start_async - 🚀 [170e929315ad4929b40e2e181a728375] Async optimize queued: car_body (max_iter=10)
+2026-06-21 09:39:04 | INFO     | backend.services.optimize_service:start_async - 🚀 [4af15e610cde4083b1eb0be9d012c723] Async optimize queued: sphere (max_iter=10)
+2026-06-21 09:39:05 | INFO     | backend.services.optimize_service:start_async - 🚀 [330c7e8353064674ba91d853f7872b21] Async optimize queued: car_body (max_iter=10)
+2026-06-21 09:41:18 | INFO     | backend.services.optimize_service:start_async - 🚀 [e125116fe17843c1ba9a4eef69f01b65] Async optimize queued: sphere (max_iter=10)
+2026-06-21 09:41:22 | INFO     | backend.services.optimize_service:start_async - 🚀 [ac4fe2288d9146a8856b0f69d20c04ac] Async optimize queued: car_body (max_iter=10)
+2026-06-21 09:41:33 | INFO     | backend.services.optimize_service:start_async - 🚀 [a2d3b1cf8bdb44c7b2c2db95ef9d576a] Async optimize queued: sphere (max_iter=10)
+2026-06-21 09:41:34 | INFO     | backend.services.optimize_service:start_async - 🚀 [e6d6a13777b54f63b5105f2541dca9a1] Async optimize queued: car_body (max_iter=10)
+2026-06-21 09:42:14 | INFO     | backend.services.optimize_service:start_async - 🚀 [11afc80c1f754f79acbf0ef43e737482] Async optimize queued: sphere (max_iter=10)
+2026-06-21 09:42:14 | INFO     | backend.services.optimize_service:start_async - 🚀 [940bda3f4639414eb9be08e0c39cd498] Async optimize queued: car_body (max_iter=10)
+2026-06-21 09:43:18 | INFO     | backend.services.optimize_service:start_async - 🚀 [729966967dc8414c80e1bed9714afd2c] Async optimize queued: car_body (max_iter=15)
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:45 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:46 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.9ms → grade=D
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:46 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-07-04 18:50:47 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.54s: D → D, g2 Δ=+0
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:47 | INFO     | backend.services.storyboard_service:generate - 🎬 [16f11dedd757] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-07-04 18:50:47 | INFO     | backend.services.storyboard_service:generate - ✅ [16f11dedd757] Storyboard ready in 0.5ms (7 scenes)
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:47 | INFO     | backend.services.project_service:create - 📁 Project created: id=5 name=测试方案
+2026-07-04 18:50:47 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=5
+2026-07-04 18:50:47 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=5
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:47 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 44.0ms (134644 bytes)
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:50:48 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:48 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:48 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:48 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:48 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:50:48 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:48 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-02d4d6
+2026-07-04 18:50:48 | INFO     | backend.services.optimize_service:start_async - 🚀 [9146cf8c0aed4ec1b5df094195818dbf] Async optimize queued: 测试面板 (max_iter=30)
+2026-07-04 18:50:48 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:49 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-3e940d
+2026-07-04 18:50:49 | INFO     | backend.services.optimize_service:start_async - 🚀 [dc9ca5a3b26941489571817e8fc1f984] Async optimize queued: plane_with_noise (max_iter=30)
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:50:49 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-6d8148
+2026-07-04 18:50:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:14 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:15 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-07-04 18:52:15 | INFO     | backend.services.car_model_service:build - ✅ Car built in 74.3ms (3475 verts)
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:15 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 49.6ms → grade=D
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:15 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:15 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-07-04 18:52:16 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.53s: D → D, g2 Δ=+0
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:16 | INFO     | backend.services.storyboard_service:generate - 🎬 [419440b5d4ff] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-07-04 18:52:16 | INFO     | backend.services.storyboard_service:generate - ✅ [419440b5d4ff] Storyboard ready in 0.5ms (7 scenes)
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:16 | INFO     | backend.services.project_service:create - 📁 Project created: id=6 name=测试方案
+2026-07-04 18:52:16 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=6
+2026-07-04 18:52:16 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=6
+2026-07-04 18:52:16 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:17 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 36.0ms (134644 bytes)
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:17 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:27 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-07-04 18:52:28 | INFO     | backend.services.car_model_service:build - ✅ Car built in 48.5ms (3475 verts)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 44.0ms → grade=D
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:28 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:28 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-07-04 18:52:29 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.53s: D → D, g2 Δ=+0
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:29 | INFO     | backend.services.storyboard_service:generate - 🎬 [aaf8407f43af] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-07-04 18:52:29 | INFO     | backend.services.storyboard_service:generate - ✅ [aaf8407f43af] Storyboard ready in 0.5ms (7 scenes)
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:29 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:29 | INFO     | backend.services.project_service:create - 📁 Project created: id=7 name=测试方案
+2026-07-04 18:52:29 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=7
+2026-07-04 18:52:30 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=7
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:30 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 36.5ms (134644 bytes)
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:52:30 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:30 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-048fe0
+2026-07-04 18:52:31 | INFO     | backend.services.optimize_service:start_async - 🚀 [3cfacda3f6494120bacddada57f784e1] Async optimize queued: 测试面板 (max_iter=30)
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:31 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-41f6b1
+2026-07-04 18:52:31 | INFO     | backend.services.optimize_service:start_async - 🚀 [3a4d6ea47e7f4747a20bc04f088c08e3] Async optimize queued: plane_with_noise (max_iter=30)
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-04 18:52:31 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-85403f
+2026-07-04 18:52:31 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:43 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:43 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:43 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:44 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:44 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:45 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:46 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:46 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:46 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:46 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:46 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:46 | INFO     | backend.services.car_model_service:export_model - 🎨 Export with freeform: preset=fender_bulge
+2026-07-05 14:05:47 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:47 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:47 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:47 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:47 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:48 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:48 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:48 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:48 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:48 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:49 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:50 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:50 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:50 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:50 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:50 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:51 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:51 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:51 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:51 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:51 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:52 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:05:52 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:05:52 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:05:52 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:05:52 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:05:52 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:51 | INFO     | backend.utils.file_storage:save_bytes - 💾 Saved /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/exports/5a9cd30dd5c8f409.glb (134644 bytes)
+2026-07-05 14:06:51 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 86.1ms (134644 bytes)
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:51 | INFO     | backend.utils.file_storage:save_bytes - 💾 Saved /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/exports/8b168e1c8f18dbac.glb (134616 bytes)
+2026-07-05 14:06:51 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 76.3ms (134616 bytes)
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:51 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:52 | INFO     | backend.utils.file_storage:save_bytes - 💾 Saved /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/exports/4328718586d03299.obj (343590 bytes)
+2026-07-05 14:06:52 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 86.9ms (343590 bytes)
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:52 | INFO     | backend.services.car_model_service:export_model - 🎨 Export with freeform: preset=fender_bulge
+2026-07-05 14:06:52 | INFO     | backend.utils.file_storage:save_bytes - 💾 Saved /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/exports/c72001102d3da8f7.obj (343590 bytes)
+2026-07-05 14:06:52 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 125.8ms (343590 bytes)
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:52 | INFO     | backend.utils.file_storage:save_bytes - 💾 Saved /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/exports/9d6a008d6019e745.stl (325284 bytes)
+2026-07-05 14:06:52 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 77.4ms (325284 bytes)
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:52 | INFO     | backend.utils.file_storage:save_bytes - 💾 Saved /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/exports/e7fb872cfb86d923.stl (325284 bytes)
+2026-07-05 14:06:52 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 139.0ms (325284 bytes)
+2026-07-05 14:06:52 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:53 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 41.9ms (134644 bytes)
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:53 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.4ms (134644 bytes)
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:53 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:54 | INFO     | backend.utils.file_storage:save_bytes - 💾 Saved /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/exports/781c6a7880c82dbd.stl (325284 bytes)
+2026-07-05 14:06:54 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 126.1ms (325284 bytes)
+2026-07-05 14:06:54 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 33.3ms (325284 bytes)
+2026-07-05 14:06:54 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:06:54 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:06:54 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:06:54 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:06:54 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:06:54 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.4ms (134644 bytes)
+2026-07-05 14:06:54 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 48.0ms (343590 bytes)
+2026-07-05 14:06:54 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 36.3ms (325284 bytes)
+2026-07-05 14:06:54 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:05 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:05 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:05 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:05 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-07-05 14:07:06 | INFO     | backend.services.car_model_service:build - ✅ Car built in 53.5ms (3475 verts)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 45.7ms → grade=D
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:06 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-07-05 14:07:07 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.54s: D → D, g2 Δ=+0
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:07 | INFO     | backend.services.storyboard_service:generate - 🎬 [cfe0f0c6c402] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-07-05 14:07:07 | INFO     | backend.services.storyboard_service:generate - ✅ [cfe0f0c6c402] Storyboard ready in 0.5ms (7 scenes)
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:07 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:07 | INFO     | backend.services.project_service:create - 📁 Project created: id=8 name=测试方案
+2026-07-05 14:07:08 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=8
+2026-07-05 14:07:08 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=8
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:08 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 36.9ms (134644 bytes)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:08 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.9ms (134644 bytes)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:08 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 37.7ms (134616 bytes)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:08 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 42.8ms (343590 bytes)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:08 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:08 | INFO     | backend.services.car_model_service:export_model - 🎨 Export with freeform: preset=fender_bulge
+2026-07-05 14:07:08 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 79.5ms (343590 bytes)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:09 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 32.4ms (325284 bytes)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:09 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 35.6ms (325284 bytes)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:09 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.6ms (134644 bytes)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:09 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.6ms (134644 bytes)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:09 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 38.9ms (325284 bytes)
+2026-07-05 14:07:09 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 34.8ms (325284 bytes)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-05 14:07:09 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:09 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.3ms (134644 bytes)
+2026-07-05 14:07:10 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 43.0ms (343590 bytes)
+2026-07-05 14:07:10 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 35.0ms (325284 bytes)
+2026-07-05 14:07:10 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:10 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:10 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:10 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-05 14:07:10 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:10 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-e2370d
+2026-07-05 14:07:11 | INFO     | backend.services.optimize_service:start_async - 🚀 [1b7eca830c114cbf80785622fe26ebae] Async optimize queued: 测试面板 (max_iter=30)
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:11 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-0bb1c2
+2026-07-05 14:07:11 | INFO     | backend.services.optimize_service:start_async - 🚀 [25917f632af843be9b33c159e25e2407] Async optimize queued: plane_with_noise (max_iter=30)
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:///:memory:
+2026-07-05 14:07:11 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-05 14:07:11 | INFO     | backend.services.project_service:create - 📁 Project created: id=1 name=测试方案-98675e
+2026-07-05 14:07:12 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:02 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:02 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:02 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:03 | INFO     | backend.services.car_model_service:build - 🔧 Built car with 8 parts
+2026-07-07 23:21:03 | INFO     | backend.services.car_model_service:build - ✅ Car built in 96.1ms (3475 verts)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:03 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:04 | INFO     | backend.services.quality_service:assess - 📊 Quality assessed in 37.6ms → grade=D
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:04 | INFO     | backend.services.optimize_service:optimize - 🎯 [sync] Start optimize: sphere (max_iter=30)
+2026-07-07 23:21:04 | INFO     | backend.services.optimize_service:optimize - ✅ [sync] Optimized in 0.50s: D → D, g2 Δ=+0
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:04 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:05 | INFO     | backend.services.storyboard_service:generate - 🎬 [15189dfb6ae8] Generating storyboard: 测试智能汽车 (template=car_promotion)
+2026-07-07 23:21:05 | INFO     | backend.services.storyboard_service:generate - ✅ [15189dfb6ae8] Storyboard ready in 0.6ms (7 scenes)
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:05 | INFO     | backend.services.project_service:create - 📁 Project created: id=9 name=测试方案
+2026-07-07 23:21:05 | INFO     | backend.services.project_service:update - ✏️ Project updated: id=9
+2026-07-07 23:21:05 | INFO     | backend.services.project_service:delete - 🗑️ Project soft-deleted: id=9
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:05 | INFO     | backend.services.export_service:export - 📦 Exported GLB in 37.9ms (134644 bytes)
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:05 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 41.6ms (134644 bytes)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 39.9ms (134616 bytes)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 45.7ms (343590 bytes)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 🎨 Export with freeform: preset=fender_bulge
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 81.0ms (343590 bytes)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 35.3ms (325284 bytes)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 36.9ms (325284 bytes)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:06 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.6ms (134644 bytes)
+2026-07-07 23:21:06 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:07 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.3ms (134644 bytes)
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:07 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 35.9ms (325284 bytes)
+2026-07-07 23:21:07 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 31.1ms (325284 bytes)
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 🚀 EVOLUTION AI Backend 启动 (env=development)
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 📁 静态资源: /app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 🗄️ 数据库: sqlite:////app/data/所有对话/主对话/EVOLUTION_AI_DEMO/backend/outputs/evolution_ai.db
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - ✅ 数据库表已就绪
+2026-07-07 23:21:07 | INFO     | backend.services.car_model_service:export_model - 📦 Exported GLB in 33.1ms (134644 bytes)
+2026-07-07 23:21:07 | INFO     | backend.services.car_model_service:export_model - 📦 Exported OBJ in 41.6ms (343590 bytes)
+2026-07-07 23:21:07 | INFO     | backend.services.car_model_service:export_model - 📦 Exported STL in 31.4ms (325284 bytes)
+2026-07-07 23:21:07 | INFO     | backend.main:lifespan - 👋 EVOLUTION AI Backend 关闭

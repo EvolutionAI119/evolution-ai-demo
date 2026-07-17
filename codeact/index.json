@@ -1,0 +1,11 @@
+[
+  {
+    "name": "run_w3d6_tests.py",
+    "path": "./codeact/scripts/run_w3d6_tests.py",
+    "description": "W3-D6 性能基准测试 + 曲面质量验证：运行 NURBS/FFD/圆角/扫描性能基准和 G0/G1/曲率/变形精度/GLB 质量验证测试",
+    "params": {
+      "result_mode": "display_only"
+    },
+    "status": "active"
+  }
+]

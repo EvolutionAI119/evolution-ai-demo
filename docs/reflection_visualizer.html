@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>反射线可视化 · EMBODY AI</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  background: #0a0a0f; 
+  color: #e0e0e0; 
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+}
+#canvas-container { 
+  width: 100vw; 
+  height: 100vh; 
+  position: relative; 
+}
+canvas { display: block; }
+
+/* 顶栏 */
+#topbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 48px;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+#topbar h1 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8af;
+  letter-spacing: 1px;
+}
+#topbar .sep { margin: 0 12px; color: #444; }
+#topbar .subtitle {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 右侧面板 */
+#panel {
+  position: absolute;
+  top: 60px; right: 12px;
+  width: 260px;
+  background: rgba(15, 15, 25, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 16px;
+  z-index: 100;
+}
+#panel h2 {
+  font-size: 13px;
+  color: #8af;
+  margin-bottom: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.metric:last-child { border-bottom: none; }
+.metric-label { font-size: 12px; color: #888; }
+.metric-value { 
+  font-size: 14px; 
+  font-weight: 600; 
+  font-variant-numeric: tabular-nums;
+}
+.score-a { color: #4ade80; }
+.score-b { color: #a78bfa; }
+.score-c { color: #fb923c; }
+.score-d { color: #f87171; }
+
+/* 控制按钮组 */
+.controls {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: #ccc;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.btn.active { 
+  background: rgba(100, 150, 255, 0.15); 
+  border-color: rgba(100, 150, 255, 0.3);
+  color: #8af;
+}
+
+/* 曲面选择器 */
+.shape-selector {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.shape-btn {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #999;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.shape-btn:hover { background: rgba(255,255,255,0.06); color: #ccc; }
+.shape-btn.active { 
+  background: rgba(100, 150, 255, 0.12);
+  border-color: rgba(100, 150, 255, 0.25);
+  color: #8af;
+}
+
+/* 图例 */
+.legend {
+  margin-top: 16px;
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+}
+.legend-title { font-size: 11px; color: #666; margin-bottom: 8px; }
+.legend-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #2563eb, #22d3ee, #4ade80, #fbbf24, #ef4444);
+}
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #666;
+}
+
+/* 底部状态栏 */
+#statusbar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 28px;
+  background: rgba(10, 10, 15, 0.85);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 11px;
+  color: #555;
+  z-index: 100;
+  gap: 20px;
+}
+.status-item { display: flex; align-items: center; gap: 4px; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; }
+.status-dot.green { background: #4ade80; }
+.status-dot.yellow { background: #fbbf24; }
+
+/* 光照方向控制 */
+.light-control {
+  margin-top: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+}
+.light-control label {
+  font-size: 11px;
+  color: #666;
+  display: block;
+  margin-bottom: 6px;
+}
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.slider-row span { font-size: 11px; color: #888; width: 14px; }
+.slider-row input[type="range"] {
+  flex: 1;
+  height: 4px;
+  -webkit-appearance: none;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  outline: none;
+}
+.slider-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #8af;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="canvas-container"></div>
+
+<!-- 顶栏 -->
+<div id="topbar">
+  <h1>反射线可视化</h1>
+  <span class="sep">|</span>
+  <span class="subtitle">NURBS 曲面质量评估</span>
+</div>
+
+<!-- 右侧面板 -->
+<div id="panel">
+  <h2>质量指标</h2>
+  <div class="metric">
+    <span class="metric-label">反射线评分</span>
+    <span class="metric-value" id="m-score">—</span>
+  </div>
+  <div class="metric">
+    <span class="metric-label">等级</span>
+    <span class="metric-value" id="m-grade">—</span>
+  </div>
+  <div class="metric">
+    <span class="metric-label">最大曲率跳变</span>
+    <span class="metric-value" id="m-jump">—</span>
+  </div>
+  <div class="metric">
+    <span class="metric-label">平均曲率</span>
+    <span class="metric-value" id="m-curv">—</span>
+  </div>
+  <div class="metric">
+    <span class="metric-label">顶点数</span>
+    <span class="metric-value" id="m-verts">—</span>
+  </div>
+
+  <div class="controls">
+    <div class="btn active" data-mode="reflection" onclick="setMode('reflection')">反射光带</div>
+    <div class="btn" data-mode="curvature" onclick="setMode('curvature')">曲率热力图</div>
+    <div class="btn" data-mode="normal" onclick="setMode('normal')">法向量着色</div>
+    <div class="btn" data-mode="wireframe" onclick="setMode('wireframe')">线框模式</div>
+  </div>
+
+  <div class="light-control">
+    <label>入射光方向</label>
+    <div class="slider-row">
+      <span>X</span>
+      <input type="range" id="lx" min="-100" max="100" value="0" oninput="updateLight()">
+    </div>
+    <div class="slider-row">
+      <span>Y</span>
+      <input type="range" id="ly" min="-100" max="100" value="0" oninput="updateLight()">
+    </div>
+    <div class="slider-row">
+      <span>Z</span>
+      <input type="range" id="lz" min="-100" max="100" value="100" oninput="updateLight()">
+    </div>
+  </div>
+
+  <h2 style="margin-top:16px">预设曲面</h2>
+  <div class="shape-selector">
+    <div class="shape-btn active" onclick="setShape('sphere')">球面</div>
+    <div class="shape-btn" onclick="setShape('torus')">环面</div>
+    <div class="shape-btn" onclick="setShape('saddle')">鞍面</div>
+    <div class="shape-btn" onclick="setShape('wave')">波浪面</div>
+    <div class="shape-btn" onclick="setShape('cylinder')">圆柱面</div>
+    <div class="shape-btn" onclick="setShape('carpanel')">车身板</div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-title">曲率图例</div>
+    <div class="legend-bar"></div>
+    <div class="legend-labels">
+      <span>低（光顺）</span>
+      <span>高（突变）</span>
+    </div>
+  </div>
+</div>
+
+<!-- 底部状态栏 -->
+<div id="statusbar">
+  <div class="status-item">
+    <div class="status-dot green"></div>
+    <span>WebGL 就绪</span>
+  </div>
+  <div class="status-item" id="fps-counter">FPS: —</div>
+  <div class="status-item" id="render-info">—</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+// ─────────────────── 全局状态 ───────────────────
+let scene, camera, renderer, controls;
+let surfaceMesh, wireframeMesh;
+let currentMode = 'reflection';
+let currentShape = 'sphere';
+let lightDir = new THREE.Vector3(0, 0, 1);
+let clock = new THREE.Clock();
+let frameCount = 0, lastFpsTime = 0;
+
+// ─────────────────── 初始化 Three.js ───────────────────
+function init() {
+  const container = document.getElementById('canvas-container');
+  
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0a0a0f);
+  
+  camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(3, 2, 4);
+  
+  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+  
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.05;
+  
+  // 环境光
+  scene.add(new THREE.AmbientLight(0x404060, 0.5));
+  
+  // 方向光（用于反射效果）
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1.0);
+  dirLight.position.set(0, 0, 5);
+  dirLight.name = 'mainLight';
+  scene.add(dirLight);
+  
+  // 网格辅助
+  const gridHelper = new THREE.GridHelper(10, 20, 0x222233, 0x111122);
+  gridHelper.position.y = -2;
+  scene.add(gridHelper);
+  
+  window.addEventListener('resize', onResize);
+  
+  // 生成初始曲面
+  generateSurface('sphere');
+  
+  animate();
+}
+
+function onResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// ─────────────────── 曲面生成 ───────────────────
+function generateSurface(type) {
+  const N = 40, M = 40;
+  const points = [];
+  
+  switch(type) {
+    case 'sphere':
+      for (let i = 0; i < N; i++) {
+        points[i] = [];
+        for (let j = 0; j < M; j++) {
+          const u = (i / (N-1)) * Math.PI;
+          const v = (j / (M-1)) * 2 * Math.PI;
+          points[i][j] = [
+            Math.sin(u) * Math.cos(v),
+            Math.cos(u),
+            Math.sin(u) * Math.sin(v)
+          ];
+        }
+      }
+      break;
+      
+    case 'torus':
+      for (let i = 0; i < N; i++) {
+        points[i] = [];
+        for (let j = 0; j < M; j++) {
+          const u = (i / (N-1)) * 2 * Math.PI;
+          const v = (j / (M-1)) * 2 * Math.PI;
+          const R = 1.0, r = 0.4;
+          points[i][j] = [
+            (R + r * Math.cos(v)) * Math.cos(u),
+            (R + r * Math.cos(v)) * Math.sin(u),
+            r * Math.sin(v)
+          ];
+        }
+      }
+      break;
+      
+    case 'saddle':
+      for (let i = 0; i < N; i++) {
+        points[i] = [];
+        for (let j = 0; j < M; j++) {
+          const x = (i / (N-1) - 0.5) * 3;
+          const y = (j / (M-1) - 0.5) * 3;
+          points[i][j] = [x, (x*x - y*y) * 0.3, y];
+        }
+      }
+      break;
+      
+    case 'wave':
+      for (let i = 0; i < N; i++) {
+        points[i] = [];
+        for (let j = 0; j < M; j++) {
+          const x = (i / (N-1) - 0.5) * 4;
+          const y = (j / (M-1) - 0.5) * 4;
+          points[i][j] = [x, Math.sin(x*2) * Math.cos(y*2) * 0.3, y];
+        }
+      }
+      break;
+      
+    case 'cylinder':
+      for (let i = 0; i < N; i++) {
+        points[i] = [];
+        for (let j = 0; j < M; j++) {
+          const h = (i / (N-1) - 0.5) * 2;
+          const theta = (j / (M-1)) * 2 * Math.PI;
+          points[i][j] = [Math.cos(theta), h, Math.sin(theta)];
+        }
+      }
+      break;
+      
+    case 'carpanel':
+      // 模拟车身板：带微弱曲率的自由曲面
+      for (let i = 0; i < N; i++) {
+        points[i] = [];
+        for (let j = 0; j < M; j++) {
+          const u = i / (N-1);
+          const v = j / (M-1);
+          const x = (u - 0.5) * 3;
+          const y = (v - 0.5) * 2;
+          const z = 0.1 * (1 - u*u) + 0.05 * Math.sin(u*3) * Math.cos(v*2);
+          points[i][j] = [x, z, y];
+        }
+      }
+      break;
+  }
+  
+  buildMesh(points);
+  computeMetrics(points);
+}
+
+// ─────────────────── 构建网格 ───────────────────
+function buildMesh(points) {
+  // 清除旧网格
+  if (surfaceMesh) scene.remove(surfaceMesh);
+  if (wireframeMesh) scene.remove(wireframeMesh);
+  
+  const N = points.length;
+  const M = points[0].length;
+  
+  // 计算法向量和曲率
+  const normals = computeNormals(points);
+  const curvature = computeCurvature(points, normals);
+  
+  // 构建 Three.js 几何体
+  const geometry = new THREE.BufferGeometry();
+  const vertices = [];
+  const normalArr = [];
+  const colorArr = [];
+  const indices = [];
+  
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      const p = points[i][j];
+      vertices.push(p[0], p[1], p[2]);
+      
+      const n = normals[i][j];
+      normalArr.push(n[0], n[1], n[2]);
+      
+      // 根据模式设置颜色
+      const c = getColor(i, j, normals, curvature, points);
+      colorArr.push(c[0], c[1], c[2]);
+    }
+  }
+  
+  for (let i = 0; i < N - 1; i++) {
+    for (let j = 0; j < M - 1; j++) {
+      const a = i * M + j;
+      const b = (i + 1) * M + j;
+      const c = i * M + (j + 1);
+      const d = (i + 1) * M + (j + 1);
+      indices.push(a, b, c, b, d, c);
+    }
+  }
+  
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+  geometry.setAttribute('normal', new THREE.Float32BufferAttribute(normalArr, 3));
+  geometry.setAttribute('color', new THREE.Float32BufferAttribute(colorArr, 3));
+  geometry.setIndex(indices);
+  
+  // 曲面材质
+  const material = new THREE.MeshPhongMaterial({
+    vertexColors: true,
+    shininess: 80,
+    specular: new THREE.Color(0x444466),
+    side: THREE.DoubleSide,
+  });
+  
+  surfaceMesh = new THREE.Mesh(geometry, material);
+  scene.add(surfaceMesh);
+  
+  // 线框
+  const wireMaterial = new THREE.MeshBasicMaterial({
+    color: 0x4466aa,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.15,
+  });
+  wireframeMesh = new THREE.Mesh(geometry.clone(), wireMaterial);
+  wireframeMesh.visible = (currentMode === 'wireframe');
+  scene.add(wireframeMesh);
+  
+  // 更新渲染信息
+  document.getElementById('render-info').textContent = 
+    `顶点: ${N*M} | 三角面: ${indices.length/3}`;
+}
+
+// ─────────────────── 法向量计算 ───────────────────
+function computeNormals(points) {
+  const N = points.length, M = points[0].length;
+  const normals = [];
+  
+  for (let i = 0; i < N; i++) {
+    normals[i] = [];
+    for (let j = 0; j < M; j++) {
+      if (i > 0 && i < N-1 && j > 0 && j < M-1) {
+        const p = points[i][j];
+        const p1 = points[i+1][j];
+        const p2 = points[i][j+1];
+        const v1 = [p1[0]-p[0], p1[1]-p[1], p1[2]-p[2]];
+        const v2 = [p2[0]-p[0], p2[1]-p[1], p2[2]-p[2]];
+        const n = [
+          v1[1]*v2[2] - v1[2]*v2[1],
+          v1[2]*v2[0] - v1[0]*v2[2],
+          v1[0]*v2[1] - v1[1]*v2[0]
+        ];
+        const len = Math.sqrt(n[0]*n[0] + n[1]*n[1] + n[2]*n[2]);
+        normals[i][j] = len > 1e-9 ? [n[0]/len, n[1]/len, n[2]/len] : [0, 1, 0];
+      } else {
+        normals[i][j] = [0, 1, 0];
+      }
+    }
+  }
+  return normals;
+}
+
+// ─────────────────── 曲率计算 ───────────────────
+function computeCurvature(points, normals) {
+  const N = points.length, M = points[0].length;
+  const curvature = [];
+  
+  for (let i = 0; i < N; i++) {
+    curvature[i] = [];
+    for (let j = 0; j < M; j++) {
+      if (i > 0 && i < N-1 && j > 0 && j < M-1) {
+        const n = normals[i][j];
+        const angles = [];
+        // 四个方向的法向夹角
+        const neighbors = [
+          normals[i+1][j], normals[i-1][j],
+          normals[i][j+1], normals[i][j-1]
+        ];
+        let totalAngle = 0;
+        for (const nb of neighbors) {
+          const dot = n[0]*nb[0] + n[1]*nb[1] + n[2]*nb[2];
+          const angle = Math.acos(Math.max(-1, Math.min(1, dot)));
+          totalAngle += angle;
+        }
+        curvature[i][j] = totalAngle / 4;
+      } else {
+        curvature[i][j] = 0;
+      }
+    }
+  }
+  return curvature;
+}
+
+// ─────────────────── 颜色映射 ───────────────────
+function getColor(i, j, normals, curvature, points) {
+  const n = normals[i][j];
+  const c = curvature[i][j];
+  
+  switch (currentMode) {
+    case 'reflection': {
+      // 反射光带：基于法向量与光照方向的点积
+      const dot = Math.abs(n[0]*lightDir.x + n[1]*lightDir.y + n[2]*lightDir.z);
+      // 反射线效果：等值线
+      const bands = Math.sin(dot * 20) * 0.5 + 0.5;
+      const intensity = dot * 0.6 + bands * 0.4;
+      return [
+        0.15 + intensity * 0.3,
+        0.2 + intensity * 0.4,
+        0.4 + intensity * 0.6
+      ];
+    }
+    
+    case 'curvature': {
+      // 曲率热力图：蓝→青→绿→黄→红
+      const maxC = 0.5;
+      const t = Math.min(c / maxC, 1);
+      if (t < 0.25) return [0.15, 0.15 + t*4*0.5, 0.8];
+      if (t < 0.5) return [0.15, 0.65, 0.8 - (t-0.25)*4*0.6];
+      if (t < 0.75) return [(t-0.5)*4*0.8, 0.65, 0.2 - (t-0.5)*4*0.1];
+      return [0.8 + (t-0.75)*4*0.2, 0.55 - (t-0.75)*4*0.4, 0.1];
+    }
+    
+    case 'normal': {
+      // 法向量着色
+      return [
+        Math.abs(n[0]) * 0.8 + 0.1,
+        Math.abs(n[1]) * 0.8 + 0.1,
+        Math.abs(n[2]) * 0.8 + 0.1
+      ];
+    }
+    
+    case 'wireframe':
+      return [0.3, 0.4, 0.7];
+  }
+}
+
+// ─────────────────── 质量指标计算 ───────────────────
+function computeMetrics(points) {
+  const N = points.length, M = points[0].length;
+  const normals = computeNormals(points);
+  const curvature = computeCurvature(points, normals);
+  
+  // 统计
+  let maxJump = 0, sumCurv = 0, count = 0;
+  for (let i = 1; i < N-1; i++) {
+    for (let j = 1; j < M-1; j++) {
+      sumCurv += curvature[i][j];
+      count++;
+      maxJump = Math.max(maxJump, curvature[i][j]);
+    }
+  }
+  const meanCurv = sumCurv / Math.max(count, 1);
+  
+  // 反射线评分（简化版）
+  const curvValues = [];
+  for (let i = 1; i < N-1; i++)
+    for (let j = 1; j < M-1; j++)
+      curvValues.push(curvature[i][j]);
+  
+  const curvStd = std(curvValues);
+  const curvMean = mean(curvValues);
+  const uniformity = 1 / (1 + curvStd / Math.max(0.1, curvMean));
+  const smoothness = 1 / (1 + maxJump / 10);
+  const score = 0.5 * uniformity + 0.5 * smoothness;
+  
+  // 等级
+  let grade = 'D';
+  if (score > 0.85) grade = 'A';
+  else if (score > 0.7) grade = 'B';
+  else if (score > 0.5) grade = 'C';
+  
+  // 更新 UI
+  const scoreEl = document.getElementById('m-score');
+  scoreEl.textContent = score.toFixed(3);
+  scoreEl.className = 'metric-value ' + (grade === 'A' ? 'score-a' : grade === 'B' ? 'score-b' : grade === 'C' ? 'score-c' : 'score-d');
+  
+  document.getElementById('m-grade').textContent = grade;
+  document.getElementById('m-grade').className = 'metric-value ' + (grade === 'A' ? 'score-a' : grade === 'B' ? 'score-b' : grade === 'C' ? 'score-c' : 'score-d');
+  document.getElementById('m-jump').textContent = (maxJump * 180 / Math.PI).toFixed(2) + '°';
+  document.getElementById('m-curv').textContent = (meanCurv * 180 / Math.PI).toFixed(3) + '°';
+  document.getElementById('m-verts').textContent = (N * M).toLocaleString();
+}
+
+function mean(arr) { return arr.reduce((a,b) => a+b, 0) / arr.length; }
+function std(arr) { const m = mean(arr); return Math.sqrt(mean(arr.map(x => (x-m)*(x-m)))); }
+
+// ─────────────────── 交互 ───────────────────
+function setMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.btn[data-mode]').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.btn[data-mode="${mode}"]`).classList.add('active');
+  
+  if (wireframeMesh) wireframeMesh.visible = (mode === 'wireframe');
+  
+  // 重建网格以更新颜色
+  generateSurface(currentShape);
+}
+
+function setShape(shape) {
+  currentShape = shape;
+  document.querySelectorAll('.shape-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  generateSurface(shape);
+}
+
+function updateLight() {
+  const x = document.getElementById('lx').value / 100;
+  const y = document.getElementById('ly').value / 100;
+  const z = document.getElementById('lz').value / 100;
+  lightDir.set(x, y, z).normalize();
+  
+  // 更新方向光位置
+  const light = scene.getObjectByName('mainLight');
+  if (light) light.position.set(x * 5, y * 5, z * 5);
+  
+  // 重建网格以更新反射效果
+  generateSurface(currentShape);
+}
+
+// ─────────────────── 动画循环 ───────────────────
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  
+  // FPS 计算
+  frameCount++;
+  const now = performance.now();
+  if (now - lastFpsTime > 1000) {
+    document.getElementById('fps-counter').textContent = 
+      `FPS: ${Math.round(frameCount * 1000 / (now - lastFpsTime))}`;
+    frameCount = 0;
+    lastFpsTime = now;
+  }
+  
+  renderer.render(scene, camera);
+}
+
+// ─────────────────── 启动 ───────────────────
+init();
+</script>
+</body>
+</html>

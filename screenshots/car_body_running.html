@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 优化 · car_body 任务 · EVOLUTION AI</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f5f7fa;
+      color: #303133;
+      font-size: 14px;
+    }
+    .layout { min-height: 100vh; display: flex; flex-direction: column; }
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #ebeef5;
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,21,41,0.08);
+    }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-brand .logo {
+      width: 32px; height: 32px; border-radius: 6px;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .header-brand .title { font-size: 18px; font-weight: 600; color: #303133; }
+    .header-brand .badge {
+      font-size: 12px; color: #909399; background: #f4f4f5; padding: 2px 8px; border-radius: 4px;
+    }
+    .nav-menu { display: flex; gap: 4px; list-style: none; }
+    .nav-menu li { padding: 0 16px; }
+    .nav-menu li a {
+      text-decoration: none; color: #606266; font-size: 14px; height: 60px; line-height: 60px; display: block;
+      border-bottom: 2px solid transparent; transition: color 0.2s;
+    }
+    .nav-menu li.active a { color: #4f46e5; border-bottom-color: #4f46e5; font-weight: 600; }
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981; margin-right: 6px; }
+    .lang-btn {
+      padding: 6px 12px; border: 1px solid #dcdfe6; border-radius: 4px; background: #fff; cursor: pointer;
+      color: #606266; font-size: 13px;
+    }
+    .main { flex: 1; padding: 24px 32px; display: grid; grid-template-columns: 360px 1fr; gap: 24px; }
+    .card {
+      background: #fff; border-radius: 8px; padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,21,41,0.04);
+    }
+    .card h2 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #303133; }
+    .card h2 .sub { font-size: 12px; color: #909399; font-weight: 400; margin-left: 8px; }
+    .form-item { margin-bottom: 16px; }
+    .form-item label { display: block; font-size: 13px; color: #606266; margin-bottom: 6px; }
+    .form-item select, .form-item input {
+      width: 100%; padding: 8px 12px; border: 1px solid #dcdfe6; border-radius: 4px;
+      font-size: 14px; color: #303133; background: #fff;
+    }
+    .shape-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .shape-card {
+      border: 1px solid #dcdfe6; border-radius: 6px; padding: 10px; cursor: pointer;
+      text-align: center; font-size: 13px; color: #606266; background: #fafbfc;
+    }
+    .shape-card.active { border-color: #4f46e5; background: #eef2ff; color: #4f46e5; font-weight: 600; }
+    .shape-card .label { font-size: 13px; }
+    .shape-card .desc { font-size: 11px; color: #909399; margin-top: 2px; }
+    .btn-primary {
+      width: 100%; padding: 10px 16px; background: #4f46e5; color: #fff; border: none; border-radius: 4px;
+      font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 8px;
+    }
+    .btn-primary:disabled { background: #a5b4fc; cursor: not-allowed; }
+    .task-id {
+      font-family: monospace; font-size: 12px; color: #606266; background: #f4f4f5;
+      padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 8px;
+    }
+    .right-col { display: flex; flex-direction: column; gap: 16px; }
+    .progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .progress-bar {
+      flex: 1; height: 8px; background: #f0f0f3; border-radius: 4px; overflow: hidden;
+    }
+    .progress-bar-fill {
+      width: 100%; height: 100%; background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      border-radius: 4px;
+    }
+    .progress-text { font-size: 13px; color: #606266; font-weight: 600; min-width: 60px; text-align: right; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .stat {
+      background: #fafbfc; border-radius: 6px; padding: 12px; text-align: center;
+      border: 1px solid #ebeef5;
+    }
+    .stat .label { font-size: 12px; color: #909399; }
+    .stat .value { font-size: 22px; font-weight: 700; color: #303133; margin: 4px 0; }
+    .stat .delta { font-size: 11px; color: #10b981; }
+    .stat .delta.down { color: #f56c6c; }
+    .timeline { display: flex; flex-direction: column; gap: 12px; }
+    .timeline-item { display: flex; gap: 12px; align-items: flex-start; }
+    .timeline-dot {
+      width: 12px; height: 12px; border-radius: 50%; background: #10b981; flex-shrink: 0; margin-top: 4px;
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+    }
+    .timeline-dot.warn { background: #e6a23c; box-shadow: 0 0 0 4px rgba(230, 162, 60, 0.15); }
+    .timeline-dot.muted { background: #c0c4cc; box-shadow: 0 0 0 4px rgba(192, 196, 204, 0.15); }
+    .timeline-content { flex: 1; }
+    .timeline-time { font-size: 11px; color: #909399; font-family: monospace; }
+    .timeline-msg { font-size: 13px; color: #303133; margin-top: 2px; }
+    .timeline-msg code { background: #f4f4f5; padding: 1px 6px; border-radius: 3px; font-size: 12px; }
+    .console {
+      background: #1e1e1e; color: #d4d4d4; border-radius: 6px; padding: 12px 16px;
+      font-family: "Cascadia Code", "Fira Code", monospace; font-size: 12px; line-height: 1.6;
+      max-height: 200px; overflow: hidden;
+    }
+    .console .line { display: flex; gap: 8px; }
+    .console .ts { color: #6a9955; flex-shrink: 0; }
+    .console .lvl { flex-shrink: 0; min-width: 50px; font-weight: 600; }
+    .console .lvl.info { color: #4fc3f7; }
+    .console .lvl.warn { color: #ffb74d; }
+    .console .lvl.error { color: #ff6b6b; }
+    .console .lvl.success { color: #81c784; }
+    .console .msg { color: #d4d4d4; }
+    .success-banner {
+      background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px;
+      padding: 12px 16px; display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+    }
+    .success-banner .icon { font-size: 24px; }
+    .success-banner .text { flex: 1; }
+    .success-banner .title { font-size: 14px; font-weight: 600; color: #0c4a6e; }
+    .success-banner .sub { font-size: 12px; color: #0369a1; margin-top: 2px; }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <!-- 顶部 Header -->
+  <header class="header">
+    <div class="header-brand">
+      <div class="logo">E</div>
+      <div>
+        <div class="title">EVOLUTION AI</div>
+      </div>
+      <span class="badge">v0.3.0</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#">首页</a></li>
+      <li><a href="#">造型设计</a></li>
+      <li><a href="#">质量评估</a></li>
+      <li class="active"><a href="#">AI 优化</a></li>
+      <li><a href="#">分镜脚本</a></li>
+      <li><a href="#">方案管理</a></li>
+    </ul>
+    <div class="header-right">
+      <span class="status-dot"></span>
+      <span style="font-size: 13px; color: #606266;">后端: online</span>
+      <button class="lang-btn">中文 / EN</button>
+    </div>
+  </header>
+
+  <!-- 主体 -->
+  <div class="main">
+    <!-- 左：参数面板 -->
+    <div class="card">
+      <h2>优化参数 <span class="sub">car_body 预设</span></h2>
+      <div class="form-item">
+        <label>选择预设曲面</label>
+        <div class="shape-grid">
+          <div class="shape-card"><div class="label">球面</div><div class="desc">sphere</div></div>
+          <div class="shape-card"><div class="label">带噪平面</div><div class="desc">plane</div></div>
+          <div class="shape-card"><div class="label">圆柱</div><div class="desc">cylinder</div></div>
+          <div class="shape-card active"><div class="label">车身侧围</div><div class="desc">car_body ✓</div></div>
+        </div>
+      </div>
+      <div class="form-item">
+        <label>最大迭代次数</label>
+        <input value="10" readonly>
+      </div>
+      <div class="form-item">
+        <label>面板名称</label>
+        <input value="car_body" readonly>
+      </div>
+      <button class="btn-primary" disabled>运行中...</button>
+      <div class="task-id">task_id: 4b787dc65918494a8746b5eb64150d46</div>
+    </div>
+
+    <!-- 右：实时状态 + 结果 -->
+    <div class="right-col">
+      <!-- 成功 banner -->
+      <div class="success-banner">
+        <div class="icon">✅</div>
+        <div class="text">
+          <div class="title">异步任务完成 · Bug 已修复</div>
+          <div class="sub">W1-D2.5 修复后 car_body 异步任务不再抛 "At least one array has zero dimension"</div>
+        </div>
+      </div>
+
+      <!-- 进度 + 状态 -->
+      <div class="card">
+        <h2>实时状态 <span class="sub">M2.5 WebSocket · Redis Pub/Sub</span></h2>
+        <div class="progress-row">
+          <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+          <div class="progress-text">10 / 10</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="label">初始 G2</div>
+            <div class="value">1752</div>
+            <div class="delta">总数 4512</div>
+          </div>
+          <div class="stat">
+            <div class="label">优化后 G2</div>
+            <div class="value">1714</div>
+            <div class="delta">-38 (-2.2%)</div>
+          </div>
+          <div class="stat">
+            <div class="label">反射线</div>
+            <div class="value">0.388</div>
+            <div class="delta down">-0.001</div>
+          </div>
+          <div class="stat">
+            <div class="label">等级</div>
+            <div class="value" style="color: #e6a23c;">D</div>
+            <div class="delta">g2_ratio 0.38</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 时间线 -->
+      <div class="card">
+        <h2>任务时间线 <span class="sub">端到端 1.6s</span></h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot muted"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">t=0.00s</div>
+              <div class="timeline-msg">POST <code>/api/v1/optimize/start-preset</code> · shape=car_body, max_iter=10 → 202 Accepted, task_id=<code>4b787dc6...</code></div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot warn"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">t=0.00s</div>
+              <div class="timeline-msg">Celery worker 接收任务，DB 写入 <code>OptimizationTask</code> (status=PENDING → STARTED, progress=0.05)</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot warn"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">t=0.01s</div>
+              <div class="timeline-msg"><code>_make_surface("car_body")</code> → <code>body.vertices[:49*48].reshape(49, 48, 3)</code> ✅ (W1-D2.5 修复后)</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">t=0.20s</div>
+              <div class="timeline-msg"><code>optimize_surface((49, 48, 3), "car_body", 10, 42)</code> → 模拟退火 10 轮，目标函数从 31662 → 31365 收敛</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">t=0.50s</div>
+              <div class="timeline-msg">WebSocket <code>/api/v1/ws/optimize/{task_id}</code> 回放 31 个 PROGRESS 帧（0.1s × 31 = 3.1s）</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-time">t=1.61s</div>
+              <div class="timeline-msg">SUCCESS · DB status=SUCCESS, progress=1.0, result_json 写入完成（g2: 1752 → 1714）</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Console 日志 -->
+      <div class="card">
+        <h2>服务端日志 <span class="sub">celery_worker.log</span></h2>
+        <div class="console">
+          <div class="line"><span class="ts">14:17:24</span><span class="lvl info">[INFO]</span><span class="msg">backend.tasks.optimize_task:run_optimize_task - 🚀 [4b787dc6...] Async optimize queued: car_body (max_iter=10)</span></div>
+          <div class="line"><span class="ts">14:17:25</span><span class="lvl info">[INFO]</span><span class="msg">backend.services.optimize_service:start_async - 推送 Celery, broker=redis://localhost:6379/0</span></div>
+          <div class="line"><span class="ts">14:17:25</span><span class="lvl info">[INFO]</span><span class="msg">backend.tasks.optimize_task:_make_surface - car_body body.vertices.shape=(2352, 3) → reshape(49, 48, 3)</span></div>
+          <div class="line"><span class="ts">14:17:25</span><span class="lvl info">[INFO]</span><span class="msg">algorithm_model.surface_quality.optimizer:ai_optimize - iter=0 obj=31661.78</span></div>
+          <div class="line"><span class="ts">14:17:26</span><span class="lvl info">[INFO]</span><span class="msg">algorithm_model.surface_quality.optimizer:ai_optimize - iter=5 obj=31515.23 (收敛中)</span></div>
+          <div class="line"><span class="ts">14:17:27</span><span class="lvl info">[INFO]</span><span class="msg">algorithm_model.surface_quality.optimizer:ai_optimize - iter=10 obj=31364.74 (converged)</span></div>
+          <div class="line"><span class="ts">14:17:27</span><span class="lvl success">[OK]</span><span class="msg">backend.tasks.optimize_task:run_optimize_task - ✅ [4b787dc6...] Async optimize SUCCESS: car_body (1.66s, g2: 1752→1714)</span></div>
+          <div class="line"><span class="ts">14:17:27</span><span class="lvl info">[INFO]</span><span class="msg">backend.utils.redis_pubsub:publish_progress - WS SUCCESS 推送, elapsed_sec=1.66</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

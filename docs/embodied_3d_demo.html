@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>具身智能 3D 动效演示 - Three.js 2.5D 视差粒子场景</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      overflow: hidden;
+      background: #0a0a12;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+    
+    #canvas-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    
+    canvas {
+      display: block;
+    }
+    
+    #info {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(120, 180, 255, 0.7);
+      font-size: 12px;
+      text-align: center;
+      pointer-events: none;
+      text-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+    }
+    
+    #loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #00aaff;
+      font-size: 18px;
+      text-align: center;
+    }
+    
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(0, 150, 255, 0.2);
+      border-top-color: #00aaff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <!--
+    ============================================
+    启动方式：
+    ============================================
+    方案 A（推荐）：
+    1. 将此 HTML 文件复制到图片所在目录：
+       /app/data/所有对话/主对话/imgs/260701_00_生图/
+    2. 在该目录启动本地服务器：
+       cd /app/data/所有对话/主对话/imgs/260701_00_生图/
+       python -m http.server 8095
+    3. 浏览器打开：http://localhost:8095/embodied_3d_demo.html
+    
+    方案 B：
+    1. 将 img_2.jpg 复制到本 HTML 文件相同目录
+    2. 直接用浏览器打开此 HTML 文件（部分浏览器可能限制本地文件访问）
+    ============================================
+  -->
+</head>
+<body>
+  <div id="canvas-container">
+    <div id="loading">
+      <div class="loader"></div>
+      <div>加载中...</div>
+    </div>
+  </div>
+  <div id="info">拖拽旋转 · 滚轮缩放 · 具身智能仿生人 3D 动效</div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.167.1/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.167.1/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+    import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+    // ============================================
+    // 全局配置
+    // ============================================
+    const CONFIG = {
+      // 图片路径 - 请确保此文件与 HTML 在同一目录，或使用正确的相对/绝对路径
+      imagePath: './img_2.jpg',
+      
+      // 纹理坐标映射（基于 1728x2304 图片）
+      // 胸口心形核心：约 50% 宽, 42% 高
+      chestCore: { x: 0.5, y: 0.42 },
+      // 左手指尖：约 28% 宽, 90% 高
+      leftFingertip: { x: 0.28, y: 0.90 },
+      // 右手指尖：约 72% 宽, 90% 高
+      rightFingertip: { x: 0.72, y: 0.90 },
+      // 左肩能量纹路起点：约 32% 宽, 30% 高
+      leftShoulder: { x: 0.32, y: 0.30 },
+      // 右肩能量纹路起点：约 68% 宽, 30% 高
+      rightShoulder: { x: 0.68, y: 0.30 },
+      // 腰部能量纹路：约 35%/65% 宽, 68% 高
+      waistLeft: { x: 0.35, y: 0.68 },
+      waistRight: { x: 0.65, y: 0.68 },
+      
+      // 粒子数量
+      particleCounts: {
+        chestCore: 65,
+        fingertip: 6,
+        energyLine: 35
+      },
+      
+      // 动画参数
+      animation: {
+        chestPulseSpeed: 2.5,
+        energyFlowSpeed: 1.2,
+        autoRotateSpeed: 0.03,
+        autoRotatePeriod: 20
+      },
+      
+      // 相机参数
+      camera: {
+        fov: 45,
+        near: 0.1,
+        far: 1000,
+        initialPosition: { x: 0, y: 0.5, z: 5 }
+      },
+      
+      // Bloom 参数
+      bloom: {
+        strength: 0.3,
+        radius: 0.4,
+        threshold: 0.85
+      }
+    };
+
+    // ============================================
+    // 全局变量
+    // ============================================
+    let scene, camera, renderer, composer, controls;
+    let imagePlane, texture;
+    let clock = new THREE.Clock();
+    let mousePos = new THREE.Vector2();
+    let targetMousePos = new THREE.Vector2();
+    let isMouseDown = false;
+    let autoRotateAngle = 0;
+
+    // 粒子系统引用
+    let chestCoreParticles, leftFingertipParticles, rightFingertipParticles;
+    let energyLineParticles;
+
+    // ============================================
+    // 初始化
+    // ============================================
+    async function init() {
+      // 创建场景
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x0a0a12);
+
+      // 创建相机
+      camera = new THREE.PerspectiveCamera(
+        CONFIG.camera.fov,
+        window.innerWidth / window.innerHeight,
+        CONFIG.camera.near,
+        CONFIG.camera.far
+      );
+      camera.position.set(
+        CONFIG.camera.initialPosition.x,
+        CONFIG.camera.initialPosition.y,
+        CONFIG.camera.initialPosition.z
+      );
+
+      // 创建渲染器
+      renderer = new THREE.WebGLRenderer({ 
+        antialias: true,
+        alpha: true 
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2;
+
+      const container = document.getElementById('canvas-container');
+      container.appendChild(renderer.domElement);
+
+      // 加载纹理
+      await loadTexture();
+
+      // 创建场景内容
+      createImagePlane();
+      createParticleSystems();
+
+      // 设置后处理
+      setupPostProcessing();
+
+      // 设置控制器
+      setupControls();
+
+      // 事件监听
+      setupEventListeners();
+
+      // 隐藏加载提示
+      document.getElementById('loading').style.display = 'none';
+
+      // 开始动画循环
+      animate();
+    }
+
+    // ============================================
+    // 加载纹理
+    // ============================================
+    async function loadTexture() {
+      return new Promise((resolve, reject) => {
+        const loader = new THREE.TextureLoader();
+        loader.crossOrigin = 'anonymous';
+        
+        loader.load(
+          CONFIG.imagePath,
+          (loadedTexture) => {
+            texture = loadedTexture;
+            texture.colorSpace = THREE.SRGBColorSpace;
+            resolve();
+          },
+          undefined,
+          (error) => {
+            console.error('纹理加载失败:', error);
+            // 如果加载失败，使用渐变背景纹理
+            createFallbackTexture();
+            resolve();
+          }
+        );
+      });
+    }
+
+    // ============================================
+    // 创建备用纹理（当原图加载失败时）
+    // ============================================
+    function createFallbackTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 512;
+      canvas.height = 768;
+      const ctx = canvas.getContext('2d');
+      
+      // 创建渐变背景
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, '#1a1a2e');
+      gradient.addColorStop(0.5, '#16213e');
+      gradient.addColorStop(1, '#0f0f23');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // 添加一些光效
+      ctx.fillStyle = 'rgba(0, 100, 200, 0.1)';
+      ctx.beginPath();
+      ctx.arc(canvas.width / 2, canvas.height * 0.42, 80, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // 绘制人形轮廓
+      ctx.strokeStyle = 'rgba(100, 180, 255, 0.3)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.ellipse(canvas.width / 2, canvas.height * 0.15, 40, 50, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2, canvas.height * 0.25);
+      ctx.lineTo(canvas.width / 2, canvas.height * 0.65);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2 - 60, canvas.height * 0.35);
+      ctx.lineTo(canvas.width / 2, canvas.height * 0.40);
+      ctx.lineTo(canvas.width / 2 + 60, canvas.height * 0.35);
+      ctx.stroke();
+      
+      texture = new THREE.CanvasTexture(canvas);
+    }
+
+    // ============================================
+    // 创建图片平面
+    // ============================================
+    function createImagePlane() {
+      // 计算纹理纵横比
+      const imageAspect = 1728 / 2304; // 原图比例
+      let planeWidth, planeHeight;
+      
+      if (imageAspect > window.innerWidth / window.innerHeight) {
+        planeWidth = 4;
+        planeHeight = planeWidth / imageAspect;
+      } else {
+        planeHeight = 4;
+        planeWidth = planeHeight * imageAspect;
+      }
+
+      // 顶点着色器 - 添加 3D 起伏效果
+      const vertexShader = `
+        varying vec2 vUv;
+        varying float vElevation;
+        uniform float uTime;
+        
+        void main() {
+          vUv = uv;
+          
+          vec3 pos = position;
+          
+          // 基于 UV 的轻微起伏
+          float centerDist = length(uv - 0.5);
+          float wave = sin(centerDist * 10.0 - uTime * 0.5) * 0.02;
+          wave += sin(uv.x * 8.0 + uTime * 0.3) * 0.01;
+          wave += sin(uv.y * 6.0 - uTime * 0.4) * 0.01;
+          
+          vElevation = wave;
+          pos.z += wave;
+          
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }
+      `;
+
+      // 片段着色器 - 基础图像
+      const fragmentShader = `
+        varying vec2 vUv;
+        varying float vElevation;
+        uniform sampler2D uTexture;
+        uniform float uTime;
+        
+        void main() {
+          vec4 texColor = texture2D(uTexture, vUv);
+          
+          // 极轻微蓝色氛围，不影响原图
+          float glow = sin(uTime * 2.0) * 0.005 + 0.005;
+          texColor.rgb += vec3(0.0, glow * 0.3, glow);
+          
+          gl_FragColor = texColor;
+        }
+      `;
+
+      const material = new THREE.ShaderMaterial({
+        vertexShader,
+        fragmentShader,
+        uniforms: {
+          uTexture: { value: texture },
+          uTime: { value: 0 }
+        },
+        side: THREE.DoubleSide
+      });
+
+      const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight, 64, 64);
+      imagePlane = new THREE.Mesh(geometry, material);
+      imagePlane.position.z = 0;
+      scene.add(imagePlane);
+
+      // 添加边缘发光边框
+      const edgeGeometry = new THREE.EdgesGeometry(geometry);
+      const edgeMaterial = new THREE.LineBasicMaterial({ 
+        color: 0x0066ff,
+        transparent: true,
+        opacity: 0.3
+      });
+      const edgeLines = new THREE.LineSegments(edgeGeometry, edgeMaterial);
+      edgeLines.position.z = 0.01;
+      scene.add(edgeLines);
+    }
+
+    // ============================================
+    // 粒子着色器
+    // ============================================
+    const particleVertexShader = `
+      attribute float aSize;
+      attribute float aRandom;
+      attribute vec3 aColor;
+      attribute float aOffset;
+      
+      varying vec3 vColor;
+      varying float vAlpha;
+      
+      uniform float uTime;
+      uniform float uPulsePhase;
+      uniform float uFlowPhase;
+      
+      void main() {
+        vColor = aColor;
+        
+        vec3 pos = position;
+        
+        // 根据粒子类型应用不同动画
+        if (aOffset > 0.5) {
+          // 脉动动画（胸口核心）
+          float pulse = sin(uTime * 2.5 + aRandom * 6.28) * 0.5 + 0.5;
+          pos.xy *= 1.0 + pulse * 0.3;
+          vAlpha = 0.6 + pulse * 0.4;
+        } else if (aOffset > 0.0) {
+          // 流光动画（能量纹路）
+          float flow = fract(uTime * 0.5 + aRandom);
+          vAlpha = sin(flow * 3.14159) * 0.8 + 0.2;
+        } else {
+          // 闪烁动画（指尖）
+          float flicker = sin(uTime * 8.0 + aRandom * 20.0) * 0.5 + 0.5;
+          vAlpha = 0.4 + flicker * 0.6;
+          pos.y += sin(uTime * 3.0 + aRandom * 6.28) * 0.02;
+        }
+        
+        vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+        gl_PointSize = aSize * (300.0 / -mvPosition.z);
+        gl_Position = projectionMatrix * mvPosition;
+      }
+    `;
+
+    const particleFragmentShader = `
+      varying vec3 vColor;
+      varying float vAlpha;
+      
+      void main() {
+        // 创建圆形粒子
+        vec2 center = gl_PointCoord - 0.5;
+        float dist = length(center);
+        
+        if (dist > 0.5) discard;
+        
+        // 柔和边缘 + 发光核心
+        float alpha = smoothstep(0.5, 0.0, dist) * vAlpha;
+        float glow = exp(-dist * 4.0) * 0.8;
+        
+        vec3 finalColor = vColor + vColor * glow;
+        
+        gl_FragColor = vec4(finalColor, alpha);
+      }
+    `;
+
+    // ============================================
+    // 创建粒子系统
+    // ============================================
+    function createParticleSystems() {
+      // 胸口心形核心粒子
+      chestCoreParticles = createHeartCoreParticles();
+      scene.add(chestCoreParticles);
+
+      // 指尖粒子
+      leftFingertipParticles = createFingertipParticles(CONFIG.leftFingertip);
+      rightFingertipParticles = createFingertipParticles(CONFIG.rightFingertip);
+      scene.add(leftFingertipParticles);
+      scene.add(rightFingertipParticles);
+
+      // 能量纹路流光粒子
+      energyLineParticles = createEnergyLineParticles();
+      scene.add(energyLineParticles);
+    }
+
+    // ============================================
+    // 创建心形核心粒子
+    // ============================================
+    function createHeartCoreParticles() {
+      const count = CONFIG.particleCounts.chestCore;
+      const positions = new Float32Array(count * 3);
+      const sizes = new Float32Array(count);
+      const colors = new Float32Array(count * 3);
+      const randoms = new Float32Array(count);
+      const offsets = new Float32Array(count); // > 0.5 表示脉动类型
+
+      for (let i = 0; i < count; i++) {
+        // 心形分布
+        const t = (i / count) * Math.PI * 2;
+        const spread = 0.03 + Math.random() * 0.04;
+        
+        // 心形方程（简化的爱心形状）
+        const heartX = 16 * Math.pow(Math.sin(t), 3);
+        const heartY = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t);
+        
+        positions[i * 3] = (CONFIG.chestCore.x - 0.5 + heartX * 0.003 * spread) * 4;
+        positions[i * 3 + 1] = (0.5 - CONFIG.chestCore.y - heartY * 0.003 * spread) * 4;
+        positions[i * 3 + 2] = 0.1 + Math.random() * 0.1;
+        
+        sizes[i] = 8 + Math.random() * 12;
+        randoms[i] = Math.random();
+        offsets[i] = 0.6 + Math.random() * 0.4; // 脉动类型
+        
+        // 蓝色渐变
+        const bluePhase = Math.random();
+        if (bluePhase < 0.33) {
+          colors[i * 3] = 0.0;
+          colors[i * 3 + 1] = 0.4;
+          colors[i * 3 + 2] = 1.0;
+        } else if (bluePhase < 0.66) {
+          colors[i * 3] = 0.0;
+          colors[i * 3 + 1] = 0.8;
+          colors[i * 3 + 2] = 1.0;
+        } else {
+          colors[i * 3] = 0.8;
+          colors[i * 3 + 1] = 0.95;
+          colors[i * 3 + 2] = 1.0;
+        }
+      }
+
+      return createParticleSystem(positions, sizes, colors, randoms, offsets);
+    }
+
+    // ============================================
+    // 创建指尖粒子
+    // ============================================
+    function createFingertipParticles(fingerPos) {
+      const count = CONFIG.particleCounts.fingertip;
+      const positions = new Float32Array(count * 3);
+      const sizes = new Float32Array(count);
+      const colors = new Float32Array(count * 3);
+      const randoms = new Float32Array(count);
+      const offsets = new Float32Array(count); // 0.0 表示闪烁类型
+
+      for (let i = 0; i < count; i++) {
+        const spread = 0.02 + Math.random() * 0.03;
+        positions[i * 3] = (fingerPos.x - 0.5 + (Math.random() - 0.5) * spread) * 4;
+        positions[i * 3 + 1] = (0.5 - fingerPos.y + (Math.random() - 0.5) * spread) * 4;
+        positions[i * 3 + 2] = 0.15 + Math.random() * 0.1;
+        
+        sizes[i] = 5 + Math.random() * 8;
+        randoms[i] = Math.random();
+        offsets[i] = 0.0; // 闪烁类型
+        
+        // 蓝色
+        colors[i * 3] = 0.0;
+        colors[i * 3 + 1] = 0.5 + Math.random() * 0.3;
+        colors[i * 3 + 2] = 1.0;
+      }
+
+      return createParticleSystem(positions, sizes, colors, randoms, offsets);
+    }
+
+    // ============================================
+    // 创建能量纹路流光粒子
+    // ============================================
+    function createEnergyLineParticles() {
+      const count = CONFIG.particleCounts.energyLine;
+      const positions = new Float32Array(count * 3);
+      const sizes = new Float32Array(count);
+      const colors = new Float32Array(count * 3);
+      const randoms = new Float32Array(count);
+      const offsets = new Float32Array(count); // 0.0-0.5 表示流光类型
+
+      // 定义能量纹路路径
+      const energyPaths = [
+        // 左肩到胸口
+        { start: CONFIG.leftShoulder, end: CONFIG.chestCore, steps: 10 },
+        // 右肩到胸口
+        { start: CONFIG.rightShoulder, end: CONFIG.chestCore, steps: 10 },
+        // 腰部左到右
+        { start: CONFIG.waistLeft, end: CONFIG.waistRight, steps: 15 }
+      ];
+
+      let index = 0;
+      for (const path of energyPaths) {
+        for (let i = 0; i < path.steps && index < count; i++) {
+          const t = i / path.steps;
+          const spread = 0.01;
+          
+          positions[index * 3] = ((path.start.x + (path.end.x - path.start.x) * t) - 0.5 + (Math.random() - 0.5) * spread) * 4;
+          positions[index * 3 + 1] = (0.5 - (path.start.y + (path.end.y - path.start.y) * t) + (Math.random() - 0.5) * spread) * 4;
+          positions[index * 3 + 2] = 0.12 + Math.random() * 0.08;
+          
+          sizes[index] = 4 + Math.random() * 6;
+          randoms[index] = t; // 使用路径位置作为随机种子
+          offsets[index] = 0.1 + Math.random() * 0.3; // 流光类型
+          
+          // 蓝色渐变
+          colors[index * 3] = 0.0;
+          colors[index * 3 + 1] = 0.5 + Math.random() * 0.3;
+          colors[index * 3 + 2] = 1.0;
+          
+          index++;
+        }
+      }
+
+      return createParticleSystem(positions, sizes, colors, randoms, offsets);
+    }
+
+    // ============================================
+    // 创建粒子系统网格
+    // ============================================
+    function createParticleSystem(positions, sizes, colors, randoms, offsets) {
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1));
+      geometry.setAttribute('aColor', new THREE.BufferAttribute(colors, 3));
+      geometry.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1));
+      geometry.setAttribute('aOffset', new THREE.BufferAttribute(offsets, 1));
+
+      const material = new THREE.ShaderMaterial({
+        vertexShader: particleVertexShader,
+        fragmentShader: particleFragmentShader,
+        uniforms: {
+          uTime: { value: 0 },
+          uPulsePhase: { value: 0 },
+          uFlowPhase: { value: 0 }
+        },
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      });
+
+      return new THREE.Points(geometry, material);
+    }
+
+    // ============================================
+    // 后处理设置
+    // ============================================
+    function setupPostProcessing() {
+      composer = new EffectComposer(renderer);
+      
+      const renderPass = new RenderPass(scene, camera);
+      composer.addPass(renderPass);
+
+      const bloomPass = new UnrealBloomPass(
+        new THREE.Vector2(window.innerWidth, window.innerHeight),
+        CONFIG.bloom.strength,
+        CONFIG.bloom.radius,
+        CONFIG.bloom.threshold
+      );
+      composer.addPass(bloomPass);
+    }
+
+    // ============================================
+    // 控制器设置
+    // ============================================
+    function setupControls() {
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.enableZoom = true;
+      controls.minDistance = 2;
+      controls.maxDistance = 10;
+      controls.enablePan = false;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = CONFIG.animation.autoRotateSpeed;
+    }
+
+    // ============================================
+    // 事件监听
+    // ============================================
+    function setupEventListeners() {
+      // 鼠标移动
+      window.addEventListener('mousemove', (e) => {
+        targetMousePos.x = (e.clientX / window.innerWidth) * 2 - 1;
+        targetMousePos.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      });
+
+      // 窗口大小变化
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        composer.setSize(window.innerWidth, window.innerHeight);
+      });
+
+      // 鼠标按下/抬起
+      renderer.domElement.addEventListener('mousedown', () => {
+        isMouseDown = true;
+        controls.autoRotate = false;
+      });
+
+      renderer.domElement.addEventListener('mouseup', () => {
+        isMouseDown = false;
+        // 延迟恢复自动旋转
+        setTimeout(() => {
+          if (!isMouseDown) controls.autoRotate = true;
+        }, 3000);
+      });
+
+      // 触摸支持
+      renderer.domElement.addEventListener('touchstart', () => {
+        isMouseDown = true;
+        controls.autoRotate = false;
+      });
+
+      renderer.domElement.addEventListener('touchend', () => {
+        isMouseDown = false;
+        setTimeout(() => {
+          if (!isMouseDown) controls.autoRotate = true;
+        }, 3000);
+      });
+    }
+
+    // ============================================
+    // 动画循环
+    // ============================================
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const time = clock.getElapsedTime();
+      const delta = clock.getDelta();
+
+      // 平滑鼠标跟随
+      mousePos.lerp(targetMousePos, 0.05);
+
+      // 更新图片平面着色器时间
+      if (imagePlane && imagePlane.material.uniforms) {
+        imagePlane.material.uniforms.uTime.value = time;
+      }
+
+      // 更新所有粒子系统
+      updateParticles(chestCoreParticles, time);
+      updateParticles(leftFingertipParticles, time);
+      updateParticles(rightFingertipParticles, time);
+      updateParticles(energyLineParticles, time);
+
+      // 相机视差效果
+      if (!isMouseDown) {
+        camera.position.x += (mousePos.x * 0.5 - camera.position.x) * 0.02;
+        camera.position.y += (mousePos.y * 0.3 + 0.5 - camera.position.y) * 0.02;
+      }
+
+      // 更新控制器
+      controls.update();
+
+      // 渲染
+      composer.render();
+    }
+
+    // ============================================
+    // 更新粒子
+    // ============================================
+    function updateParticles(particles, time) {
+      if (particles && particles.material.uniforms) {
+        particles.material.uniforms.uTime.value = time;
+        
+        // 更新粒子位置（为脉动效果）
+        const positions = particles.geometry.attributes.position.array;
+        const offsets = particles.geometry.attributes.aOffset.array;
+        
+        for (let i = 0; i < positions.length / 3; i++) {
+          if (offsets[i] > 0.5) {
+            // 胸口核心脉动
+            const pulse = Math.sin(time * CONFIG.animation.chestPulseSpeed + i * 0.1) * 0.5 + 0.5;
+            const baseX = positions[i * 3];
+            const baseY = positions[i * 3 + 1];
+            const dist = Math.sqrt(baseX * baseX + baseY * baseY);
+            if (dist > 0) {
+              positions[i * 3] = baseX * (1 + pulse * 0.1);
+              positions[i * 3 + 1] = baseY * (1 + pulse * 0.1);
+            }
+          }
+        }
+        
+        particles.geometry.attributes.position.needsUpdate = true;
+      }
+    }
+
+    // ============================================
+    // 启动
+    // ============================================
+    init().catch(console.error);
+  </script>
+</body>
+</html>

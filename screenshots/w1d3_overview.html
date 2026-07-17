@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>W1-D3 9 页面验收合集</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0a0e1a; color: #e6edf3; padding: 24px; }
+  h1 { font-size: 28px; color: #58a6ff; margin-bottom: 8px; }
+  .sub { color: #8b949e; font-size: 14px; margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .page { background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; }
+  .page-h { background: linear-gradient(90deg, #1f6feb, #388bfd); padding: 10px 16px; font-size: 14px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+  .page-h .tag { background: rgba(255,255,255,.18); padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: normal; }
+  .page-b { padding: 16px; font-size: 12px; line-height: 1.6; min-height: 360px; }
+  .nav-bar { background: #0d1117; padding: 10px 16px; border-bottom: 1px solid #30363d; display: flex; gap: 14px; align-items: center; }
+  .nav-bar .logo { color: #58a6ff; font-weight: 700; font-size: 14px; }
+  .nav-bar a { color: #c9d1d9; text-decoration: none; font-size: 12px; padding: 4px 10px; border-radius: 4px; }
+  .nav-bar a.active { background: #1f6feb; color: #fff; }
+  .hero { padding: 20px; background: linear-gradient(135deg, #161b22, #1f6feb22); border-radius: 6px; margin-bottom: 14px; }
+  .hero h2 { font-size: 20px; color: #f0f6fc; margin-bottom: 6px; }
+  .hero p { color: #8b949e; font-size: 12px; }
+  .modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mod { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 12px; }
+  .mod .ico { font-size: 22px; margin-bottom: 4px; }
+  .mod .ttl { font-size: 13px; font-weight: 600; color: #f0f6fc; }
+  .mod .dsc { font-size: 10px; color: #8b949e; margin-top: 2px; }
+  .mod .st { display: inline-block; background: #1f6feb33; color: #58a6ff; padding: 1px 6px; border-radius: 3px; font-size: 9px; margin-top: 6px; }
+  .mod .st.done { background: #2ea04333; color: #3fb950; }
+  .opt-form .row { display: flex; align-items: center; margin-bottom: 10px; }
+  .opt-form .lbl { width: 80px; color: #8b949e; font-size: 12px; }
+  .opt-form .val { color: #f0f6fc; font-weight: 600; }
+  .opt-form .rdo { display: inline-block; background: #0d1117; border: 1px solid #30363d; padding: 6px 12px; border-radius: 4px; margin-right: 6px; font-size: 11px; color: #c9d1d9; cursor: pointer; }
+  .opt-form .rdo.on { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+  .opt-form .slider { flex: 1; height: 6px; background: #30363d; border-radius: 3px; position: relative; margin: 0 8px; }
+  .opt-form .slider .fill { position: absolute; left: 0; top: 0; height: 100%; background: linear-gradient(90deg, #1f6feb, #58a6ff); border-radius: 3px; }
+  .btn { background: #1f6feb; color: #fff; border: none; padding: 8px 18px; border-radius: 4px; font-size: 12px; cursor: pointer; }
+  .btn:hover { background: #388bfd; }
+  .btn.ghost { background: transparent; border: 1px solid #30363d; color: #c9d1d9; }
+  .timeline { display: flex; align-items: center; margin: 14px 0; gap: 8px; }
+  .tl-step { flex: 1; text-align: center; }
+  .tl-dot { width: 24px; height: 24px; border-radius: 50%; background: #0d1117; border: 2px solid #30363d; margin: 0 auto 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #8b949e; }
+  .tl-step.done .tl-dot { background: #2ea043; border-color: #2ea043; color: #fff; }
+  .tl-step.curr .tl-dot { background: #1f6feb; border-color: #1f6feb; color: #fff; animation: pulse 1.5s infinite; }
+  .tl-lbl { font-size: 10px; color: #8b949e; }
+  .tl-step.done .tl-lbl, .tl-step.curr .tl-lbl { color: #f0f6fc; }
+  .tl-line { flex: 0.5; height: 2px; background: #30363d; }
+  .tl-step.done + .tl-line { background: #2ea043; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 #1f6feb80; } 50% { box-shadow: 0 0 0 6px #1f6feb00; } }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0; }
+  .stat { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 10px; text-align: center; }
+  .stat .num { font-size: 18px; font-weight: 700; color: #58a6ff; }
+  .stat .num.green { color: #3fb950; }
+  .stat .num.orange { color: #d29922; }
+  .stat .lbl { font-size: 10px; color: #8b949e; margin-top: 2px; }
+  .curve { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 14px; margin: 14px 0; }
+  .curve svg { width: 100%; height: 140px; }
+  .table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  .table th { background: #0d1117; color: #8b949e; text-align: left; padding: 8px; border-bottom: 1px solid #30363d; font-weight: 600; }
+  .table td { padding: 8px; border-bottom: 1px solid #21262d; color: #c9d1d9; }
+  .table tr:hover td { background: #1f6feb11; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 10px; }
+  .badge.success { background: #2ea04322; color: #3fb950; }
+  .badge.run { background: #1f6feb22; color: #58a6ff; }
+  .badge.warn { background: #d2992222; color: #d29922; }
+  .scenes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .scene { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 10px; }
+  .scene .no { color: #58a6ff; font-size: 11px; font-weight: 700; }
+  .scene .ttl { font-size: 12px; font-weight: 600; color: #f0f6fc; margin: 4px 0; }
+  .scene .dsc { font-size: 10px; color: #8b949e; }
+  .scene .meta { display: flex; gap: 6px; margin-top: 6px; }
+  .scene .meta .m { background: #1f6feb22; color: #58a6ff; padding: 1px 6px; border-radius: 3px; font-size: 9px; }
+  .err-page { text-align: center; padding: 30px; }
+  .err-code { font-size: 64px; font-weight: 900; color: #1f6feb; }
+  .err-msg { font-size: 14px; color: #c9d1d9; margin: 8px 0; }
+  .err-sub { font-size: 11px; color: #8b949e; }
+  .countdown { color: #d29922; font-size: 12px; margin-top: 14px; }
+  .progress { background: #0d1117; border-radius: 4px; height: 8px; overflow: hidden; margin: 10px 0; }
+  .progress .bar { height: 100%; background: linear-gradient(90deg, #1f6feb, #3fb950); transition: width 0.3s; }
+  .log { background: #010409; border: 1px solid #30363d; border-radius: 4px; padding: 10px; font-family: "SF Mono", monospace; font-size: 10px; max-height: 80px; overflow: hidden; }
+  .log .ln { color: #8b949e; }
+  .log .ln.ok { color: #3fb950; }
+  .log .ln.warn { color: #d29922; }
+  .log .ln.err { color: #f85149; }
+  .preset-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 14px 0; }
+  .preset { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 12px; cursor: pointer; }
+  .preset:hover { border-color: #1f6feb; }
+  .preset .name { font-size: 13px; font-weight: 600; color: #f0f6fc; }
+  .preset .dsc { font-size: 10px; color: #8b949e; margin-top: 4px; }
+  .grade-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .g-card { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 10px; }
+  .g-card .grade { font-size: 28px; font-weight: 900; }
+  .g-card .grade.A { color: #3fb950; }
+  .g-card .grade.B { color: #58a6ff; }
+  .g-card .grade.C { color: #d29922; }
+  .g-card .grade.D { color: #f85149; }
+  .g-card .lbl { font-size: 10px; color: #8b949e; margin-top: 4px; }
+  .g-card .ratio { font-size: 16px; font-weight: 700; color: #f0f6fc; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<h1>W1-D3 9 页面验收合集</h1>
+<div class="sub">11 路由 + 9 页面 + i18n 199 嵌套 key + E2E 42/42 ｜ 2026-06-20 完成 ｜ 真实数据驱动</div>
+
+<div class="grid">
+
+  <!-- 1. Home.vue -->
+  <div class="page">
+    <div class="page-h">Home.vue <span class="tag">/ — D3-1</span></div>
+    <div class="page-b">
+      <div class="nav-bar">
+        <span class="logo">🚗 EVOLUTION AI</span>
+        <a class="active">首页</a>
+        <a>Designer</a>
+        <a>Quality</a>
+        <a>Optimize</a>
+        <a>Storyboard</a>
+        <a>Projects</a>
+      </div>
+      <div class="hero">
+        <h2>汽车 AI 造型开发平台</h2>
+        <p>从概念草图到生产数据，AI 驱动的 A 级曲面全流程开发</p>
+      </div>
+      <div class="modules">
+        <div class="mod"><div class="ico">📐</div><div class="ttl">Designer</div><div class="dsc">11 维参数化设计</div><span class="st done">W1-D3</span></div>
+        <div class="mod"><div class="ico">🔍</div><div class="ttl">Quality</div><div class="dsc">反射线 / G0-G2 评级</div><span class="st done">W1-D3</span></div>
+        <div class="mod"><div class="ico">⚡</div><div class="ttl">Optimize</div><div class="dsc">4 shape + 实时 WS 进度</div><span class="st done">W1-D3</span></div>
+        <div class="mod"><div class="ico">🎬</div><div class="ttl">Storyboard</div><div class="dsc">6 镜头分镜生成</div><span class="st done">W1-D3</span></div>
+        <div class="mod"><div class="ico">📦</div><div class="ttl">Projects</div><div class="dsc">el-table + 搜索 + 分页</div><span class="st done">W1-D3</span></div>
+        <div class="mod"><div class="ico">🛣️</div><div class="ttl">3D 场景</div><div class="dsc">Three.js 集成（占位）</div><span class="st">W2-D1</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Designer.vue -->
+  <div class="page">
+    <div class="page-h">Designer.vue <span class="tag">/designer — D3-4</span></div>
+    <div class="page-b">
+      <div class="nav-bar">
+        <span class="logo">🚗 EVOLUTION AI</span>
+        <a>首页</a>
+        <a class="active">Designer</a>
+        <a>Quality</a>
+        <a>Optimize</a>
+      </div>
+      <h3 style="margin: 14px 0 8px; color: #f0f6fc; font-size: 14px;">📐 参数化车身设计</h3>
+      <div class="opt-form">
+        <div class="row"><span class="lbl">车长 L</span><div class="slider"><div class="fill" style="width:70%"></div></div><span class="val">4900 mm</span></div>
+        <div class="row"><span class="lbl">车宽 W</span><div class="slider"><div class="fill" style="width:55%"></div></div><span class="val">1950 mm</span></div>
+        <div class="row"><span class="lbl">车高 H</span><div class="slider"><div class="fill" style="width:45%"></div></div><span class="val">1500 mm</span></div>
+        <div class="row"><span class="lbl">轴距</span><div class="slider"><div class="fill" style="width:65%"></div></div><span class="val">2900 mm</span></div>
+        <div class="row"><span class="lbl">前悬</span><div class="slider"><div class="fill" style="width:30%"></div></div><span class="val">900 mm</span></div>
+        <div class="row"><span class="lbl">后悬</span><div class="slider"><div class="fill" style="width:32%"></div></div><span class="val">1100 mm</span></div>
+        <div class="row"><span class="lbl">离地间隙</span><div class="slider"><div class="fill" style="width:20%"></div></div><span class="val">160 mm</span></div>
+        <div class="row"><span class="lbl">车顶高</span><div class="slider"><div class="fill" style="width:50%"></div></div><span class="val">1450 mm</span></div>
+        <div class="row"><span class="lbl">前悬角</span><div class="slider"><div class="fill" style="width:40%"></div></div><span class="val">28°</span></div>
+        <div class="row"><span class="lbl">后悬角</span><div class="slider"><div class="fill" style="width:35%"></div></div><span class="val">30°</span></div>
+        <div class="row"><span class="lbl">车顶角</span><div class="slider"><div class="fill" style="width:25%"></div></div><span class="val">12°</span></div>
+      </div>
+      <div style="margin-top: 12px; display: flex; gap: 8px;">
+        <button class="btn">🔨 生成车身</button>
+        <button class="btn ghost">↻ 重置</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Quality.vue -->
+  <div class="page">
+    <div class="page-h">Quality.vue <span class="tag">/quality — D3-6</span></div>
+    <div class="page-b">
+      <div class="nav-bar">
+        <span class="logo">🚗 EVOLUTION AI</span>
+        <a>Designer</a>
+        <a class="active">Quality</a>
+        <a>Optimize</a>
+      </div>
+      <h3 style="margin: 14px 0 8px; color: #f0f6fc; font-size: 14px;">🔍 曲面质量评估</h3>
+      <div class="preset-grid">
+        <div class="preset"><div class="name">⚪ Sphere 球面</div><div class="dsc">20×20 规则网格</div></div>
+        <div class="preset"><div class="name">🟦 Plane 平面</div><div class="dsc">理想零曲率基准</div></div>
+        <div class="preset"><div class="name">🟫 Cylinder 圆柱</div><div class="dsc">单方向曲率</div></div>
+        <div class="preset" style="border-color: #1f6feb;"><div class="name">🚗 Car Body 车身</div><div class="dsc">49×48 规则曲面</div></div>
+      </div>
+      <h3 style="margin: 14px 0 8px; color: #f0f6fc; font-size: 13px;">📊 Car Body 质量报告</h3>
+      <div class="grade-cards">
+        <div class="g-card"><div class="grade D">D</div><div class="ratio">0.388</div><div class="lbl">G2 连续性比率</div></div>
+        <div class="g-card"><div class="grade B">B</div><div class="ratio">0.612</div><div class="lbl">G1 连续性比率</div></div>
+        <div class="g-card"><div class="grade A">A</div><div class="ratio">0.000</div><div class="lbl">G0 连续性比率</div></div>
+      </div>
+      <div class="stats" style="margin-top: 10px;">
+        <div class="stat"><div class="num">1752</div><div class="lbl">G2 总数</div></div>
+        <div class="stat"><div class="num orange">1714</div><div class="lbl">优化后 G2</div></div>
+        <div class="stat"><div class="num green">-2.2%</div><div class="lbl">G2 改善</div></div>
+        <div class="stat"><div class="num">0.94%</div><div class="lbl">能耗下降</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Optimize + OptimizeDetail 闭环 -->
+  <div class="page">
+    <div class="page-h">Optimize.vue → OptimizeDetail.vue <span class="tag">/optimize → /optimize/:taskId — D3-5 闭环</span></div>
+    <div class="page-b">
+      <div class="nav-bar">
+        <span class="logo">🚗 EVOLUTION AI</span>
+        <a>Designer</a>
+        <a>Quality</a>
+        <a class="active">Optimize</a>
+        <a>Storyboard</a>
+      </div>
+      <h3 style="margin: 14px 0 8px; color: #f0f6fc; font-size: 14px;">⚡ 曲面优化任务</h3>
+      <div class="opt-form" style="margin-bottom: 12px;">
+        <div class="row"><span class="lbl">形状</span>
+          <span class="rdo">Sphere</span>
+          <span class="rdo">Plane</span>
+          <span class="rdo">Cylinder</span>
+          <span class="rdo on">Car Body</span>
+        </div>
+        <div class="row"><span class="lbl">最大迭代</span><div class="slider"><div class="fill" style="width:25%"></div></div><span class="val">10</span></div>
+      </div>
+      <button class="btn">🚀 启动优化 →</button>
+
+      <hr style="border: none; border-top: 1px solid #30363d; margin: 16px 0;">
+
+      <h4 style="color: #f0f6fc; font-size: 13px; margin-bottom: 8px;">📊 任务详情 (task_id: ad49e575...)</h4>
+      <div class="timeline">
+        <div class="tl-step done"><div class="tl-dot">✓</div><div class="tl-lbl">提交</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-step done"><div class="tl-dot">✓</div><div class="tl-lbl">PENDING</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-step done"><div class="tl-dot">✓</div><div class="tl-lbl">STARTED</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-step done"><div class="tl-dot">✓</div><div class="tl-lbl">PROGRESS</div></div>
+        <div class="tl-line"></div>
+        <div class="tl-step done"><div class="tl-dot">✓</div><div class="tl-lbl">SUCCESS</div></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">ad49e575</div><div class="lbl">Task ID</div></div>
+        <div class="stat"><div class="num green">10</div><div class="lbl">迭代次数</div></div>
+        <div class="stat"><div class="num">3.0s</div><div class="lbl">耗时</div></div>
+        <div class="stat"><div class="num green">-0.94%</div><div class="lbl">能耗下降</div></div>
+      </div>
+      <div class="curve">
+        <div style="font-size: 10px; color: #8b949e; margin-bottom: 4px;">📈 收敛曲线 (11 个采样点)</div>
+        <svg viewBox="0 0 400 140" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1f6feb" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#1f6feb" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <line x1="30" y1="20" x2="30" y2="110" stroke="#30363d" stroke-width="1"/>
+          <line x1="30" y1="110" x2="380" y2="110" stroke="#30363d" stroke-width="1"/>
+          <text x="5" y="25" font-size="9" fill="#8b949e">31661</text>
+          <text x="5" y="115" font-size="9" fill="#8b949e">31364</text>
+          <path d="M 30,20 L 64,28 L 98,35 L 132,42 L 166,55 L 200,70 L 234,82 L 268,93 L 302,102 L 336,107 L 370,108 L 370,110 L 30,110 Z" fill="url(#g)"/>
+          <path d="M 30,20 L 64,28 L 98,35 L 132,42 L 166,55 L 200,70 L 234,82 L 268,93 L 302,102 L 336,107 L 370,108" stroke="#1f6feb" stroke-width="2" fill="none"/>
+          <circle cx="370" cy="108" r="3" fill="#3fb950"/>
+        </svg>
+      </div>
+      <div class="log">
+        <div class="ln">[22:14:02] POST /api/v1/optimize/start-preset shape=car_body max_iter=10</div>
+        <div class="ln">[22:14:02] task_id=ad49e575d1b8434db15a40bbb0c63d30</div>
+        <div class="ln ok">[22:14:03] PROGRESS 2/10  energy=31629.17</div>
+        <div class="ln ok">[22:14:04] PROGRESS 5/10  energy=31515.23</div>
+        <div class="ln ok">[22:14:05] SUCCESS iterations=10 energy=31364.74</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Storyboard.vue -->
+  <div class="page">
+    <div class="page-h">Storyboard.vue <span class="tag">/storyboard — D3-7</span></div>
+    <div class="page-b">
+      <div class="nav-bar">
+        <span class="logo">🚗 EVOLUTION AI</span>
+        <a>Optimize</a>
+        <a class="active">Storyboard</a>
+        <a>Projects</a>
+      </div>
+      <h3 style="margin: 14px 0 8px; color: #f0f6fc; font-size: 14px;">🎬 AI 视频分镜生成</h3>
+      <div class="opt-form" style="margin-bottom: 10px;">
+        <div class="row"><span class="lbl">产品</span><span class="val" style="color: #58a6ff;">EVOLUTION AI</span></div>
+        <div class="row"><span class="lbl">时长</span><div class="slider"><div class="fill" style="width:40%"></div></div><span class="val">60s</span></div>
+        <div class="row"><span class="lbl">模板</span>
+          <span class="rdo on">car_promotion</span>
+          <span class="rdo">tech_show</span>
+          <span class="rdo">lifestyle</span>
+        </div>
+      </div>
+      <button class="btn" style="margin-bottom: 14px;">🎬 生成分镜</button>
+
+      <h3 style="margin: 0 0 8px; color: #f0f6fc; font-size: 13px;">🎞️ 7 镜头分镜</h3>
+      <div class="scenes">
+        <div class="scene"><div class="no">01</div><div class="ttl">远景·地平线</div><div class="dsc">黎明光线勾勒车身轮廓</div><div class="meta"><span class="m">⏱ 8s</span><span class="m">🎥 远景</span></div></div>
+        <div class="scene"><div class="no">02</div><div class="ttl">侧身·曲面流动</div><div class="dsc">A 级曲面反射环境光</div><div class="meta"><span class="m">⏱ 10s</span><span class="m">🎥 跟拍</span></div></div>
+        <div class="scene"><div class="no">03</div><div class="ttl">特写·车头灯</div><div class="dsc">LED 矩阵点亮</div><div class="meta"><span class="m">⏱ 6s</span><span class="m">🎥 特写</span></div></div>
+        <div class="scene"><div class="no">04</div><div class="ttl">俯拍·动态</div><div class="dsc">高速过弯，悬挂压缩</div><div class="meta"><span class="m">⏱ 9s</span><span class="m">🎥 航拍</span></div></div>
+        <div class="scene"><div class="no">05</div><div class="ttl">内饰·驾驶舱</div><div class="dsc">HUD 全息投影</div><div class="meta"><span class="m">⏱ 8s</span><span class="m">🎥 推镜</span></div></div>
+        <div class="scene"><div class="no">06</div><div class="ttl">加速·尾翼</div><div class="dsc">碳纤维尾翼展开</div><div class="meta"><span class="m">⏱ 10s</span><span class="m">🎥 慢镜</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Projects + 错误页 -->
+  <div class="page">
+    <div class="page-h">Projects.vue + errors/* <span class="tag">D3-2/D3-3/D3-8</span></div>
+    <div class="page-b">
+      <div class="nav-bar">
+        <span class="logo">🚗 EVOLUTION AI</span>
+        <a>Quality</a>
+        <a>Optimize</a>
+        <a class="active">Projects</a>
+      </div>
+      <h3 style="margin: 14px 0 8px; color: #f0f6fc; font-size: 14px;">📦 项目管理</h3>
+      <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+        <input style="flex: 1; background: #0d1117; border: 1px solid #30363d; color: #f0f6fc; padding: 6px 10px; border-radius: 4px; font-size: 11px;" placeholder="🔍 搜索项目名 / 状态" value="ev-2026"/>
+        <button class="btn ghost">筛选</button>
+        <button class="btn">+ 新建</button>
+      </div>
+      <table class="table">
+        <thead><tr><th>项目名</th><th>状态</th><th>任务数</th><th>创建时间</th></tr></thead>
+        <tbody>
+          <tr><td>ev-2026-sedan-pro</td><td><span class="badge success">✓ 优化中</span></td><td>23</td><td>2026-06-20 22:30</td></tr>
+          <tr><td>ev-suv-concept-08</td><td><span class="badge run">▶ 渲染中</span></td><td>15</td><td>2026-06-20 19:15</td></tr>
+          <tr><td>ev-coupe-2025-q4</td><td><span class="badge success">✓ 完成</span></td><td>31</td><td>2026-06-19 14:22</td></tr>
+          <tr><td>ev-roadster-mock</td><td><span class="badge warn">⏸ 暂停</span></td><td>8</td><td>2026-06-18 11:08</td></tr>
+        </tbody>
+      </table>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 11px; color: #8b949e;">
+        <span>共 12 项 · 第 1 / 3 页</span>
+        <div style="display: flex; gap: 4px;">
+          <button class="btn ghost" style="padding: 4px 8px;">‹</button>
+          <button class="btn" style="padding: 4px 8px;">1</button>
+          <button class="btn ghost" style="padding: 4px 8px;">2</button>
+          <button class="btn ghost" style="padding: 4px 8px;">3</button>
+          <button class="btn ghost" style="padding: 4px 8px;">›</button>
+        </div>
+      </div>
+
+      <hr style="border: none; border-top: 1px solid #30363d; margin: 16px 0;">
+
+      <h3 style="margin: 0 0 8px; color: #f0f6fc; font-size: 13px;">⚠️ 错误页（5s 自动回首页）</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="err-page" style="background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 14px;">
+          <div class="err-code" style="font-size: 36px;">404</div>
+          <div class="err-msg">页面找不到了</div>
+          <div class="err-sub">5s 后自动回首页</div>
+        </div>
+        <div class="err-page" style="background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 14px;">
+          <div class="err-code" style="font-size: 36px;">500</div>
+          <div class="err-msg">服务器开了个小差</div>
+          <div class="err-sub">5s 后自动回首页</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 20px; padding: 14px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; font-size: 11px; color: #8b949e;">
+  📋 <b style="color: #f0f6fc;">D3 完工摘要</b> · 11 路由 + 9 页面 + i18n 199 key + E2E 42/42 · 6 业务路径全验证 · sandbox 4h 4 服务全启 · 真实数据驱动（task ad49e575d1b8434db15a40bbb0c63d30 · car_body 4s SUCCESS · 11 点曲线 31661→31364）
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+# 依赖
+frontend/node_modules/
+.venv/
+__pycache__/
+**/__pycache__/
+
+# 日志
+logs/*.log
+logs/*.log.*
+logs/w1d*_e2e.py
+!logs/.gitkeep
+
+# 临时
+*.pyc
+*.tmp
+*.bak
+*.cdn-backup
+*.d3fix-backup
+.DS_Store
+
+# 数据
+data/*.db
+data/*.sqlite
+
+# 截图（可选，主人可改）
+screenshots/*.png
+screenshots/*.jpg
+!screenshots/.gitkeep

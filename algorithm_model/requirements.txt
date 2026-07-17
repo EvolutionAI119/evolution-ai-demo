@@ -1,0 +1,12 @@
+# 核心算法
+numpy>=1.26
+trimesh>=4.0
+scipy>=1.11
+
+# 可视化（可选）
+matplotlib>=3.7
+plotly>=5.0
+
+# Web 端（可选）
+fastapi>=0.100
+uvicorn>=0.23

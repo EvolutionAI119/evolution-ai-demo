@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVOLUTION AI · 汽车造型开发平台</title>
+    <!-- W2-D1 改造：CDN 全部本地化（绕国内 GFW）-->
+    <!-- Vue 全局（D5+2 修复：element-plus UMD / vue-i18n IIFE 都要 globalThis.Vue）-->
+    <script src="./vendor/vue.global.prod.js"></script>
+    <!-- Element Plus 本地化 -->
+    <link rel="stylesheet" href="./vendor/element-plus.css" />
+    <script src="./vendor/element-plus.js"></script>
+    <!-- Element Plus Icons 本地化 -->
+    <script src="./vendor/element-icons.js"></script>
+    <!-- Axios 本地化 -->
+    <script src="./vendor/axios.js"></script>
+    <!-- Vue I18n 本地化 -->
+    <script src="./vendor/vue-i18n.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
