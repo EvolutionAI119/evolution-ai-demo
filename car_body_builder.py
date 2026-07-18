@@ -657,7 +657,7 @@ def derive_hardpoints(p: CarParamsV3) -> Hardpoints:
     hp.headlightX = hp.noseX - 0.05
     hp.headlightY = hp.hoodY - 0.02
     hp.taillightX = hp.tailX + 0.05
-    hp.taillightY = hp.waistY - 0.05
+    hp.taillightY = hp.bumperRearTopY + 0.15  # was: hp.waistY - 0.05 (wrong — 1.075m, too high!)
 
     hp.grilleX = hp.noseX + 0.10
     hp.grilleTopY = hp.hoodY - 0.08
@@ -964,8 +964,8 @@ def build_greenhouse(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.nda
     n_stations = 30
     n_pts = 20
 
-    x_start = hp.aTopX + 0.05
-    x_end = hp.cTopX - 0.05
+    x_start = hp.aBaseX - 0.05  # was: hp.aTopX + 0.05 (too far rear — missed front cabin!)
+    x_end = hp.cBaseX + 0.05    # was: hp.cTopX - 0.05 (too far rear — missed rear cabin!)
     if x_start <= x_end:
         x_start, x_end = x_end, x_start
 
@@ -1273,7 +1273,7 @@ def build_fender(p: CarParamsV3, hp: Hardpoints, position: str = "front", side: 
             theta, phi = u * math.pi, v * math.pi
             x = x_center + radius * math.cos(theta) * 0.6
             y = y_center + radius * math.sin(theta) * math.sin(phi) * 0.5
-            z = p.GC + radius * math.sin(theta) * math.cos(phi)
+            z = max(p.GC, p.GC + radius * math.sin(theta) * math.cos(phi))  # clamp to ground
             verts.append([x, y, z])
 
     faces = []
@@ -1293,11 +1293,13 @@ def build_door(p: CarParamsV3, hp: Hardpoints, position: str = "front", side: st
     """Build door panel mesh."""
     if position == "front":
         x_start = hp.doorFrontStartX
-        door_len = p.door_front_len
+        door_len = hp.doorFrontEndX - hp.doorFrontStartX  # was: p.door_front_len
         door_h = p.door_front_height
     else:
-        x_start = hp.doorRearStartX
-        door_len = p.door_rear_len
+        # Rear door: from B-pillar going rearward, but not all the way to C-pillar
+        # (rear quarter panel fills the gap between door rear edge and C-pillar)
+        x_start = hp.doorRearEndX  # C-pillar base (most rearward)
+        door_len = (hp.doorRearStartX - hp.doorRearEndX) * 0.50  # ~50% of B-C span
         door_h = p.door_rear_height
 
     z_off = -p.W / 2.0 * 0.92 if side == "left" else p.W / 2.0 * 0.92
@@ -1309,11 +1311,13 @@ def build_door(p: CarParamsV3, hp: Hardpoints, position: str = "front", side: st
 
 
 def build_hood(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]:
-    """Build hood panel mesh (aligned with desktop generate_hood)."""
+    """Build hood panel mesh (aligned with desktop generate_hood).
+    Hood spans from A-pillar base (hoodEndX) to nose tip (noseX).
+    """
     nu, nv = 12, 8
     angle_rad = math.radians(p.hood_angle)
-    x_start = hp.noseX + 0.05
-    length = p.hood_len
+    x_start = hp.hoodEndX  # was: hp.noseX + 0.05 (wrong — placed hood past the nose!)
+    length = hp.noseX - hp.hoodEndX  # was: p.hood_len (wrong — 1.3m overextended past nose)
 
     verts = []
     for i in range(nu):
@@ -1339,10 +1343,13 @@ def build_hood(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]:
 
 
 def build_trunk(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]:
-    """Build trunk lid mesh (aligned with desktop generate_trunk)."""
+    """Build trunk lid mesh (aligned with desktop generate_trunk).
+    Trunk spans from C-pillar base (cBaseX) to tail (trunkEndX=tailX).
+    """
     nu, nv = 8, 6
-    x_start = hp.cBaseX + 0.10
-    length = p.trunk_len
+    # trunkEndX < cBaseX (e.g. -2.5 < -1.1), so trunk extends negative X direction
+    x_start = hp.trunkEndX  # was: hp.cBaseX + 0.10 (wrong — placed trunk in middle of car!)
+    length = hp.cBaseX - hp.trunkEndX  # was: p.trunk_len (wrong — only 1.0m, should span to tail)
 
     verts = []
     for i in range(nu):
@@ -1351,7 +1358,7 @@ def build_trunk(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]
             v = j / (nv - 1)
             x = x_start + u * length
             y = (v - 0.5) * p.trunk_width
-            z = hp.waistY + 0.08 * math.exp(-u * 4) * math.cos(v * math.pi)
+            z = hp.bumperRearTopY + 0.15 + 0.08 * math.exp(-u * 4) * math.cos(v * math.pi)
             verts.append([x, y, z])
 
     faces = []
