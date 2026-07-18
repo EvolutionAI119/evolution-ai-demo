@@ -1158,7 +1158,11 @@ def _generate_panel_mesh(
     x_start: float, y_base: float, length: float, height: float,
     z_offset: float = 0, nu: int = 8, nv: int = 6,
 ) -> Tuple[np.ndarray, np.ndarray]:
-    """Generate a simple panel mesh (aligned with desktop _generate_panel)."""
+    """Generate a simple panel mesh (aligned with desktop _generate_panel).
+    
+    Panel extends ONE direction from y_base: z in [y_base, y_base + height].
+    This keeps panels above ground and prevents bbox center from being pulled down.
+    """
     verts = []
     for i in range(nu):
         u = i / (nu - 1)
@@ -1166,7 +1170,7 @@ def _generate_panel_mesh(
             v = j / (nv - 1)
             x = x_start + u * length
             y = z_offset + height * 0.1 * math.sin(u * math.pi) * math.cos(v * math.pi)
-            z = y_base + (v - 0.5) * height * 2
+            z = y_base + v * height  # one-directional: [y_base, y_base+height]
             verts.append([x, y, z])
 
     faces = []
