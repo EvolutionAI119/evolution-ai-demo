@@ -1470,6 +1470,9 @@ def build_full_car_v3(p: CarParamsV3) -> Dict[str, dict]:
 
     # --- Main body shell (V2.1 sweep) ---
     body_verts, body_faces = build_body_sweep(p, hp)
+    # Clamp body bottom to wheel-bottom level (GC) so car sits on ground
+    wheel_bottom_z = hp.wcy - p.WR  # = GC
+    body_verts[:, 2] = np.maximum(body_verts[:, 2], wheel_bottom_z)
     parts["body"] = {"vertices": body_verts, "faces": body_faces, "color": "#c0c0c0"}
 
     # --- Greenhouse (glass area) ---

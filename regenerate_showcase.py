@@ -47,8 +47,8 @@ with open(HTML_PATH, 'r') as f:
 
 # Find and replace CAR_DATA
 old_start = html.index('const CAR_DATA = ')
-old_end_marker = '};\n\nlet scene'
-old_end = html.index(old_end_marker, old_start) + len('};')
+old_end_marker = '}}}\n\nlet scene'
+old_end = html.index(old_end_marker, old_start) + len('}}}')
 
 new_car_data_json = json.dumps(CAR_DATA, cls=NpEncoder, separators=(',', ':'))
 new_html = html[:old_start] + f'const CAR_DATA = {new_car_data_json}' + html[old_end:]
