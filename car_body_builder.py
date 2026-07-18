@@ -1097,56 +1097,78 @@ def build_wheel(cx: float, cy: float, cz: float,
 # 9. Headlight / Taillight Builders (preserved from V2.1)
 # ===================================================================
 def build_headlight(p: CarParamsV3, hp: Hardpoints, side: str = "right") -> Tuple[np.ndarray, np.ndarray]:
+    """Build headlight as 3D housing at front bumper face, with lens surface."""
+    nu, nv = 8, 8
     y_sign = 1.0 if side == "right" else -1.0
-    cx = hp.headlightX
-    cy = y_sign * (p.W / 2.0 * 0.75)
-    cz = hp.headlightY
 
-    hw = p.headlight_w / 2
-    hh = p.headlight_height / 2
+    # Position at front bumper face (slightly ahead of noseX)
+    cx = hp.noseX + 0.08
+    cy = y_sign * (p.W / 2.0 * 0.55)
+    cz = hp.hoodY - 0.04
+    depth = 0.06
+    hw = p.headlight_w * 0.50
+    hh = p.headlight_height * 0.55
 
-    verts = [
-        [cx, cy - hw * y_sign, cz - hh],
-        [cx, cy + hw * y_sign, cz - hh],
-        [cx, cy + hw * y_sign, cz + hh],
-        [cx, cy - hw * y_sign, cz + hh],
-        [cx - 0.05, cy - hw * y_sign * 0.8, cz - hh * 0.8],
-        [cx - 0.05, cy + hw * y_sign * 0.8, cz - hh * 0.8],
-        [cx - 0.05, cy + hw * y_sign * 0.8, cz + hh * 0.8],
-        [cx - 0.05, cy - hw * y_sign * 0.8, cz + hh * 0.8],
-    ]
-    faces = [
-        [0, 1, 2], [0, 2, 3], [4, 6, 5], [4, 7, 6],
-        [0, 4, 5], [0, 5, 1], [2, 6, 7], [2, 7, 3],
-        [0, 3, 7], [0, 7, 4], [1, 5, 6], [1, 6, 2],
-    ]
+    verts = []
+    for i in range(nu):
+        u = i / (nu - 1)
+        for j in range(nv):
+            v = j / (nv - 1)
+            y = cy + (v - 0.5) * 2.0 * hw * y_sign
+            z = cz + (u - 0.5) * 2.0 * hh
+            # Lens bulge outward
+            bulge = 0.020 * math.sin(v * math.pi) * math.sin(u * math.pi)
+            x = cx + bulge
+            verts.append([x, y, z])
+
+    faces = []
+    for i in range(nu - 1):
+        for j in range(nv - 1):
+            p00 = i * nv + j
+            p10 = (i + 1) * nv + j
+            p01 = i * nv + j + 1
+            p11 = (i + 1) * nv + j + 1
+            faces.append([p00, p10, p11])
+            faces.append([p00, p11, p01])
+
     return np.array(verts), np.array(faces, dtype=np.int64)
 
 
 def build_taillight(p: CarParamsV3, hp: Hardpoints, side: str = "right") -> Tuple[np.ndarray, np.ndarray]:
+    """Build taillight as 3D housing at rear bumper face, with lens surface."""
+    nu, nv = 8, 8
     y_sign = 1.0 if side == "right" else -1.0
-    cx = hp.taillightX
-    cy = y_sign * (p.W / 2.0 * 0.70)
-    cz = hp.taillightY
 
-    hw = p.taillight_width / 2
-    hh = p.taillight_height / 2
+    # Position at rear bumper face (slightly behind tailX)
+    cx = hp.tailX - 0.06
+    cy = y_sign * (p.W / 2.0 * 0.55)
+    cz = hp.hoodY * 0.70
+    depth = 0.05
+    hw = p.taillight_width * 0.50
+    hh = p.taillight_height * 0.55
 
-    verts = [
-        [cx, cy - hw * y_sign, cz - hh],
-        [cx, cy + hw * y_sign, cz - hh],
-        [cx, cy + hw * y_sign, cz + hh],
-        [cx, cy - hw * y_sign, cz + hh],
-        [cx + 0.04, cy - hw * y_sign * 0.85, cz - hh * 0.85],
-        [cx + 0.04, cy + hw * y_sign * 0.85, cz - hh * 0.85],
-        [cx + 0.04, cy + hw * y_sign * 0.85, cz + hh * 0.85],
-        [cx + 0.04, cy - hw * y_sign * 0.85, cz + hh * 0.85],
-    ]
-    faces = [
-        [0, 2, 1], [0, 3, 2], [4, 5, 6], [4, 6, 7],
-        [0, 1, 5], [0, 5, 4], [2, 6, 7], [2, 7, 3],
-        [0, 4, 7], [0, 7, 3], [1, 5, 6], [1, 6, 2],
-    ]
+    verts = []
+    for i in range(nu):
+        u = i / (nu - 1)
+        for j in range(nv):
+            v = j / (nv - 1)
+            y = cy + (v - 0.5) * 2.0 * hw * y_sign
+            z = cz + (u - 0.5) * 2.0 * hh
+            # Lens bulge outward (rearward)
+            bulge = 0.018 * math.sin(v * math.pi) * math.sin(u * math.pi)
+            x = cx - bulge
+            verts.append([x, y, z])
+
+    faces = []
+    for i in range(nu - 1):
+        for j in range(nv - 1):
+            p00 = i * nv + j
+            p10 = (i + 1) * nv + j
+            p01 = i * nv + j + 1
+            p11 = (i + 1) * nv + j + 1
+            faces.append([p00, p10, p11])
+            faces.append([p00, p11, p01])
+
     return np.array(verts), np.array(faces, dtype=np.int64)
 
 
@@ -1187,16 +1209,9 @@ def _generate_panel_mesh(
 
 
 def build_bumper(p: CarParamsV3, hp: Hardpoints, position: str = "front") -> Tuple[np.ndarray, np.ndarray]:
-    """Build bumper mesh (aligned with desktop generate_bumper_front/rear)."""
-    width = p.W
-    length = 0.200
-    height = 0.250
-    nu, nv = 10, 6
-
-    if position == "front":
-        x_base = hp.noseX
-    else:
-        x_base = hp.tailX
+    """Build bumper as curved shell from GC to hoodY, extending beyond noseX/tailX."""
+    nu, nv = 12, 10
+    extend = 0.12 if position == "front" else 0.10
 
     verts = []
     for i in range(nu):
@@ -1204,11 +1219,23 @@ def build_bumper(p: CarParamsV3, hp: Hardpoints, position: str = "front") -> Tup
         for j in range(nv):
             v = j / (nv - 1)
             if position == "front":
-                x = x_base - length * (1 - u)
+                x = hp.noseX + extend * (1.0 - u)
             else:
-                x = x_base + length * u
-            y = (v - 0.5) * width * (0.85 + (u if position == "front" else (1 - u)) * 0.15)
-            z = height * (1 - math.cos(u * math.pi)) * 0.5 + p.GC + 0.05
+                x = hp.tailX - extend * (1.0 - u)
+
+            # Z: GC at bottom → hoodY at top, with sine curve for bulge
+            z_range = hp.hoodY - p.GC
+            z = p.GC + 0.02 + z_range * 0.85 * math.sin(u * math.pi * 0.5)
+
+            # Width: narrow at tips, wider at body connection
+            hw = p.W * 0.42 * (0.6 + 0.4 * u)
+            y = (v - 0.5) * 2.0 * hw
+
+            # Slight forward bulge at center
+            if position == "front":
+                x -= 0.008 * math.sin(v * math.pi)
+            else:
+                x += 0.008 * math.sin(v * math.pi)
             verts.append([x, y, z])
 
     faces = []
@@ -1225,12 +1252,35 @@ def build_bumper(p: CarParamsV3, hp: Hardpoints, position: str = "front") -> Tup
 
 
 def build_grille(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]:
-    """Build grille mesh."""
-    return _generate_panel_mesh(
-        hp.grilleX, hp.grilleTopY,
-        0.050, p.grille_height,
-        z_offset=0, nu=3, nv=8,
-    )
+    """Build grille as recessed panel at nose front with horizontal slat lines."""
+    nu, nv = 4, 10
+    cx = hp.noseX + 0.06
+    z_bottom = p.GC + 0.06
+    z_top = hp.hoodY - 0.06
+    hw = p.W * 0.28
+
+    verts = []
+    for i in range(nu):
+        u = i / (nu - 1)
+        for j in range(nv):
+            v = j / (nv - 1)
+            y = (v - 0.5) * 2.0 * hw
+            z = z_bottom + u * (z_top - z_bottom)
+            recess = 0.015 * math.sin(v * math.pi)
+            x = cx - recess
+            verts.append([x, y, z])
+
+    faces = []
+    for i in range(nu - 1):
+        for j in range(nv - 1):
+            p00 = i * nv + j
+            p10 = (i + 1) * nv + j
+            p01 = i * nv + j + 1
+            p11 = (i + 1) * nv + j + 1
+            faces.append([p00, p10, p11])
+            faces.append([p00, p11, p01])
+
+    return np.array(verts), np.array(faces, dtype=np.int64)
 
 
 def build_mirror(p: CarParamsV3, hp: Hardpoints, side: str = "left") -> Tuple[np.ndarray, np.ndarray]:
@@ -1259,21 +1309,33 @@ def build_pillar(p: CarParamsV3, hp: Hardpoints, pillar_type: str = "A", side: s
 
 
 def build_fender(p: CarParamsV3, hp: Hardpoints, position: str = "front", side: str = "left") -> Tuple[np.ndarray, np.ndarray]:
-    """Build fender mesh (aligned with desktop generate_fender)."""
+    """Build fender as proper arch surface covering the top half of the wheel."""
+    nu, nv = 12, 12
     radius = p.wheel_arch_radius
-    nu, nv = 6, 6
-    x_center = hp.fenderFrontX if position == "front" else hp.fenderRearX
-    y_center = -(hp.fwz + 0.030) if side == "left" else (hp.fwz + 0.030)
+    x_axle = hp.fenderFrontX if position == "front" else hp.fenderRearX
+    y_sign = -1.0 if side == "left" else 1.0
+    y_center = y_sign * (p.TW / 2.0 * 0.80)
+    z_center = hp.wcy  # wheel center height
+
+    # Fender spans the wheel width with arch shape on top
+    x_span = radius * 2.2  # slightly wider than wheel diameter
+    arch_r = radius * 1.15  # arch radius slightly larger than wheel
 
     verts = []
     for i in range(nu):
         u = i / (nu - 1)
+        # x: span across wheel width
+        x = x_axle + (u - 0.5) * x_span
+        # Arch height: full at center, zero at edges
+        dx_norm = abs(u - 0.5) * 2.0  # 0 at center, 1 at edges
+        arch_height = arch_r * math.sqrt(max(0, 1.0 - dx_norm ** 2)) * 0.85
+
         for j in range(nv):
             v = j / (nv - 1)
-            theta, phi = u * math.pi, v * math.pi
-            x = x_center + radius * math.cos(theta) * 0.6
-            y = y_center + radius * math.sin(theta) * math.sin(phi) * 0.5
-            z = max(p.GC, p.GC + radius * math.sin(theta) * math.cos(phi))  # clamp to ground
+            # y: from body side to wheel outer edge
+            y = y_center + (v - 0.5) * radius * 1.3 * y_sign
+            # z: ground + arch height
+            z = p.GC + 0.02 + arch_height * math.sin(v * math.pi)
             verts.append([x, y, z])
 
     faces = []
@@ -1311,22 +1373,31 @@ def build_door(p: CarParamsV3, hp: Hardpoints, position: str = "front", side: st
 
 
 def build_hood(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]:
-    """Build hood panel mesh (aligned with desktop generate_hood).
-    Hood spans from A-pillar base (hoodEndX) to nose tip (noseX).
+    """Build hood surface from noseTipY at noseX to hoodY at hoodEndX.
+    Uses hardpoint heights directly (not side_profile_z) for accurate hood geometry.
     """
-    nu, nv = 12, 8
-    angle_rad = math.radians(p.hood_angle)
-    x_start = hp.hoodEndX  # was: hp.noseX + 0.05 (wrong — placed hood past the nose!)
-    length = hp.noseX - hp.hoodEndX  # was: p.hood_len (wrong — 1.3m overextended past nose)
+    nu, nv = 14, 10
+    x_start = hp.hoodEndX   # A-pillar base (~0.20)
+    x_end = hp.noseX         # nose tip (~2.30)
+    total_len = x_end - x_start
 
     verts = []
     for i in range(nu):
         u = i / (nu - 1)
+        x = x_start + u * total_len
+        # Interpolate Z: hoodY at hoodEndX → noseTipY at noseX (reverse u)
+        # Use smoothstep for smooth transition
+        s = smoothstep(0.0, 1.0, 1.0 - u)  # s=1 at hoodEndX, s=0 at noseX
+        z_base = hp.noseTipY + (hp.hoodY - hp.noseTipY) * s + 0.003
+        # Width follows body planform at this X position
+        t_norm = (x - hp.noseX) / (hp.tailX - hp.noseX)
+        t_norm = max(0.0, min(1.0, t_norm))
+        hw = planform_halfwidth(p, hp, t_norm) * 0.85
         for j in range(nv):
             v = j / (nv - 1)
-            x = x_start + u * length
-            y = (v - 0.5) * p.hood_width
-            z = hp.hoodY + p.hood_height * math.sin(u * math.pi) * math.cos(v * math.pi) + u * math.tan(angle_rad) * length * 0.3
+            y = (v - 0.5) * 2.0 * hw
+            crown = 0.018 * math.sin(v * math.pi)
+            z = z_base + crown
             verts.append([x, y, z])
 
     faces = []
@@ -1343,22 +1414,32 @@ def build_hood(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]:
 
 
 def build_trunk(p: CarParamsV3, hp: Hardpoints) -> Tuple[np.ndarray, np.ndarray]:
-    """Build trunk lid mesh (aligned with desktop generate_trunk).
-    Trunk spans from C-pillar base (cBaseX) to tail (trunkEndX=tailX).
+    """Build trunk surface from bumperRearTopY at tailX to waistY at cBaseX.
+    Uses hardpoint heights directly for accurate trunk geometry.
     """
-    nu, nv = 8, 6
-    # trunkEndX < cBaseX (e.g. -2.5 < -1.1), so trunk extends negative X direction
-    x_start = hp.trunkEndX  # was: hp.cBaseX + 0.10 (wrong — placed trunk in middle of car!)
-    length = hp.cBaseX - hp.trunkEndX  # was: p.trunk_len (wrong — only 1.0m, should span to tail)
+    nu, nv = 12, 8
+    x_start = hp.trunkEndX   # tailX (~-2.50)
+    x_end = hp.cBaseX        # C-pillar base (~-1.10)
+    total_len = x_end - x_start  # positive
 
     verts = []
     for i in range(nu):
         u = i / (nu - 1)
+        x = x_start + u * total_len
+        # Interpolate Z: bumperRearTopY at tailX → mid-height at cBaseX
+        # Trunk lid sits below the shoulder line, not at waistY
+        trunk_top_z = hp.bumperRearTopY + (hp.hoodY - hp.bumperRearTopY) * 0.70
+        s = smoothstep(0.0, 1.0, u)  # s=0 at tailX, s=1 at cBaseX
+        z_base = hp.bumperRearTopY + (trunk_top_z - hp.bumperRearTopY) * s + 0.003
+        # Width follows body planform at this X position
+        t_norm = (x - hp.noseX) / (hp.tailX - hp.noseX)
+        t_norm = max(0.0, min(1.0, t_norm))
+        hw = planform_halfwidth(p, hp, t_norm) * 0.85
         for j in range(nv):
             v = j / (nv - 1)
-            x = x_start + u * length
-            y = (v - 0.5) * p.trunk_width
-            z = hp.bumperRearTopY + 0.15 + 0.08 * math.exp(-u * 4) * math.cos(v * math.pi)
+            y = (v - 0.5) * 2.0 * hw
+            crown = 0.012 * math.sin(v * math.pi)
+            z = z_base + crown
             verts.append([x, y, z])
 
     faces = []
